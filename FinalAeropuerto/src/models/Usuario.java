@@ -1,38 +1,64 @@
 package models;
 
-public class Usuario {
-    private String nombre;
-    private String correoElectronico;
-    private String contraseña;
+import java.util.Date;
 
-    public Usuario(String nombre, String correoElectronico, String contraseña) {
-        this.nombre = nombre;
-        this.correoElectronico = correoElectronico;
-        this.contraseña = contraseña;
+public class Usuario extends Persona {
+    private int idUsuario; 
+    private String nombreUsuario;
+    private String email;
+    private String contrasena;
+
+    public Usuario(int idUsuario, String nombreUsuario, String email, String contrasena, String nombre, String apellido, 
+            String telefono, String nacionalidad, Date fechaNacimiento, String tipoDocumento, String numeroDocumento) {
+        super(nombre, apellido, telefono, nacionalidad, fechaNacimiento, tipoDocumento, numeroDocumento);
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.email = email;
+        this.contrasena = contrasena;
+    }
+    
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public String getCorreoElectronico() {
-        return correoElectronico;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+    public String getEmail() {
+        return email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Usuario{");
+        sb.append("id_usuario=").append(idUsuario);
+        sb.append(", nombreUsuario=").append(nombreUsuario);
+        sb.append(", email=").append(email);
+        sb.append(", contrasena=").append(contrasena);
+        sb.append('}');
+        return sb.toString();
+    }
+    
 }
-

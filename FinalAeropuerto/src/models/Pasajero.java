@@ -1,27 +1,11 @@
 package models;
 
-public class Pasajero {
-    private String nombre;
-    private String documentoIdentidad;
+import java.util.Date;
 
-    public Pasajero(String nombre, String documentoIdentidad) {
-        this.nombre = nombre;
-        this.documentoIdentidad = documentoIdentidad;
-    }
+public class Pasajero extends Persona {
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDocumentoIdentidad() {
-        return documentoIdentidad;
-    }
-
-    public void setDocumentoIdentidad(String documentoIdentidad) {
-        this.documentoIdentidad = documentoIdentidad;
+    public Pasajero(String nombre, String apellido, String telefono, String nacionalidad, Date fechaNacimiento, 
+            String tipoDocumento, String numeroDocumento) {
+        super(nombre, apellido, telefono, nacionalidad, fechaNacimiento, tipoDocumento, numeroDocumento);
     }
 }
