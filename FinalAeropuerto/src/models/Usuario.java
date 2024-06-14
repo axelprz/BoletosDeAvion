@@ -1,21 +1,10 @@
 package models;
 
-import java.util.Date;
-
 public class Usuario extends Persona {
     private int idUsuario; 
     private String nombreUsuario;
     private String email;
     private String contrasena;
-
-    public Usuario(int idUsuario, String nombreUsuario, String email, String contrasena, String nombre, String apellido, 
-            String telefono, String nacionalidad, Date fechaNacimiento, String tipoDocumento, String numeroDocumento) {
-        super(nombre, apellido, telefono, nacionalidad, fechaNacimiento, tipoDocumento, numeroDocumento);
-        this.idUsuario = idUsuario;
-        this.nombreUsuario = nombreUsuario;
-        this.email = email;
-        this.contrasena = contrasena;
-    }
     
     public int getIdUsuario() {
         return idUsuario;

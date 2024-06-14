@@ -12,17 +12,6 @@ public class Persona {
     private String tipoDocumento;
     private String numeroDocumento;
 
-    public Persona(String nombre, String apellido, String telefono, String nacionalidad, Date fechaNacimiento, 
-            String tipoDocumento, String numeroDocumento) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.nacionalidad = nacionalidad;
-        this.fechaNacimiento = fechaNacimiento;
-        this.tipoDocumento = tipoDocumento;
-        this.numeroDocumento = numeroDocumento;
-    }
-
     public String getNombre() {
         return nombre;
     }
