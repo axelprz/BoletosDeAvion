@@ -53,7 +53,12 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         jTextField3.setText("¿Olvido su contraseña?");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 640, -1, -1));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 640, 140, -1));
 
         jButton1.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
         jButton1.setText("Iniciar Sesion");
@@ -68,6 +73,10 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
