@@ -42,6 +42,7 @@ public class PanelVuelos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/pagina principal.png"))); // NOI18N
@@ -118,6 +119,21 @@ public class PanelVuelos extends javax.swing.JFrame {
         jButton8.setContentAreaFilled(false);
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 720));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/avion inicioo.jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
@@ -178,5 +194,6 @@ public class PanelVuelos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
