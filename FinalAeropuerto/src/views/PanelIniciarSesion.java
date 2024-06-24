@@ -33,7 +33,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         txtEmail.setBackground(new java.awt.Color(51, 51, 51));
         txtEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(207, 124, 44));
+        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
         txtEmail.setText("Nombre de Usuario o Email...");
         txtEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(207, 124, 44), 1, true));
         txtEmail.setDragEnabled(true);
@@ -43,7 +43,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         btnCambiarPass.setBackground(new java.awt.Color(51, 51, 51));
         btnCambiarPass.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        btnCambiarPass.setForeground(new java.awt.Color(207, 125, 44));
+        btnCambiarPass.setForeground(new java.awt.Color(204, 204, 204));
         btnCambiarPass.setText("Olvidaste Tu Contraseña?");
         btnCambiarPass.setBorderPainted(false);
         btnCambiarPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -61,7 +61,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         btnIniciarSesion.setBackground(new java.awt.Color(51, 51, 51));
         btnIniciarSesion.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnIniciarSesion.setForeground(new java.awt.Color(207, 125, 44));
+        btnIniciarSesion.setForeground(new java.awt.Color(204, 204, 204));
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.setBorderPainted(false);
         btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -73,7 +73,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         txtPass.setBackground(new java.awt.Color(51, 51, 51));
         txtPass.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        txtPass.setForeground(new java.awt.Color(207, 125, 45));
+        txtPass.setForeground(new java.awt.Color(153, 153, 153));
         txtPass.setText("**********");
         txtPass.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(207, 125, 44), 1, true));
         getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 300, 40));

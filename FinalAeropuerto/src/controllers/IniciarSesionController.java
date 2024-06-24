@@ -59,12 +59,12 @@ public class IniciarSesionController implements ActionListener, MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == views.txtEmail){
-            Object[] components = Funciones.placeHolderEmail(views.txtEmail, views.txtPass);
+            Object[] components = PlaceHolder.placeHolderEmail(views.txtEmail, views.txtPass);
             views.txtEmail = (JTextField) components[0];
             views.txtPass = (JPasswordField) components[1];
         }
         else if(e.getSource() == views.txtPass){
-            Object[] components = Funciones.placeHolderPassword(views.txtPass, views.txtEmail);
+            Object[] components = PlaceHolder.placeHolderPassword(views.txtPass, views.txtEmail);
             views.txtPass = (JPasswordField) components[0];
             views.txtEmail = (JTextField) components[1];
         }

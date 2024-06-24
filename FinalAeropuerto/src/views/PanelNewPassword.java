@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package views;
 
-/**
- *
- * @author agust
- */
+import controllers.NewPasswordController;
+import models.Usuario;
+import models.dao.UsuarioDao;
+
 public class PanelNewPassword extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelNewPassword
-     */
     public PanelNewPassword() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        Usuario us = new Usuario();
+        UsuarioDao usDao = new UsuarioDao();
+        NewPasswordController controller = new NewPasswordController(this, us, usDao);
+        this.btnConfirmarPassword.setVisible(false);
+        this.btnConfirmarCodigo.setVisible(false);
+        this.txtPassword.setVisible(false);
+        this.txtCodigoVerificacion.setVisible(false);
+        this.txtPasswordConfirmada.setVisible(false);
     }
 
     /**
@@ -26,85 +29,151 @@ public class PanelNewPassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        btnConfirmarEmail = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btnConfirmarPassword = new javax.swing.JButton();
+        txtCodigoVerificacion = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        txtPasswordConfirmada = new javax.swing.JPasswordField();
+        btnConfirmarCodigo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setText("Ingrese Nueva Contraseña");
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Cambiar Contraseña");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 430, -1));
+
+        txtEmail.setBackground(new java.awt.Color(51, 51, 51));
+        txtEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setText("Nombre de Usuario o Email...");
+        txtEmail.setBorder(null);
+        txtEmail.setDragEnabled(true);
+        txtEmail.setFocusCycleRoot(true);
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField1FocusGained(evt);
+                txtEmailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
+                txtEmailFocusLost(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 220, -1));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 40));
 
-        jTextField2.setText("Confirme Nueva Contraseña");
-        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField2FocusLost(evt);
-            }
-        });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 220, -1));
-
-        jButton1.setFont(new java.awt.Font("Rockwell Condensed", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Confirmar Nueva Contraseña");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmarEmail.setBackground(new java.awt.Color(51, 51, 51));
+        btnConfirmarEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnConfirmarEmail.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmarEmail.setText("Confirmar Email");
+        btnConfirmarEmail.setBorderPainted(false);
+        btnConfirmarEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarEmail.setFocusPainted(false);
+        btnConfirmarEmail.setRequestFocusEnabled(false);
+        btnConfirmarEmail.setVerifyInputWhenFocusTarget(false);
+        btnConfirmarEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnConfirmarEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 220, 40));
+        jPanel1.add(btnConfirmarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
 
-        jLabel2.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Crear Nueva Contraseña");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo mas chico.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 210, 150));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondo de registro.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        btnConfirmarPassword.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnConfirmarPassword.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmarPassword.setText("Confirmar Contraseña");
+        btnConfirmarPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarPassword.setFocusPainted(false);
+        btnConfirmarPassword.setRequestFocusEnabled(false);
+        btnConfirmarPassword.setVerifyInputWhenFocusTarget(false);
+        btnConfirmarPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConfirmarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+
+        txtCodigoVerificacion.setBackground(new java.awt.Color(51, 51, 51));
+        txtCodigoVerificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtCodigoVerificacion.setForeground(new java.awt.Color(153, 153, 153));
+        txtCodigoVerificacion.setText("Ingrese el código de verificación");
+        txtCodigoVerificacion.setBorder(null);
+        txtCodigoVerificacion.setDragEnabled(true);
+        txtCodigoVerificacion.setFocusCycleRoot(true);
+        jPanel1.add(txtCodigoVerificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, 40));
+
+        txtPassword.setBackground(new java.awt.Color(51, 51, 51));
+        txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(153, 153, 153));
+        txtPassword.setText("**********");
+        txtPassword.setBorder(null);
+        txtPassword.setDragEnabled(true);
+        txtPassword.setFocusCycleRoot(true);
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 40));
+
+        txtPasswordConfirmada.setBackground(new java.awt.Color(51, 51, 51));
+        txtPasswordConfirmada.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtPasswordConfirmada.setForeground(new java.awt.Color(153, 153, 153));
+        txtPasswordConfirmada.setText("**********");
+        txtPasswordConfirmada.setBorder(null);
+        txtPasswordConfirmada.setDragEnabled(true);
+        txtPasswordConfirmada.setFocusCycleRoot(true);
+        jPanel1.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, 40));
+
+        btnConfirmarCodigo.setBackground(new java.awt.Color(51, 51, 51));
+        btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnConfirmarCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirmarCodigo.setText("Confirmar Código");
+        btnConfirmarCodigo.setBorderPainted(false);
+        btnConfirmarCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarCodigo.setFocusPainted(false);
+        btnConfirmarCodigo.setRequestFocusEnabled(false);
+        btnConfirmarCodigo.setVerifyInputWhenFocusTarget(false);
+        btnConfirmarCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarCodigoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnConfirmarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnConfirmarEmailActionPerformed
 
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        if (jTextField1.getText().equals("Ingrese Nueva Contraseña")) {
-        jTextField1.setText("");
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        if (txtEmail.getText().equals("Ingrese Nueva Contraseña")) {
+        txtEmail.setText("");
         }
-    }//GEN-LAST:event_jTextField1FocusGained
+    }//GEN-LAST:event_txtEmailFocusGained
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-        if (jTextField1.getText().isEmpty()) {
-        jTextField1.setText("Ingrese Nueva Contraseña");
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        if (txtEmail.getText().isEmpty()) {
+        txtEmail.setText("Ingrese Nueva Contraseña");
         }
-    }//GEN-LAST:event_jTextField1FocusLost
+    }//GEN-LAST:event_txtEmailFocusLost
 
-    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-        if (jTextField2.getText().equals("Confirme Nueva Contraseña")) {
-        jTextField2.setText("");
-        }
-    }//GEN-LAST:event_jTextField2FocusGained
+    private void btnConfirmarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfirmarPasswordActionPerformed
 
-    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
-        if (jTextField2.getText().isEmpty()) {
-        jTextField2.setText("Confirme Nueva Contraseña");
-        }
-    }//GEN-LAST:event_jTextField2FocusLost
+    private void btnConfirmarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfirmarCodigoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,10 +211,15 @@ public class PanelNewPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btnConfirmarCodigo;
+    public javax.swing.JButton btnConfirmarEmail;
+    public javax.swing.JButton btnConfirmarPassword;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    public javax.swing.JTextField txtCodigoVerificacion;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JPasswordField txtPasswordConfirmada;
     // End of variables declaration//GEN-END:variables
 }

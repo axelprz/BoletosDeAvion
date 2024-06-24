@@ -21,12 +21,12 @@ public class PanelRYIController implements ActionListener{
         if(e.getSource() == views.btnLogin){
             PanelIniciarSesion login = new PanelIniciarSesion();
             login.setVisible(true);
-            this.views.dispose();
+            views.dispose();
         }
         else if(e.getSource() == views.btnRegistrarse){
             PanelRegistro registro = new PanelRegistro();
             registro.setVisible(true);
-            this.views.dispose();
+            views.dispose();
         }
     }
 }

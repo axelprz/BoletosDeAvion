@@ -59,7 +59,7 @@ public class UsuarioDao {
         return us;
     }
     
-    public Usuario BuscarUsuario(String nombreUsuario){
+    public Usuario buscarUsuario(String nombreUsuario){
         String sql = "SELECT * FROM usuarios WHERE (nombre_usuario = ? OR email = ?)";
         Usuario us = new Usuario();
         
@@ -71,10 +71,10 @@ public class UsuarioDao {
             rs = ps.executeQuery();
             
             if(rs.next()){
-                us.setIdUsuario(rs.getInt("id"));
+                us.setIdUsuario(rs.getInt("id_usuario"));
                 us.setNombre(rs.getString("nombre"));
                 us.setApellido(rs.getString("apellido"));
-                us.setNombreUsuario(rs.getString("nombre-usuario"));
+                us.setNombreUsuario(rs.getString("nombre_usuario"));
                 us.setEmail(rs.getString("email"));
                 us.setContrasena(rs.getString("contrasena"));
                 us.setTelefono(rs.getString("telefono"));

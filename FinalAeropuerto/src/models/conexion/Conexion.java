@@ -10,8 +10,8 @@ public class Conexion {
     Connection con;
     public Connection getConexion(){
         try {
-            String db = "jdbc:mysql://localhost:33065/boletos_avion";
-            con = DriverManager.getConnection(db,"root","");
+            String db = "jdbc:mysql://localhost:3306/boletos_avion?serverTimezone=UTC";
+            con = DriverManager.getConnection(db,"root","Mendoza05@");
             return con;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
