@@ -1,26 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package views;
 
-/**
- *
- * @author agust
- */
-
+import controllers.PerfilController;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import models.Usuario;
+import models.dao.UsuarioDao;
 
 public class PanelPerfil extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelPerfil
-     */
-    public PanelPerfil() {
+    public PanelPerfil(Usuario us) {
         initComponents();
+        this.txtPassword.setVisible(false);
+        this.txtPasswordConfirmada.setVisible(false);
+        this.txtTelefono.setVisible(false);
+        this.txtCodigo.setVisible(false);
+        this.jSeparator1.setVisible(false);
+        this.jSeparator2.setVisible(false);
+        this.jSeparator3.setVisible(false);
+        this.jSeparator4.setVisible(false);
+        this.btnConfirmarCodigo.setVisible(false);
+        this.btnConfirmarPassword.setVisible(false);
+        this.txtTelefono.setVisible(false);
+        this.btnConfirmarTelefono.setVisible(false);
+        UsuarioDao usDao = new UsuarioDao();
+        PerfilController controller = new PerfilController(this, us, usDao);
     }
 
     /**
@@ -34,19 +40,33 @@ public class PanelPerfil extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        lblImagen = new javax.swing.JLabel();
-        lblImagen2 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txtNewPassword = new javax.swing.JTextField();
-        txtConfirmNewPassword = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
+        lblImagenPerfil = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        btnConfirmarTelefono = new javax.swing.JButton();
+        lblTelefono = new javax.swing.JLabel();
+        lblNombreApellido = new javax.swing.JLabel();
+        lblNombreUsuario = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        btnSeleccionarImagen = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btnCambiarPassword = new javax.swing.JButton();
+        txtPasswordConfirmada = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
+        btnConfirmarPassword = new javax.swing.JButton();
+        txtTelefono = new javax.swing.JTextField();
+        btnConfirmarCodigo = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        txtCodigo = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        btnCambiarTelefono = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,9 +77,9 @@ public class PanelPerfil extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu.png"))); // NOI18N
-        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu oscuro.png"))); // NOI18N
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu.png"))); // NOI18N
+        btnMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        btnMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu oscuro.png"))); // NOI18N
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/vuelos.png"))); // NOI18N
         jButton2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
@@ -80,7 +100,7 @@ public class PanelPerfil extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -90,7 +110,7 @@ public class PanelPerfil extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(158, 158, 158)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -102,82 +122,198 @@ public class PanelPerfil extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 720));
 
-        jButton5.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Guardar Cambios");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 670, 170, -1));
-
-        lblImagen.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        getContentPane().add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 170, 160));
-
-        lblImagen2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        getContentPane().add(lblImagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 170, 160));
-
-        jButton6.setBackground(new java.awt.Color(255, 204, 102));
-        jButton6.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("Seleccionar Imagen");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 170, -1));
-
-        jLabel3.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Cambio de contraseña");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 190, -1));
-
-        txtNewPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtNewPassword.setText("Nueva Contraseña");
-        txtNewPassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtNewPasswordFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtNewPasswordFocusLost(evt);
-            }
-        });
-        getContentPane().add(txtNewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 270, -1));
-
-        txtConfirmNewPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtConfirmNewPassword.setText("Confirmar Nueva Contraseña");
-        txtConfirmNewPassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtConfirmNewPasswordFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtConfirmNewPasswordFocusLost(evt);
-            }
-        });
-        getContentPane().add(txtConfirmNewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 270, -1));
-
-        jButton7.setBackground(new java.awt.Color(204, 204, 204));
-        jButton7.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("Confirmar Contraseña");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 190, -1));
+        lblImagenPerfil.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        getContentPane().add(lblImagenPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 170, 160));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1210, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
+        btnConfirmarTelefono.setBackground(new java.awt.Color(255, 204, 102));
+        btnConfirmarTelefono.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnConfirmarTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        btnConfirmarTelefono.setText("Confirmar Teléfono");
+        btnConfirmarTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarTelefonoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConfirmarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 520, 170, 40));
+
+        lblTelefono.setBackground(new java.awt.Color(51, 51, 51));
+        lblTelefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(51, 51, 51));
+        lblTelefono.setText("Teléfono");
+        jPanel2.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 300, 31));
+
+        lblNombreApellido.setBackground(new java.awt.Color(0, 0, 0));
+        lblNombreApellido.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        lblNombreApellido.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombreApellido.setText("Nombre y Apellido");
+        jPanel2.add(lblNombreApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 58, 300, 59));
+
+        lblNombreUsuario.setBackground(new java.awt.Color(51, 51, 51));
+        lblNombreUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblNombreUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        lblNombreUsuario.setText("Nombre de Usuario");
+        jPanel2.add(lblNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 300, 31));
+
+        lblEmail.setBackground(new java.awt.Color(51, 51, 51));
+        lblEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(51, 51, 51));
+        lblEmail.setText("Email");
+        jPanel2.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 300, 31));
+
+        btnSeleccionarImagen.setBackground(new java.awt.Color(255, 204, 102));
+        btnSeleccionarImagen.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnSeleccionarImagen.setForeground(new java.awt.Color(0, 0, 0));
+        btnSeleccionarImagen.setText("Seleccionar Imagen");
+        btnSeleccionarImagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSeleccionarImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarImagenActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSeleccionarImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 170, 40));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Cambio de Teléfono");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 190, 40));
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Cambio de Contraseña");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 190, 40));
+
+        btnCambiarPassword.setBackground(new java.awt.Color(255, 204, 102));
+        btnCambiarPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnCambiarPassword.setForeground(new java.awt.Color(0, 0, 0));
+        btnCambiarPassword.setText("Cambiar Contraseña");
+        btnCambiarPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCambiarPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCambiarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 180, 40));
+
+        txtPasswordConfirmada.setBackground(new java.awt.Color(204, 204, 204));
+        txtPasswordConfirmada.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtPasswordConfirmada.setForeground(new java.awt.Color(51, 51, 51));
+        txtPasswordConfirmada.setText("**********");
+        txtPasswordConfirmada.setBorder(null);
+        txtPasswordConfirmada.setDragEnabled(true);
+        txtPasswordConfirmada.setFocusCycleRoot(true);
+        jPanel2.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 180, -1));
+
+        txtPassword.setBackground(new java.awt.Color(204, 204, 204));
+        txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.setText("**********");
+        txtPassword.setBorder(null);
+        txtPassword.setDragEnabled(true);
+        txtPassword.setFocusCycleRoot(true);
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 180, -1));
+
+        btnConfirmarPassword.setBackground(new java.awt.Color(255, 204, 102));
+        btnConfirmarPassword.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnConfirmarPassword.setForeground(new java.awt.Color(0, 0, 0));
+        btnConfirmarPassword.setText("Confirmar Contraseña");
+        btnConfirmarPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConfirmarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 180, 40));
+
+        txtTelefono.setBackground(new java.awt.Color(204, 204, 204));
+        txtTelefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono.setText("Nuevo Teléfono");
+        txtTelefono.setBorder(null);
+        txtTelefono.setDragEnabled(true);
+        txtTelefono.setFocusCycleRoot(true);
+        txtTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefonoFocusLost(evt);
+            }
+        });
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 170, -1));
+
+        btnConfirmarCodigo.setBackground(new java.awt.Color(255, 204, 102));
+        btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnConfirmarCodigo.setForeground(new java.awt.Color(0, 0, 0));
+        btnConfirmarCodigo.setText("Confirmar Código");
+        btnConfirmarCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarCodigoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 180, 40));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 180, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 180, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 180, -1));
+
+        txtCodigo.setBackground(new java.awt.Color(204, 204, 204));
+        txtCodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(51, 51, 51));
+        txtCodigo.setText("Código de verificación");
+        txtCodigo.setBorder(null);
+        txtCodigo.setDragEnabled(true);
+        txtCodigo.setFocusCycleRoot(true);
+        txtCodigo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCodigoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCodigoFocusLost(evt);
+            }
+        });
+        jPanel2.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 180, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 170, -1));
+
+        btnCambiarTelefono.setBackground(new java.awt.Color(255, 204, 102));
+        btnCambiarTelefono.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnCambiarTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        btnCambiarTelefono.setText("Cambiar Teléfono");
+        btnCambiarTelefono.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCambiarTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarTelefonoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCambiarTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 170, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1210, 720));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Cambio de contraseña");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 190, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnConfirmarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarTelefonoActionPerformed
         String Ruta = "";
         
         JFileChooser jFileChooser = new JFileChooser();
@@ -190,82 +326,87 @@ public class PanelPerfil extends javax.swing.JFrame {
             Ruta = jFileChooser.getSelectedFile().getPath();
             
             Image mImage = new ImageIcon(Ruta).getImage();
-            ImageIcon mIcon = new ImageIcon(mImage.getScaledInstance(lblImagen2.getWidth(), lblImagen2.getHeight(), Image.SCALE_SMOOTH));
-            lblImagen2.setIcon(mIcon);
-        
-            lblImagen.setIcon(null);
+            ImageIcon mIcon = new ImageIcon(mImage.getScaledInstance(lblImagenPerfil.getWidth(), lblImagenPerfil.getHeight(), Image.SCALE_SMOOTH));
+            lblImagenPerfil.setIcon(mIcon);
             
             javax.swing.JOptionPane.showMessageDialog(this, "Imagen cargada correctamente", "Información", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }
 
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnConfirmarTelefonoActionPerformed
 
-    private void txtNewPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewPasswordFocusGained
+    private void btnSeleccionarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarImagenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewPasswordFocusGained
+    }//GEN-LAST:event_btnSeleccionarImagenActionPerformed
 
-    private void txtNewPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewPasswordFocusLost
+    private void btnCambiarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewPasswordFocusLost
+    }//GEN-LAST:event_btnCambiarPasswordActionPerformed
 
-    private void txtConfirmNewPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtConfirmNewPasswordFocusGained
+    private void btnConfirmarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConfirmNewPasswordFocusGained
+    }//GEN-LAST:event_btnConfirmarPasswordActionPerformed
 
-    private void txtConfirmNewPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtConfirmNewPasswordFocusLost
+    private void txtTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusGained
+        if (txtTelefono.getText().equals("Ingrese Nueva Contraseña")) {
+            txtTelefono.setText("");
+        }
+    }//GEN-LAST:event_txtTelefonoFocusGained
+
+    private void txtTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefonoFocusLost
+        if (txtTelefono.getText().isEmpty()) {
+            txtTelefono.setText("Ingrese Nueva Contraseña");
+        }
+    }//GEN-LAST:event_txtTelefonoFocusLost
+
+    private void btnConfirmarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtConfirmNewPasswordFocusLost
+    }//GEN-LAST:event_btnConfirmarCodigoActionPerformed
+
+    private void txtCodigoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodigoFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoFocusGained
+
+    private void txtCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCodigoFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoFocusLost
+
+    private void btnCambiarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCambiarTelefonoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PanelPerfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PanelPerfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PanelPerfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PanelPerfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PanelPerfil().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnCambiarPassword;
+    public javax.swing.JButton btnCambiarTelefono;
+    public javax.swing.JButton btnConfirmarCodigo;
+    public javax.swing.JButton btnConfirmarPassword;
+    public javax.swing.JButton btnConfirmarTelefono;
+    public javax.swing.JButton btnMenu;
+    public javax.swing.JButton btnSeleccionarImagen;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblImagen;
-    private javax.swing.JLabel lblImagen2;
-    private javax.swing.JTextField txtConfirmNewPassword;
-    private javax.swing.JTextField txtNewPassword;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSeparator jSeparator2;
+    public javax.swing.JSeparator jSeparator3;
+    public javax.swing.JSeparator jSeparator4;
+    public javax.swing.JLabel lblEmail;
+    public javax.swing.JLabel lblImagenPerfil;
+    public javax.swing.JLabel lblNombreApellido;
+    public javax.swing.JLabel lblNombreUsuario;
+    public javax.swing.JLabel lblTelefono;
+    public javax.swing.JTextField txtCodigo;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JPasswordField txtPasswordConfirmada;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

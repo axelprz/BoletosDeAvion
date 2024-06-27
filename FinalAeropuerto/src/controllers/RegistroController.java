@@ -68,6 +68,7 @@ public class RegistroController implements ActionListener, MouseListener {
                                         views.btnRegistrarse.setVisible(false);
                                         views.txtCodigo.setVisible(true);
                                         views.btnConfirmarCodigo.setVisible(true);
+                                        views.jSeparatorCodigo.setVisible(true);
                                         this.codigo = GeneradorCodigosEmail.enviarCorreo(views.txtEmail.getText(), true);
                                         JOptionPane.showMessageDialog(null, "Ingrese el código de verificación que le enviamos");
                                     } else {

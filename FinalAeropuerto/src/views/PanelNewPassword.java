@@ -18,6 +18,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         this.txtPassword.setVisible(false);
         this.txtCodigoVerificacion.setVisible(false);
         this.txtPasswordConfirmada.setVisible(false);
+        this.jSeparator2.setVisible(false);
     }
 
     /**
@@ -39,6 +40,8 @@ public class PanelNewPassword extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         txtPasswordConfirmada = new javax.swing.JPasswordField();
         btnConfirmarCodigo = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,9 +56,9 @@ public class PanelNewPassword extends javax.swing.JFrame {
         jLabel2.setText("Cambiar Contraseña");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 430, -1));
 
-        txtEmail.setBackground(new java.awt.Color(51, 51, 51));
+        txtEmail.setBackground(new java.awt.Color(255, 204, 102));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
         txtEmail.setText("Nombre de Usuario o Email...");
         txtEmail.setBorder(null);
         txtEmail.setDragEnabled(true);
@@ -68,7 +71,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
                 txtEmailFocusLost(evt);
             }
         });
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 40));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, -1));
 
         btnConfirmarEmail.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -103,32 +106,32 @@ public class PanelNewPassword extends javax.swing.JFrame {
         });
         jPanel1.add(btnConfirmarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
 
-        txtCodigoVerificacion.setBackground(new java.awt.Color(51, 51, 51));
+        txtCodigoVerificacion.setBackground(new java.awt.Color(255, 204, 102));
         txtCodigoVerificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtCodigoVerificacion.setForeground(new java.awt.Color(153, 153, 153));
+        txtCodigoVerificacion.setForeground(new java.awt.Color(51, 51, 51));
         txtCodigoVerificacion.setText("Ingrese el código de verificación");
         txtCodigoVerificacion.setBorder(null);
         txtCodigoVerificacion.setDragEnabled(true);
         txtCodigoVerificacion.setFocusCycleRoot(true);
-        jPanel1.add(txtCodigoVerificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, 40));
+        jPanel1.add(txtCodigoVerificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, -1));
 
-        txtPassword.setBackground(new java.awt.Color(51, 51, 51));
+        txtPassword.setBackground(new java.awt.Color(255, 204, 102));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(153, 153, 153));
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
         txtPassword.setText("**********");
         txtPassword.setBorder(null);
         txtPassword.setDragEnabled(true);
         txtPassword.setFocusCycleRoot(true);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, 40));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, -1));
 
-        txtPasswordConfirmada.setBackground(new java.awt.Color(51, 51, 51));
+        txtPasswordConfirmada.setBackground(new java.awt.Color(255, 204, 102));
         txtPasswordConfirmada.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPasswordConfirmada.setForeground(new java.awt.Color(153, 153, 153));
+        txtPasswordConfirmada.setForeground(new java.awt.Color(51, 51, 51));
         txtPasswordConfirmada.setText("**********");
         txtPasswordConfirmada.setBorder(null);
         txtPasswordConfirmada.setDragEnabled(true);
         txtPasswordConfirmada.setFocusCycleRoot(true);
-        jPanel1.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, 40));
+        jPanel1.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, -1));
 
         btnConfirmarCodigo.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -145,6 +148,14 @@ public class PanelNewPassword extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 220, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
@@ -217,6 +228,8 @@ public class PanelNewPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSeparator jSeparator2;
     public javax.swing.JTextField txtCodigoVerificacion;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPassword;

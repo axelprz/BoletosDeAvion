@@ -14,6 +14,7 @@ public class PanelRegistro extends javax.swing.JFrame {
         RegistroController controller = new RegistroController(this, us, usDao);
         this.txtCodigo.setVisible(false);
         this.btnConfirmarCodigo.setVisible(false);
+        this.jSeparatorCodigo.setVisible(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -38,6 +39,13 @@ public class PanelRegistro extends javax.swing.JFrame {
         btnRegistrarse = new javax.swing.JButton();
         txtTelefono = new javax.swing.JTextField();
         btnConfirmarCodigo = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparatorCodigo = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,9 +64,9 @@ public class PanelRegistro extends javax.swing.JFrame {
         jLabel3.setText("Registro");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 430, -1));
 
-        txtApellido.setBackground(new java.awt.Color(51, 51, 51));
+        txtApellido.setBackground(new java.awt.Color(255, 204, 102));
         txtApellido.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtApellido.setForeground(new java.awt.Color(153, 153, 153));
+        txtApellido.setForeground(new java.awt.Color(51, 51, 51));
         txtApellido.setText("Apellido");
         txtApellido.setBorder(null);
         txtApellido.setDragEnabled(true);
@@ -70,11 +78,11 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtApellidoFocusLost(evt);
             }
         });
-        jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 200, 40));
+        jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 200, -1));
 
-        txtCodigo.setBackground(new java.awt.Color(51, 51, 51));
+        txtCodigo.setBackground(new java.awt.Color(255, 204, 102));
         txtCodigo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtCodigo.setForeground(new java.awt.Color(153, 153, 153));
+        txtCodigo.setForeground(new java.awt.Color(51, 51, 51));
         txtCodigo.setText("Código de verificación");
         txtCodigo.setBorder(null);
         txtCodigo.setDragEnabled(true);
@@ -86,11 +94,11 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtCodigoFocusLost(evt);
             }
         });
-        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 200, 40));
+        jPanel1.add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 200, -1));
 
-        txtEmail.setBackground(new java.awt.Color(51, 51, 51));
+        txtEmail.setBackground(new java.awt.Color(255, 204, 102));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
         txtEmail.setText("Email");
         txtEmail.setBorder(null);
         txtEmail.setDragEnabled(true);
@@ -102,11 +110,11 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtEmailFocusLost(evt);
             }
         });
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 200, 40));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 200, -1));
 
-        txtNombre.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombre.setBackground(new java.awt.Color(255, 204, 102));
         txtNombre.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtNombre.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombre.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtNombre.setText("Nombre");
         txtNombre.setBorder(null);
@@ -119,11 +127,11 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtNombreFocusLost(evt);
             }
         });
-        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 200, 40));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 200, -1));
 
-        txtNombreUsuario.setBackground(new java.awt.Color(51, 51, 51));
+        txtNombreUsuario.setBackground(new java.awt.Color(255, 204, 102));
         txtNombreUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtNombreUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombreUsuario.setForeground(new java.awt.Color(51, 51, 51));
         txtNombreUsuario.setText("Nombre de Usuario");
         txtNombreUsuario.setBorder(null);
         txtNombreUsuario.setDragEnabled(true);
@@ -135,15 +143,15 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtNombreUsuarioFocusLost(evt);
             }
         });
-        jPanel1.add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, 40));
+        jPanel1.add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 200, -1));
 
-        txtPassword.setBackground(new java.awt.Color(51, 51, 51));
+        txtPassword.setBackground(new java.awt.Color(255, 204, 102));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(153, 153, 153));
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
         txtPassword.setText("**********");
         txtPassword.setBorder(null);
         txtPassword.setDragEnabled(true);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 200, 40));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 200, -1));
 
         btnRegistrarse.setBackground(new java.awt.Color(51, 51, 51));
         btnRegistrarse.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -161,9 +169,9 @@ public class PanelRegistro extends javax.swing.JFrame {
         });
         jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 220, 40));
 
-        txtTelefono.setBackground(new java.awt.Color(51, 51, 51));
+        txtTelefono.setBackground(new java.awt.Color(255, 204, 102));
         txtTelefono.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtTelefono.setForeground(new java.awt.Color(153, 153, 153));
+        txtTelefono.setForeground(new java.awt.Color(51, 51, 51));
         txtTelefono.setText("Telefono (opcional)");
         txtTelefono.setBorder(null);
         txtTelefono.setDragEnabled(true);
@@ -175,7 +183,7 @@ public class PanelRegistro extends javax.swing.JFrame {
                 txtTelefonoFocusLost(evt);
             }
         });
-        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 200, 40));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 200, -1));
 
         btnConfirmarCodigo.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -192,6 +200,38 @@ public class PanelRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 220, 40));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setEnabled(false);
+        jSeparator1.setOpaque(true);
+        jSeparator1.setRequestFocusEnabled(false);
+        jSeparator1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 200, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 200, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 200, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 200, -1));
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 200, -1));
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 200, -1));
+
+        jSeparatorCodigo.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparatorCodigo.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparatorCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 200, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 540));
 
@@ -222,14 +262,6 @@ public class PanelRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailFocusLost
 
-    private void txtNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreFocusGained
-
-    private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreFocusLost
-
     private void txtNombreUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreUsuarioFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreUsuarioFocusGained
@@ -253,6 +285,14 @@ public class PanelRegistro extends javax.swing.JFrame {
     private void btnConfirmarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfirmarCodigoActionPerformed
+
+    private void txtNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreFocusLost
+                               
+    private void txtNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombreFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreFocusGained
 
     /**
      * @param args the command line arguments
@@ -295,6 +335,13 @@ public class PanelRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    public javax.swing.JSeparator jSeparatorCodigo;
     public javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtEmail;

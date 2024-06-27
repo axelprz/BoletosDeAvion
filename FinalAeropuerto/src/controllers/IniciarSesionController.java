@@ -46,7 +46,7 @@ public class IniciarSesionController implements ActionListener, MouseListener {
                 String password = String.valueOf(views.txtPass.getPassword());
                 us = usDao.iniciarSesion(email, password);
                 if (us.getEmail() != null) {
-                    PanelInicio inicio = new PanelInicio();
+                    PanelInicio inicio = new PanelInicio(us);
                     inicio.setVisible(true);
                     this.views.dispose();
                 } else {

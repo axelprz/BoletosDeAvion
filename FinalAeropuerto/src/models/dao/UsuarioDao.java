@@ -45,10 +45,10 @@ public class UsuarioDao {
             rs = ps.executeQuery();
             
             if(rs.next()){
-                us.setIdUsuario(rs.getInt("id"));
+                us.setIdUsuario(rs.getInt("id_usuario"));
                 us.setNombre(rs.getString("nombre"));
                 us.setApellido(rs.getString("apellido"));
-                us.setNombreUsuario(rs.getString("nombre-usuario"));
+                us.setNombreUsuario(rs.getString("nombre_usuario"));
                 us.setEmail(rs.getString("email"));
                 us.setContrasena(rs.getString("contrasena"));
                 us.setTelefono(rs.getString("telefono"));
@@ -86,7 +86,7 @@ public class UsuarioDao {
     }
     
     public boolean cambiarContrasena(Usuario us){
-        String sql = "UPDATE usuarios SET contrasena = ? WHERE id = ?";
+        String sql = "UPDATE usuarios SET contrasena = ? WHERE id_usuario = ?";
         try {
             con = cn.getConexion();
             ps = con.prepareStatement(sql);

@@ -46,6 +46,7 @@ public class NewPasswordController implements ActionListener, MouseListener {
                         JOptionPane.showMessageDialog(null, "Ingrese el código de verificación que le enviamos");
                         views.txtEmail.setEnabled(false);
                         views.txtCodigoVerificacion.setVisible(true);
+                        views.jSeparator2.setVisible(true);
                         views.btnConfirmarEmail.setVisible(false);
                         views.btnConfirmarCodigo.setVisible(true);
                     }else{
