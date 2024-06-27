@@ -43,9 +43,10 @@ public class PanelPerfil extends javax.swing.JFrame {
         lblImagen2 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        txtNewPassword = new javax.swing.JTextField();
+        txtConfirmNewPassword = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,6 +103,7 @@ public class PanelPerfil extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 720));
 
         jButton5.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Guardar Cambios");
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 670, 170, -1));
 
@@ -113,6 +115,7 @@ public class PanelPerfil extends javax.swing.JFrame {
 
         jButton6.setBackground(new java.awt.Color(255, 204, 102));
         jButton6.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Seleccionar Imagen");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,18 +125,54 @@ public class PanelPerfil extends javax.swing.JFrame {
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cambio de contraseña");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 190, -1));
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 170, -1));
+        txtNewPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtNewPassword.setText("Nueva Contraseña");
+        txtNewPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNewPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNewPasswordFocusLost(evt);
+            }
+        });
+        getContentPane().add(txtNewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 270, -1));
 
-        jTextField2.setText("jTextField2");
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 170, -1));
+        txtConfirmNewPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtConfirmNewPassword.setText("Confirmar Nueva Contraseña");
+        txtConfirmNewPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtConfirmNewPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtConfirmNewPasswordFocusLost(evt);
+            }
+        });
+        getContentPane().add(txtConfirmNewPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 270, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/avion inicioo.jpeg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
+        jButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jButton7.setFont(new java.awt.Font("Eras Bold ITC", 1, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(0, 0, 0));
+        jButton7.setText("Confirmar Contraseña");
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 190, -1));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1210, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1210, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +199,22 @@ public class PanelPerfil extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void txtNewPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewPasswordFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewPasswordFocusGained
+
+    private void txtNewPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewPasswordFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewPasswordFocusLost
+
+    private void txtConfirmNewPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtConfirmNewPasswordFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConfirmNewPasswordFocusGained
+
+    private void txtConfirmNewPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtConfirmNewPasswordFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConfirmNewPasswordFocusLost
 
     /**
      * @param args the command line arguments
@@ -203,13 +258,14 @@ public class PanelPerfil extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblImagen2;
+    private javax.swing.JTextField txtConfirmNewPassword;
+    private javax.swing.JTextField txtNewPassword;
     // End of variables declaration//GEN-END:variables
 }

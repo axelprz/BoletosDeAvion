@@ -38,7 +38,7 @@ public class PanelInicio extends javax.swing.JFrame {
         jTextPane4 = new javax.swing.JTextPane();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextPane5 = new javax.swing.JTextPane();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,7 +104,7 @@ public class PanelInicio extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 720));
 
-        jTextPane3.setBackground(new java.awt.Color(255, 204, 102));
+        jTextPane3.setBackground(new java.awt.Color(204, 204, 204));
         jTextPane3.setFont(new java.awt.Font("Eras Bold ITC", 1, 16)); // NOI18N
         jTextPane3.setForeground(new java.awt.Color(0, 0, 0));
         jTextPane3.setText("¡Bienvenido/a a FlyNow, tu puerta de entrada al mundo de los viajes aéreos! Nos alegra que hayas decidido unirte a nuestra comunidad de viajeros. En FlyNow, hemos creado una aplicación que no solo simplifica la compra de boletos de avión, sino que también transforma tu experiencia de viaje en algo extraordinario. Prepárate para descubrir destinos fascinantes y vivir aventuras inolvidables con la mayor comodidad y seguridad.\n¡Con FlyNow, el cielo no es el límite, sino el comienzo de tus sueños!");
@@ -113,7 +113,7 @@ public class PanelInicio extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 780, -1));
 
-        jTextPane4.setBackground(new java.awt.Color(255, 204, 102));
+        jTextPane4.setBackground(new java.awt.Color(204, 204, 204));
         jTextPane4.setFont(new java.awt.Font("Eras Bold ITC", 1, 24)); // NOI18N
         jTextPane4.setForeground(new java.awt.Color(0, 0, 0));
         jTextPane4.setText("¿Quienes somos?");
@@ -121,7 +121,7 @@ public class PanelInicio extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 240, -1));
 
-        jTextPane5.setBackground(new java.awt.Color(255, 204, 102));
+        jTextPane5.setBackground(new java.awt.Color(204, 204, 204));
         jTextPane5.setFont(new java.awt.Font("Eras Bold ITC", 1, 16)); // NOI18N
         jTextPane5.setForeground(new java.awt.Color(0, 0, 0));
         jTextPane5.setText("En FlyNow, somos un equipo apasionado por la aviación y la tecnología, dedicado a mejorar la experiencia de los viajeros alrededor del mundo. Nuestra misión es ofrecerte una plataforma intuitiva y eficiente para que encontrar y comprar boletos de avión sea tan fácil como soñar con tu próximo destino.\n\nTrabajamos con las mejores aerolíneas y te ofrecemos tarifas competitivas, asegurando una amplia variedad de opciones para todos tus viajes. Además, te mantenemos informado con actualizaciones en tiempo real y recomendaciones personalizadas para que tu experiencia sea lo más fluida posible.\n\nCreemos que viajar es una de las formas más poderosas de conectar con el mundo. Cada vuelo es una oportunidad para descubrir nuevas culturas y crear recuerdos inolvidables. Estamos aquí para acompañarte en cada paso del camino, garantizando tu seguridad y satisfacción con soporte al cliente disponible las 24 horas.\n\nGracias por elegir FlyNow. Estamos emocionados de ser parte de tus aventuras y ayudarte a alcanzar nuevos horizontes. \n¡Despega con FlyNow y descubre un mundo lleno de posibilidades!");
@@ -129,8 +129,20 @@ public class PanelInicio extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 780, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/avion inicioo.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1210, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1210, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -175,9 +187,9 @@ public class PanelInicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
