@@ -29,6 +29,7 @@ public class InicioController implements ActionListener {
         this.us = us;
         this.vuelDao = vuelDao;
         views.btnPerfil.addActionListener(this);
+        views.lblBienvenida.setText("Gracias por unirte a nosotros " + us.getNombre() + "!!");
         lblsLugares = Arrays.asList(views.lblLugar1, views.lblLugar2, views.lblLugar3, views.lblLugar4, views.lblLugar5,
             views.lblLugar6, views.lblLugar7, views.lblLugar8, views.lblLugar9, views.lblLugar10, views.lblLugar11, views.lblLugar12, 
             views.lblLugar13, views.lblLugar14, views.lblLugar15);

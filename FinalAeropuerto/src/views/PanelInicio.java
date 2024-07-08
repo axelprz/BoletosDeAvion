@@ -34,7 +34,7 @@ public class PanelInicio extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblBienvenida = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         lblHora2 = new javax.swing.JLabel();
@@ -194,13 +194,13 @@ public class PanelInicio extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, -1, 714));
 
-        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Gracias por unirte a nosotros Axel!!");
-        jLabel3.setOpaque(true);
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 60));
+        lblBienvenida.setBackground(new java.awt.Color(204, 204, 204));
+        lblBienvenida.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        lblBienvenida.setForeground(new java.awt.Color(0, 0, 0));
+        lblBienvenida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBienvenida.setText("Gracias por unirte a nosotros Axel!!");
+        lblBienvenida.setOpaque(true);
+        jPanel2.add(lblBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/metodos-pago.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -454,7 +454,6 @@ public class PanelInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -462,6 +461,7 @@ public class PanelInicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    public javax.swing.JLabel lblBienvenida;
     public javax.swing.JLabel lblHora1;
     public javax.swing.JLabel lblHora10;
     public javax.swing.JLabel lblHora11;

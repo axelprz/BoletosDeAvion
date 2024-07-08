@@ -11,9 +11,17 @@ CREATE TABLE nacionalidades (
     nombre VARCHAR(100) NOT NULL UNIQUE
 );
 
-CREATE TABLE origen_destinos (
-    id_origen_destino INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE origen_vuelos(
+	id_origen INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE destino_vuelos (
+    id_destino INT AUTO_INCREMENT PRIMARY KEY,
+    lugar VARCHAR(100) NOT NULL UNIQUE,
+    id_pais INT NOT NULL,
+    imagen LONGBLOB,
+    FOREIGN KEY(id_pais) REFERENCES nacionalidades(id_nacionalidad)
 );
 
 CREATE TABLE usuarios (
@@ -23,7 +31,33 @@ CREATE TABLE usuarios (
     nombre_usuario VARCHAR(100)  UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
-    telefono VARCHAR(20)
+    telefono VARCHAR(20),
+    imagen LONGBLOB
+);
+
+CREATE TABLE dias(
+	id_dia INT AUTO_INCREMENT PRIMARY KEY,
+    dia VARCHAR(15)
+);
+
+CREATE TABLE horario_vuelos (
+    id_horario INT AUTO_INCREMENT PRIMARY KEY,
+    id_dia INT NOT NULL,
+    hora INT NOT NULL,
+    FOREIGN KEY(id_dia) REFERENCES dias(id_dia)
+);
+
+CREATE TABLE vuelos (
+    id_vuelo INT AUTO_INCREMENT PRIMARY KEY,
+    numero_vuelo VARCHAR(50) UNIQUE NOT NULL,
+    id_origen INT NOT NULL,
+    id_destino INT NOT NULL,
+    duracion INT NOT NULL,
+    precio INT NOT NULL,
+    id_horario INT NOT NULL,
+    FOREIGN KEY (id_origen) REFERENCES origen_vuelos(id_origen),
+    FOREIGN KEY (id_destino) REFERENCES destino_vuelos(id_destino),
+    FOREIGN KEY(id_horario) REFERENCES horario_vuelos(id_horario)
 );
 
 CREATE TABLE pasajeros (
@@ -34,26 +68,10 @@ CREATE TABLE pasajeros (
     numero_documento VARCHAR(50) NOT NULL,
     id_nacionalidad INT,
     fecha_nacimiento DATE,
-    FOREIGN KEY (id_tipo_documento) REFERENCES tipo_documentos(id_tipo_documento),
-    FOREIGN KEY (id_nacionalidad) REFERENCES nacionalidades(id_nacionalidad)
-);
-
-CREATE TABLE vuelos (
-    id_vuelo INT AUTO_INCREMENT PRIMARY KEY,
-    numero_vuelo VARCHAR(50) UNIQUE NOT NULL,
-    id_origen INT NOT NULL,
-    id_destino INT NOT NULL,
-    duracion INT,
-    precio DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (id_origen) REFERENCES origen_destinos(id_origen_destino),
-    FOREIGN KEY (id_destino) REFERENCES origen_destinos(id_origen_destino)
-);
-
-CREATE TABLE horario_vuelos (
-    id_horario INT AUTO_INCREMENT PRIMARY KEY,
-    dia ENUM('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo') NOT NULL,
-    hora TIME NOT NULL,
     id_vuelo INT NOT NULL,
+    codigo_asiento VARCHAR(10),
+    FOREIGN KEY (id_tipo_documento) REFERENCES tipo_documentos(id_tipo_documento),
+    FOREIGN KEY (id_nacionalidad) REFERENCES nacionalidades(id_nacionalidad),
     FOREIGN KEY (id_vuelo) REFERENCES vuelos(id_vuelo)
 );
 
@@ -75,7 +93,7 @@ CREATE TABLE reservas (
 
 CREATE TABLE metodo_pagos(
 	id_metodo_pago INT AUTO_INCREMENT PRIMARY KEY,
-    metodo_pago ENUM('Tarjeta de crédito','Tarjeta de débito','PayPal','Transferencia bancaria','Depósito en efectivo') NOT NULL
+    metodo_pago ENUM('Tarjeta de crédito','Tarjeta de débito','Transferencia bancaria','Depósito en efectivo') NOT NULL
 );
 
 CREATE TABLE pagos (
