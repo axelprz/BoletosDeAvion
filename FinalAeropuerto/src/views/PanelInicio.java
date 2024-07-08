@@ -3,12 +3,14 @@ package views;
 
 import controllers.InicioController;
 import models.Usuario;
+import models.dao.VueloDao;
 
 public class PanelInicio extends javax.swing.JFrame {
 
     public PanelInicio(Usuario us) {
         initComponents();
-        InicioController controller = new InicioController(this, us);
+        VueloDao vueDao = new VueloDao();
+        InicioController controller = new InicioController(this, us, vueDao);
     }
 
     /**
@@ -26,13 +28,45 @@ public class PanelInicio extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane5 = new javax.swing.JTextPane();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblHora2 = new javax.swing.JLabel();
+        lblLugar2 = new javax.swing.JLabel();
+        lblLugar1 = new javax.swing.JLabel();
+        lblHora1 = new javax.swing.JLabel();
+        lblLugar3 = new javax.swing.JLabel();
+        lblHora3 = new javax.swing.JLabel();
+        lblHora4 = new javax.swing.JLabel();
+        lblLugar4 = new javax.swing.JLabel();
+        lblHora5 = new javax.swing.JLabel();
+        lblLugar5 = new javax.swing.JLabel();
+        lblHora6 = new javax.swing.JLabel();
+        lblLugar6 = new javax.swing.JLabel();
+        lblLugar7 = new javax.swing.JLabel();
+        lblHora7 = new javax.swing.JLabel();
+        lblHora8 = new javax.swing.JLabel();
+        lblLugar8 = new javax.swing.JLabel();
+        lblLugar9 = new javax.swing.JLabel();
+        lblHora9 = new javax.swing.JLabel();
+        lblHora10 = new javax.swing.JLabel();
+        lblLugar10 = new javax.swing.JLabel();
+        lblHora11 = new javax.swing.JLabel();
+        lblLugar11 = new javax.swing.JLabel();
+        lblLugar12 = new javax.swing.JLabel();
+        lblHora12 = new javax.swing.JLabel();
+        lblHora13 = new javax.swing.JLabel();
+        lblLugar13 = new javax.swing.JLabel();
+        lblHora14 = new javax.swing.JLabel();
+        lblLugar14 = new javax.swing.JLabel();
+        lblLugar15 = new javax.swing.JLabel();
+        lblHora15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,47 +140,302 @@ public class PanelInicio extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 720));
 
-        jTextPane4.setBackground(new java.awt.Color(204, 204, 204));
-        jTextPane4.setFont(new java.awt.Font("Eras Bold ITC", 1, 24)); // NOI18N
-        jTextPane4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane4.setText("¿Quienes somos?");
-        jScrollPane4.setViewportView(jTextPane4);
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 240, -1));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTextPane5.setBackground(new java.awt.Color(204, 204, 204));
-        jTextPane5.setFont(new java.awt.Font("Eras Bold ITC", 1, 16)); // NOI18N
-        jTextPane5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane5.setText("En FlyNow, somos un equipo apasionado por la aviación y la tecnología, dedicado a mejorar la experiencia de los viajeros alrededor del mundo. Nuestra misión es ofrecerte una plataforma intuitiva y eficiente para que encontrar y comprar boletos de avión sea tan fácil como soñar con tu próximo destino.\n\nTrabajamos con las mejores aerolíneas y te ofrecemos tarifas competitivas, asegurando una amplia variedad de opciones para todos tus viajes. Además, te mantenemos informado con actualizaciones en tiempo real y recomendaciones personalizadas para que tu experiencia sea lo más fluida posible.\n\nCreemos que viajar es una de las formas más poderosas de conectar con el mundo. Cada vuelo es una oportunidad para descubrir nuevas culturas y crear recuerdos inolvidables. Estamos aquí para acompañarte en cada paso del camino, garantizando tu seguridad y satisfacción con soporte al cliente disponible las 24 horas.\n\nGracias por elegir FlyNow. Estamos emocionados de ser parte de tus aventuras y ayudarte a alcanzar nuevos horizontes. \n¡Despega con FlyNow y descubre un mundo lleno de posibilidades!");
-        jScrollPane5.setViewportView(jTextPane5);
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Vuelos más populares");
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 780, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lugares/Paris.png"))); // NOI18N
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lugares/NuevaYork.png"))); // NOI18N
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextPane3.setBackground(new java.awt.Color(204, 204, 204));
-        jTextPane3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jTextPane3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextPane3.setText("¡Bienvenido/a a FlyNow, tu puerta de entrada al mundo de los viajes aéreos! Nos alegra que hayas decidido unirte a nuestra comunidad de viajeros.\nEn FlyNow, hemos creado una aplicación que no solo simplifica la compra de boletos de avión, sino que también transforma tu experiencia de viaje en algo extraordinario. \nPrepárate para descubrir destinos fascinantes y vivir aventuras inolvidables con la mayor comodidad y seguridad.\n¡Con FlyNow, el cielo no es el límite, sino el comienzo de tus sueños!");
-        jTextPane3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(jTextPane3);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lugares/Roma.png"))); // NOI18N
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(240, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6)))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(556, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, -1, 714));
+
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Gracias por unirte a nosotros Axel!!");
+        jLabel3.setOpaque(true);
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 60));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/metodos-pago.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 800, -1));
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Vuelos de Hoy");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 850, 30));
+
+        lblHora2.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora2.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora2.setOpaque(true);
+        jPanel2.add(lblHora2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 80, 30));
+
+        lblLugar2.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar2.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 300, 30));
+
+        lblLugar1.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar1.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 300, 30));
+
+        lblHora1.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora1.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora1.setOpaque(true);
+        jPanel2.add(lblHora1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 80, 30));
+
+        lblLugar3.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar3.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 300, 30));
+
+        lblHora3.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora3.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora3.setOpaque(true);
+        jPanel2.add(lblHora3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 80, 30));
+
+        lblHora4.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora4.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora4.setOpaque(true);
+        jPanel2.add(lblHora4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 80, 30));
+
+        lblLugar4.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar4.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 300, 30));
+
+        lblHora5.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora5.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora5.setOpaque(true);
+        jPanel2.add(lblHora5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 80, 30));
+
+        lblLugar5.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar5.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 300, 30));
+
+        lblHora6.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora6.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora6.setOpaque(true);
+        jPanel2.add(lblHora6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 80, 30));
+
+        lblLugar6.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar6.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 300, 30));
+
+        lblLugar7.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar7.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar7.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 300, 30));
+
+        lblHora7.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora7.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora7.setOpaque(true);
+        jPanel2.add(lblHora7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 80, 30));
+
+        lblHora8.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora8.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora8.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora8.setOpaque(true);
+        jPanel2.add(lblHora8, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 280, 80, 30));
+
+        lblLugar8.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar8.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar8.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 300, 30));
+
+        lblLugar9.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar9.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar9.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 300, 30));
+
+        lblHora9.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora9.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora9.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora9.setOpaque(true);
+        jPanel2.add(lblHora9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 80, 30));
+
+        lblHora10.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora10.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora10.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora10.setOpaque(true);
+        jPanel2.add(lblHora10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 80, 30));
+
+        lblLugar10.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar10.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar10.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 300, 30));
+
+        lblHora11.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora11.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora11.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora11.setOpaque(true);
+        jPanel2.add(lblHora11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 80, 30));
+
+        lblLugar11.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar11.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar11.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 300, 30));
+
+        lblLugar12.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar12.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar12.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 300, 30));
+
+        lblHora12.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora12.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora12.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora12.setOpaque(true);
+        jPanel2.add(lblHora12, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 80, 30));
+
+        lblHora13.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora13.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora13.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora13.setOpaque(true);
+        jPanel2.add(lblHora13, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 80, 30));
+
+        lblLugar13.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar13.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar13.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 300, 30));
+
+        lblHora14.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora14.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora14.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora14.setOpaque(true);
+        jPanel2.add(lblHora14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, 80, 30));
+
+        lblLugar14.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar14.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar14.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 300, 30));
+
+        lblLugar15.setBackground(new java.awt.Color(0, 0, 0));
+        lblLugar15.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblLugar15.setForeground(new java.awt.Color(51, 51, 51));
+        lblLugar15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLugar15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(lblLugar15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, 300, 30));
+
+        lblHora15.setBackground(new java.awt.Color(204, 204, 204));
+        lblHora15.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lblHora15.setForeground(new java.awt.Color(51, 51, 51));
+        lblHora15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblHora15.setOpaque(true);
+        jPanel2.add(lblHora15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1210, 720));
 
@@ -162,14 +451,46 @@ public class PanelInicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
+    private javax.swing.JPanel jPanel3;
+    public javax.swing.JLabel lblHora1;
+    public javax.swing.JLabel lblHora10;
+    public javax.swing.JLabel lblHora11;
+    public javax.swing.JLabel lblHora12;
+    public javax.swing.JLabel lblHora13;
+    public javax.swing.JLabel lblHora14;
+    public javax.swing.JLabel lblHora15;
+    public javax.swing.JLabel lblHora2;
+    public javax.swing.JLabel lblHora3;
+    public javax.swing.JLabel lblHora4;
+    public javax.swing.JLabel lblHora5;
+    public javax.swing.JLabel lblHora6;
+    public javax.swing.JLabel lblHora7;
+    public javax.swing.JLabel lblHora8;
+    public javax.swing.JLabel lblHora9;
+    public javax.swing.JLabel lblLugar1;
+    public javax.swing.JLabel lblLugar10;
+    public javax.swing.JLabel lblLugar11;
+    public javax.swing.JLabel lblLugar12;
+    public javax.swing.JLabel lblLugar13;
+    public javax.swing.JLabel lblLugar14;
+    public javax.swing.JLabel lblLugar15;
+    public javax.swing.JLabel lblLugar2;
+    public javax.swing.JLabel lblLugar3;
+    public javax.swing.JLabel lblLugar4;
+    public javax.swing.JLabel lblLugar5;
+    public javax.swing.JLabel lblLugar6;
+    public javax.swing.JLabel lblLugar7;
+    public javax.swing.JLabel lblLugar8;
+    public javax.swing.JLabel lblLugar9;
     // End of variables declaration//GEN-END:variables
 }
