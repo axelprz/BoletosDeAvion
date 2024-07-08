@@ -1,14 +1,14 @@
 
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Persona {
     private String nombre;
     private String apellido;
     private String telefono;
     private String nacionalidad;
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private String tipoDocumento;
     private String numeroDocumento;
 
@@ -44,11 +44,11 @@ public class Persona {
         this.nacionalidad = nacionalidad;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

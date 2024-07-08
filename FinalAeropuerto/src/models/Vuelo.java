@@ -1,19 +1,16 @@
 package models;
 
-import java.math.BigDecimal;
-import java.time.LocalTime;
-
 public class Vuelo {
     private int idVuelo;
     private String numeroVuelo;
     private String origen;
     private String destino;
-    private int duracion; //en minutos
-    private BigDecimal precio; 
+    private int duracion;
+    private int precio; 
     private String dia;
-    private LocalTime hora;
+    private int hora;
 
-    public Vuelo(int idVuelo, String numeroVuelo, String origen, String destino, int duracion, BigDecimal precio, String dia, LocalTime hora) {
+    public Vuelo(int idVuelo, String numeroVuelo, String origen, String destino, int duracion, int precio, String dia, int hora) {
         this.idVuelo = idVuelo;
         this.numeroVuelo = numeroVuelo;
         this.origen = origen;
@@ -64,11 +61,11 @@ public class Vuelo {
         this.duracion = duracion;
     }
 
-    public BigDecimal getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(BigDecimal precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
@@ -80,11 +77,11 @@ public class Vuelo {
         this.dia = dia;
     }
 
-    public LocalTime getHora() {
+    public int getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(int hora) {
         this.hora = hora;
     }
 
