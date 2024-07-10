@@ -1,365 +1,183 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package views;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import models.conexion.Conexion;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-
+import controllers.VuelosController;
+import models.Usuario;
+import models.dao.VueloDao;
 
 public class PanelVuelos extends javax.swing.JFrame {
 
-    private static final int REGISTROS_POR_PAGINA = 5;
-    private int paginaActual = 1;
-    private int totalPaginas = 1;
-    private Conexion conexion;
-
-    public PanelVuelos() {
+    public PanelVuelos(Usuario us) {
         initComponents();
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        jPanelRegistros.setLayout(new GridLayout(0, 1, 10, 10));
-        jPanelRegistros.setBackground(new Color(255, 204, 102));
-        jPanelRegistros.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        cargarDatosHorariosVuelos(paginaActual, REGISTROS_POR_PAGINA);
-
-        setVisible(true);
+        VueloDao vueloDao = new VueloDao();
+        VuelosController controller = new VuelosController(this, us, vueloDao);
     }
     
-    private void cargarDatosHorariosVuelos(int pagina, int registrosPorPagina) {
-        jPanelRegistros.removeAll();
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        try {
-            con = conexion.getConexion(); // Usar la clase de conexión correcta
-            String query = "SELECT * FROM horario_vuelos LIMIT ?, ?";
-            ps = con.prepareStatement(query);
-            ps.setInt(1, (pagina - 1) * registrosPorPagina);
-            ps.setInt(2, registrosPorPagina);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                String destino = rs.getString("destino");
-                String dia = rs.getString("dia");
-                String hora = rs.getString("hora");
-                double valor = rs.getDouble("valor");
-
-                JPanel panel = new JPanel(new GridLayout(1, 5, 10, 10));
-                panel.setBackground(Color.WHITE);
-                panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-                JLabel lblDestino = new JLabel(destino);
-                lblDestino.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblDestino);
-
-                JLabel lblDia = new JLabel(dia);
-                lblDia.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblDia);
-
-                JLabel lblHora = new JLabel(hora);
-                lblHora.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblHora);
-
-                JLabel lblValor = new JLabel(String.valueOf(valor));
-                lblValor.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblValor);
-
-                jPanelRegistros.add(panel);
-            }
-
-            totalPaginas = calcularTotalPaginas(registrosPorPagina);
-            jPanelRegistros.revalidate();
-            jPanelRegistros.repaint();
-
-        } catch (SQLException e) {
-            System.out.println("Error al cargar datos de horarios de vuelos: " + e.getMessage());
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                System.out.println("Error al cerrar conexión: " + e.getMessage());
-            }
-        }
-    }
-
-    private void buscarVuelosPorDestino(String destino) {
-        jPanelRegistros.removeAll();
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        try {
-            con = conexion.getConexion(); // Usar la clase de conexión correcta
-            String query = "SELECT * FROM horario_vuelos WHERE destino LIKE ?";
-            ps = con.prepareStatement(query);
-            ps.setString(1, "%" + destino + "%");
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                String dia = rs.getString("dia");
-                String hora = rs.getString("hora");
-                double valor = rs.getDouble("valor");
-
-                JPanel panel = new JPanel(new GridLayout(1, 5, 10, 10));
-                panel.setBackground(Color.WHITE);
-                panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-
-                JLabel lblDestino = new JLabel(destino);
-                lblDestino.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblDestino);
-
-                JLabel lblDia = new JLabel(dia);
-                lblDia.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblDia);
-
-                JLabel lblHora = new JLabel(hora);
-                lblHora.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblHora);
-
-                JLabel lblValor = new JLabel(String.valueOf(valor));
-                lblValor.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
-                panel.add(lblValor);
-
-                jPanelRegistros.add(panel);
-            }
-
-            totalPaginas = calcularTotalPaginas(REGISTROS_POR_PAGINA);
-            jPanelRegistros.revalidate();
-            jPanelRegistros.repaint();
-
-        } catch (SQLException e) {
-            System.out.println("Error al buscar vuelos por destino: " + e.getMessage());
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                System.out.println("Error al cerrar conexión: " + e.getMessage());
-            }
-        }
-    }
-    
-    private int calcularTotalPaginas(int registrosPorPagina) {
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        int totalRegistros = 0;
-
-        try {
-            con = conexion.getConexion(); // Usar la clase de conexión correcta
-            String query = "SELECT COUNT(*) AS total FROM horario_vuelos";
-            ps = con.prepareStatement(query);
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-                totalRegistros = rs.getInt("total");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error al calcular total de registros: " + e.getMessage());
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                System.out.println("Error al cerrar conexión: " + e.getMessage());
-            }
-        }
-
-        return (int) Math.ceil((double) totalRegistros / registrosPorPagina);
-    }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnMenu = new javax.swing.JButton();
+        btnReservas = new javax.swing.JButton();
+        btnPagos = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        btn_buscar = new javax.swing.JButton();
-        txtBuscar = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        btnLugar1 = new javax.swing.JButton();
+        btnLugar5 = new javax.swing.JButton();
+        btnLugar6 = new javax.swing.JButton();
+        btnLugar7 = new javax.swing.JButton();
+        btnLugar8 = new javax.swing.JButton();
+        btnLugar4 = new javax.swing.JButton();
+        btnLugar3 = new javax.swing.JButton();
+        btnLugar2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanelRegistros = new javax.swing.JPanel();
-        btnAnterior = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         btnSiguiente = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnAnterior = new javax.swing.JButton();
+        lblPaginador = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu.png"))); // NOI18N
-        jButton4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        jButton4.setContentAreaFilled(false);
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu oscuro.png"))); // NOI18N
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu.png"))); // NOI18N
+        btnMenu.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        btnMenu.setContentAreaFilled(false);
+        btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMenu.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu oscuro.png"))); // NOI18N
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/reservas.png"))); // NOI18N
-        jButton7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        jButton7.setContentAreaFilled(false);
-        jButton7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/reservas oscuro.png"))); // NOI18N
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, -1, -1));
+        btnReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/reservas.png"))); // NOI18N
+        btnReservas.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        btnReservas.setContentAreaFilled(false);
+        btnReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnReservas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/reservas oscuro.png"))); // NOI18N
+        getContentPane().add(btnReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, -1, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/pagos.png"))); // NOI18N
-        jButton5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        jButton5.setContentAreaFilled(false);
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/pagos oscuro.png"))); // NOI18N
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, -1, -1));
+        btnPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/pagos.png"))); // NOI18N
+        btnPagos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        btnPagos.setContentAreaFilled(false);
+        btnPagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPagos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/pagos oscuro.png"))); // NOI18N
+        getContentPane().add(btnPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo mas chico.png"))); // NOI18N
         jLabel3.setText("jLabel2");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 140));
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/perfil (1).png"))); // NOI18N
-        jButton8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
-        jButton8.setContentAreaFilled(false);
-        jButton8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/perfil (1) oscuro.png"))); // NOI18N
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
+        btnPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/perfil (1).png"))); // NOI18N
+        btnPerfil.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        btnPerfil.setContentAreaFilled(false);
+        btnPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPerfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/perfil (1) oscuro.png"))); // NOI18N
+        getContentPane().add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_buscar.setFont(new java.awt.Font("Eras Bold ITC", 1, 18)); // NOI18N
-        btn_buscar.setForeground(new java.awt.Color(0, 0, 0));
-        btn_buscar.setText("Buscar");
-        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscarActionPerformed(evt);
-            }
-        });
+        jPanel5.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
+        btnLugar1.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 250, 200));
 
-        jLabel1.setFont(new java.awt.Font("Eras Bold ITC", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Donde desea viajar?");
+        btnLugar5.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, 200));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(203, 203, 203))))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(12, 12, 12)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_buscar)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        btnLugar6.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 250, 200));
 
-        jPanelRegistros.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar7.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 250, 200));
 
-        btnAnterior.setFont(new java.awt.Font("Eras Bold ITC", 1, 18)); // NOI18N
-        btnAnterior.setForeground(new java.awt.Color(0, 0, 0));
-        btnAnterior.setText("Anterior");
-        btnAnterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAnteriorActionPerformed(evt);
-            }
-        });
+        btnLugar8.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 250, 200));
 
-        btnSiguiente.setFont(new java.awt.Font("Eras Bold ITC", 1, 18)); // NOI18N
-        btnSiguiente.setForeground(new java.awt.Color(0, 0, 0));
+        btnLugar4.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, 250, 200));
+
+        btnLugar3.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 250, 200));
+
+        btnLugar2.setBackground(new java.awt.Color(255, 204, 102));
+        btnLugar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnLugar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 250, 200));
+
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 1130, 480));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Busque su destino");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1150, -1));
+
+        txtBuscar.setBackground(new java.awt.Color(102, 102, 102));
+        txtBuscar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtBuscar.setForeground(new java.awt.Color(51, 51, 51));
+        txtBuscar.setText("Lugar o país");
+        jPanel4.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 360, 40));
+
+        btnSiguiente.setBackground(new java.awt.Color(0, 0, 0));
+        btnSiguiente.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(204, 204, 204));
         btnSiguiente.setText("Siguiente");
-        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiguienteActionPerformed(evt);
-            }
-        });
+        btnSiguiente.setBorder(null);
+        btnSiguiente.setBorderPainted(false);
+        btnSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSiguiente.setFocusPainted(false);
+        btnSiguiente.setFocusable(false);
+        jPanel4.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, 140, 40));
 
-        javax.swing.GroupLayout jPanelRegistrosLayout = new javax.swing.GroupLayout(jPanelRegistros);
-        jPanelRegistros.setLayout(jPanelRegistrosLayout);
-        jPanelRegistrosLayout.setHorizontalGroup(
-            jPanelRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistrosLayout.createSequentialGroup()
-                .addContainerGap(414, Short.MAX_VALUE)
-                .addComponent(btnAnterior)
-                .addGap(18, 18, 18)
-                .addComponent(btnSiguiente)
-                .addGap(397, 397, 397))
-        );
-        jPanelRegistrosLayout.setVerticalGroup(
-            jPanelRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRegistrosLayout.createSequentialGroup()
-                .addContainerGap(495, Short.MAX_VALUE)
-                .addGroup(jPanelRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAnterior)
-                    .addComponent(btnSiguiente))
-                .addContainerGap())
-        );
+        btnBuscar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setBorder(null);
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setFocusPainted(false);
+        jPanel4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 100, 40));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jPanelRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
+        btnAnterior.setBackground(new java.awt.Color(0, 0, 0));
+        btnAnterior.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnAnterior.setForeground(new java.awt.Color(204, 204, 204));
+        btnAnterior.setText("Anterior");
+        btnAnterior.setBorder(null);
+        btnAnterior.setBorderPainted(false);
+        btnAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnterior.setFocusPainted(false);
+        btnAnterior.setFocusable(false);
+        jPanel4.add(btnAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, 140, 40));
+
+        lblPaginador.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblPaginador.setForeground(new java.awt.Color(255, 255, 255));
+        lblPaginador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPaginador.setText("1 - 7");
+        jPanel4.add(lblPaginador, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 680, 150, -1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Página");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 660, 150, -1));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 720));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 1210, 720));
 
@@ -381,56 +199,31 @@ public class PanelVuelos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
-
-    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        String destino = txtBuscar.getText().trim();
-        if (!destino.isEmpty()) {
-            buscarVuelosPorDestino(destino);
-        } else {
-            cargarDatosHorariosVuelos(paginaActual, REGISTROS_POR_PAGINA);
-        }
-    }//GEN-LAST:event_btn_buscarActionPerformed
-
-    private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
-        if (paginaActual > 1) {
-            paginaActual--;
-            cargarDatosHorariosVuelos(paginaActual, REGISTROS_POR_PAGINA);
-        }
-    }//GEN-LAST:event_btnAnteriorActionPerformed
-
-    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        if (paginaActual < totalPaginas) {
-            paginaActual++;
-            cargarDatosHorariosVuelos(paginaActual, REGISTROS_POR_PAGINA);
-        }
-    }//GEN-LAST:event_btnSiguienteActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    
-
-    public static void main(String[] args) {
-        new PanelVuelos();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAnterior;
-    private javax.swing.JButton btnSiguiente;
-    private javax.swing.JButton btn_buscar;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    public javax.swing.JButton btnAnterior;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnLugar1;
+    public javax.swing.JButton btnLugar2;
+    public javax.swing.JButton btnLugar3;
+    public javax.swing.JButton btnLugar4;
+    public javax.swing.JButton btnLugar5;
+    public javax.swing.JButton btnLugar6;
+    public javax.swing.JButton btnLugar7;
+    public javax.swing.JButton btnLugar8;
+    public javax.swing.JButton btnMenu;
+    public javax.swing.JButton btnPagos;
+    public javax.swing.JButton btnPerfil;
+    public javax.swing.JButton btnReservas;
+    public javax.swing.JButton btnSiguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanelRegistros;
-    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    public javax.swing.JLabel lblPaginador;
+    public javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

@@ -231,4 +231,12 @@ public class PlaceHolder {
         }
         return new Object[] {txtTelefono};
     }
+    
+    public static Object[] placeHolderVueloBusqueda(JTextField txtBuscar) {
+        if (txtBuscar.getText().equals("Lugar o país")) {
+            txtBuscar.setText("");
+            txtBuscar.setForeground(new Color(0, 0, 0));
+        }
+        return new Object[] {txtBuscar};
+    }
 }
