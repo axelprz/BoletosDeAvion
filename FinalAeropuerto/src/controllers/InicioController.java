@@ -31,6 +31,7 @@ public class InicioController implements ActionListener {
         views.btnPagos.addActionListener(this);
         views.btnReservas.addActionListener(this);
         views.btnVuelos.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
         views.lblBienvenida.setText("Gracias por unirte a nosotros " + us.getNombre() + "!!");
         lblsLugares = Arrays.asList(views.lblLugar1, views.lblLugar2, views.lblLugar3, views.lblLugar4, views.lblLugar5,
             views.lblLugar6, views.lblLugar7, views.lblLugar8, views.lblLugar9, views.lblLugar10, views.lblLugar11, views.lblLugar12, 
@@ -102,6 +103,9 @@ public class InicioController implements ActionListener {
         }
         else if(e.getSource() == views.btnReservas){
             BotonesInicio.btnReservas(us, views);
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrar(views);
         }
     }
     

@@ -11,6 +11,10 @@ public class Vuelo {
     private String dia;
     private int hora;
 
+    public Vuelo(){
+        
+    }
+    
     public Vuelo(int idVuelo, String numeroVuelo, String origen, String destino, int duracion, int precio, String dia, int hora, byte[] imagenDestino) {
         this.idVuelo = idVuelo;
         this.numeroVuelo = numeroVuelo;

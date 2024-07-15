@@ -14,6 +14,7 @@ public class PanelRYIController implements ActionListener{
         this.views = views;
         views.btnLogin.addActionListener(this);
         views.btnRegistrarse.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
     }
 
     @Override
@@ -27,6 +28,9 @@ public class PanelRYIController implements ActionListener{
             PanelRegistro registro = new PanelRegistro();
             registro.setVisible(true);
             views.dispose();
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrar(views);
         }
     }
 }

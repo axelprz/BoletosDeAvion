@@ -2,7 +2,9 @@
 package controllers;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import models.Usuario;
+import views.PanelInicio;
 import views.PanelPagos;
 import views.PanelPerfil;
 import views.PanelReservas;
@@ -28,8 +30,21 @@ public class BotonesInicio {
     }
     
     public static void btnPagos(Usuario us, JFrame view){
-        PanelPagos pagos = new PanelPagos();
+        PanelPagos pagos = new PanelPagos(us);
         pagos.setVisible(true);
         view.dispose();
+    }
+    
+    public static void btnInicio(Usuario us, JFrame view){
+        PanelInicio inicio = new PanelInicio(us);
+        inicio.setVisible(true);
+        view.dispose();
+    }
+    
+    public static void btnCerrar(JFrame view){
+        int pregunta = JOptionPane.showConfirmDialog(null, "Esta seguro que desea salir", "Pregunta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (pregunta == 0) {
+            System.exit(0);
+        }
     }
 }

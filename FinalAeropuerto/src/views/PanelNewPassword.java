@@ -42,6 +42,9 @@ public class PanelNewPassword extends javax.swing.JFrame {
         btnConfirmarCodigo = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,7 +57,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cambiar Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 430, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 430, -1));
 
         txtEmail.setBackground(new java.awt.Color(255, 204, 102));
         txtEmail.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -71,40 +74,44 @@ public class PanelNewPassword extends javax.swing.JFrame {
                 txtEmailFocusLost(evt);
             }
         });
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, -1));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 220, -1));
 
         btnConfirmarEmail.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarEmail.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConfirmarEmail.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmarEmail.setText("Confirmar Email");
+        btnConfirmarEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarEmail.png"))); // NOI18N
         btnConfirmarEmail.setBorderPainted(false);
         btnConfirmarEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarEmail.setFocusPainted(false);
         btnConfirmarEmail.setRequestFocusEnabled(false);
+        btnConfirmarEmail.setRolloverEnabled(true);
+        btnConfirmarEmail.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarEmail-h.png"))); // NOI18N
         btnConfirmarEmail.setVerifyInputWhenFocusTarget(false);
         btnConfirmarEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarEmailActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConfirmarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+        jPanel1.add(btnConfirmarEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 220, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo mas chico.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 210, 150));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 210, 150));
 
         btnConfirmarPassword.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConfirmarPassword.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmarPassword.setText("Confirmar Contraseña");
+        btnConfirmarPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarPassword.png"))); // NOI18N
         btnConfirmarPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarPassword.setFocusPainted(false);
         btnConfirmarPassword.setRequestFocusEnabled(false);
+        btnConfirmarPassword.setRolloverEnabled(true);
+        btnConfirmarPassword.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarPassword-h.png"))); // NOI18N
         btnConfirmarPassword.setVerifyInputWhenFocusTarget(false);
         btnConfirmarPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConfirmarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+        jPanel1.add(btnConfirmarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 220, 40));
 
         txtCodigoVerificacion.setBackground(new java.awt.Color(255, 204, 102));
         txtCodigoVerificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -113,7 +120,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         txtCodigoVerificacion.setBorder(null);
         txtCodigoVerificacion.setDragEnabled(true);
         txtCodigoVerificacion.setFocusCycleRoot(true);
-        jPanel1.add(txtCodigoVerificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, -1));
+        jPanel1.add(txtCodigoVerificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 220, -1));
 
         txtPassword.setBackground(new java.awt.Color(255, 204, 102));
         txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -122,7 +129,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         txtPassword.setBorder(null);
         txtPassword.setDragEnabled(true);
         txtPassword.setFocusCycleRoot(true);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 220, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 220, -1));
 
         txtPasswordConfirmada.setBackground(new java.awt.Color(255, 204, 102));
         txtPasswordConfirmada.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -131,31 +138,56 @@ public class PanelNewPassword extends javax.swing.JFrame {
         txtPasswordConfirmada.setBorder(null);
         txtPasswordConfirmada.setDragEnabled(true);
         txtPasswordConfirmada.setFocusCycleRoot(true);
-        jPanel1.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, -1));
+        jPanel1.add(txtPasswordConfirmada, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 220, -1));
 
         btnConfirmarCodigo.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConfirmarCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmarCodigo.setText("Confirmar Código");
+        btnConfirmarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarCodigo.png"))); // NOI18N
         btnConfirmarCodigo.setBorderPainted(false);
         btnConfirmarCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarCodigo.setFocusPainted(false);
         btnConfirmarCodigo.setRequestFocusEnabled(false);
+        btnConfirmarCodigo.setRolloverEnabled(true);
+        btnConfirmarCodigo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarCodigo-h.png"))); // NOI18N
         btnConfirmarCodigo.setVerifyInputWhenFocusTarget(false);
         btnConfirmarCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmarCodigoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 40));
+        jPanel1.add(btnConfirmarCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 220, 40));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, -1));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 220, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 220, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("FlyNow: Vuela fácil, vuela seguro.");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 280, 50));
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar.png"))); // NOI18N
+        btnCerrar.setBorder(null);
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.setRequestFocusEnabled(false);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar-h.png"))); // NOI18N
+        btnCerrar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 70));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
@@ -222,12 +254,15 @@ public class PanelNewPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConfirmarCodigo;
     public javax.swing.JButton btnConfirmarEmail;
     public javax.swing.JButton btnConfirmarPassword;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
     public javax.swing.JTextField txtCodigoVerificacion;

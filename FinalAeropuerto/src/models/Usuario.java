@@ -5,6 +5,7 @@ public class Usuario extends Persona {
     private String nombreUsuario;
     private String email;
     private String contrasena;
+    private byte[] imagenPerfil;
     
     public int getIdUsuario() {
         return idUsuario;
@@ -38,16 +39,24 @@ public class Usuario extends Persona {
         this.contrasena = contrasena;
     }
 
+    public byte[] getImagenPerfil() {
+        return imagenPerfil;
+    }
+
+    public void setImagenPerfil(byte[] imagenPerfil) {
+        this.imagenPerfil = imagenPerfil;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Usuario{");
-        sb.append("id_usuario=").append(idUsuario);
+        sb.append("idUsuario=").append(idUsuario);
         sb.append(", nombreUsuario=").append(nombreUsuario);
         sb.append(", email=").append(email);
         sb.append(", contrasena=").append(contrasena);
+        sb.append(", imagenPerfil=").append(imagenPerfil);
         sb.append('}');
         return sb.toString();
     }
-    
 }

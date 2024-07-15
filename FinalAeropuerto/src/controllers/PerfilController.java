@@ -13,6 +13,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import models.Usuario;
+import models.conexion.ImageUploader;
 import models.dao.UsuarioDao;
 import views.PanelInicio;
 import views.PanelPerfil;
@@ -37,8 +38,13 @@ public class PerfilController implements ActionListener, MouseListener {
         views.btnConfirmarPassword.addActionListener(this);
         views.btnConfirmarTelefono.addActionListener(this);
         views.btnMenu.addActionListener(this);
+        views.btnVuelos.addActionListener(this);
+        views.btnPagos.addActionListener(this);
+        views.btnReservas.addActionListener(this);
         views.btnSeleccionarImagen.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
         mostrarDatosUsuario();
+        cargarImagenPerfil();
     }
     
     private void mostrarDatosUsuario(){
@@ -59,13 +65,18 @@ public class PerfilController implements ActionListener, MouseListener {
         
         if (respuesta == JFileChooser.APPROVE_OPTION) {
             Ruta = jFileChooser.getSelectedFile().getPath();
-            
-            Image mImage = new ImageIcon(Ruta).getImage();
-            ImageIcon mIcon = new ImageIcon(mImage.getScaledInstance(views.lblImagenPerfil.getWidth(), views.lblImagenPerfil.getHeight(), Image.SCALE_SMOOTH));
-            views.lblImagenPerfil.setIcon(mIcon);
+            ImageUploader.subirImagenPerfil(Ruta, us);
+            us = usDao.buscarUsuario(us.getNombreUsuario());
+            cargarImagenPerfil();
             
             JOptionPane.showMessageDialog(views, "Imagen cargada correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
+    
+    private void cargarImagenPerfil(){
+        Image mImage = new ImageIcon(us.getImagenPerfil()).getImage();
+        ImageIcon mIcon = new ImageIcon(mImage.getScaledInstance(views.lblImagenPerfil.getWidth(), views.lblImagenPerfil.getHeight(), Image.SCALE_SMOOTH));
+        views.lblImagenPerfil.setIcon(mIcon);
     }
 
     @Override
@@ -74,6 +85,15 @@ public class PerfilController implements ActionListener, MouseListener {
             PanelInicio inicio = new PanelInicio(this.us);
             inicio.setVisible(true);
             views.dispose();
+        }
+        else if(e.getSource() == views.btnVuelos){
+            BotonesInicio.btnVuelos(us, views);
+        }
+        else if(e.getSource() == views.btnPagos){
+            BotonesInicio.btnPagos(us, views);
+        }
+        else if(e.getSource() == views.btnReservas){
+            BotonesInicio.btnReservas(us, views);
         }
         else if(e.getSource() == views.btnSeleccionarImagen){
             seleccionarImagen();
@@ -140,6 +160,9 @@ public class PerfilController implements ActionListener, MouseListener {
             }else{
                 JOptionPane.showMessageDialog(null, "Ingrese un número de teléfono válido");
             }
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrar(views);
         }
     }
 

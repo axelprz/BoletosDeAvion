@@ -27,6 +27,7 @@ public class IniciarSesionController implements ActionListener, MouseListener {
         views.txtPass.addMouseListener(this);
         views.btnCambiarPass.addActionListener(this);
         views.btnIniciarSesion.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
     }
     
 
@@ -53,6 +54,9 @@ public class IniciarSesionController implements ActionListener, MouseListener {
                     JOptionPane.showMessageDialog(null, "Correo o contraseña incorrecta");
                 }
             }
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrar(views);
         }
     }
 

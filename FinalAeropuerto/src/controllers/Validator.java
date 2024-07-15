@@ -1,4 +1,3 @@
-
 package controllers;
 
 import java.util.regex.Matcher;
@@ -13,6 +12,8 @@ public class Validator {
     private static final Pattern NAME_PATTERN = Pattern.compile(NAME_REGEX);
     private static final String PHONE_REGEX = "^\\+?[0-9\\s-]{10,15}$";
     private static final Pattern PHONE_PATTERN = Pattern.compile(PHONE_REGEX);
+    private static final String DOCUMENT_NUMBER_REGEX = "^[0-9]{6,10}$";
+    private static final Pattern DOCUMENT_NUMBER_PATTERN = Pattern.compile(DOCUMENT_NUMBER_REGEX);
 
     public static boolean isValidPassword(String password) {
         if (password == null) {
@@ -49,6 +50,14 @@ public class Validator {
             return false;
         }
         Matcher matcher = PHONE_PATTERN.matcher(phoneNumber);
+        return matcher.matches();
+    }
+
+    public static boolean isValidDocumentNumber(String documentNumber) {
+        if (documentNumber == null) {
+            return false;
+        }
+        Matcher matcher = DOCUMENT_NUMBER_PATTERN.matcher(documentNumber);
         return matcher.matches();
     }
 }

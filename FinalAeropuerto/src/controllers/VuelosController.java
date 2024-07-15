@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import models.Usuario;
 import models.Vuelo;
 import models.dao.VueloDao;
+import views.PanelReservarVuelo;
 import views.PanelVuelos;
 
 public class VuelosController implements ActionListener, MouseListener {
@@ -80,6 +81,12 @@ public class VuelosController implements ActionListener, MouseListener {
             i++;
         }
     }
+    
+    private Vuelo obtenerVuelo(int boton){
+        Vuelo vuelo = this.vuelos.get(boton + (8 * paginador));
+        
+        return vuelo;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -116,6 +123,55 @@ public class VuelosController implements ActionListener, MouseListener {
             calcularPaginas();
             llenarBotonesBusqueda();
         }
+        else if(e.getSource() == views.btnLugar1){
+            Vuelo vuelo = obtenerVuelo(0);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar2){
+            Vuelo vuelo = obtenerVuelo(1);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar3){
+            Vuelo vuelo = obtenerVuelo(2);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar4){
+            Vuelo vuelo = obtenerVuelo(3);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar5){
+            Vuelo vuelo = obtenerVuelo(4);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar6){
+            Vuelo vuelo = obtenerVuelo(5);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar7){
+            Vuelo vuelo = obtenerVuelo(6);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        else if(e.getSource() == views.btnLugar8){
+            Vuelo vuelo = obtenerVuelo(7);
+            PanelReservarVuelo reservarVuelo = new PanelReservarVuelo(vuelo, us);
+            reservarVuelo.setVisible(true);
+            this.views.dispose();
+        }
+        
     }
 
     @Override

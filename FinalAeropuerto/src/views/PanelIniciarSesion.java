@@ -21,68 +21,111 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
         txtEmail = new javax.swing.JTextField();
         btnCambiarPass = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         btnIniciarSesion = new javax.swing.JButton();
         txtPass = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnCerrar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtEmail.setBackground(new java.awt.Color(51, 51, 51));
         txtEmail.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(153, 153, 153));
         txtEmail.setText("Nombre de Usuario o Email...");
-        txtEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(207, 124, 44), 1, true));
-        txtEmail.setDragEnabled(true);
-        txtEmail.setRequestFocusEnabled(false);
+        txtEmail.setBorder(null);
         txtEmail.setVerifyInputWhenFocusTarget(false);
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 300, 40));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 300, 40));
 
         btnCambiarPass.setBackground(new java.awt.Color(51, 51, 51));
         btnCambiarPass.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         btnCambiarPass.setForeground(new java.awt.Color(204, 204, 204));
-        btnCambiarPass.setText("Olvidaste Tu Contraseña?");
+        btnCambiarPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-cambiarContraseña.png"))); // NOI18N
         btnCambiarPass.setBorderPainted(false);
         btnCambiarPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCambiarPass.setFocusPainted(false);
         btnCambiarPass.setFocusable(false);
         btnCambiarPass.setRequestFocusEnabled(false);
+        btnCambiarPass.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-cambiarContraseña-h.png"))); // NOI18N
         btnCambiarPass.setVerifyInputWhenFocusTarget(false);
-        getContentPane().add(btnCambiarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 620, 180, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/password.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, -1, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/user.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, 40));
+        getContentPane().add(btnCambiarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 650, 180, 40));
 
         btnIniciarSesion.setBackground(new java.awt.Color(51, 51, 51));
         btnIniciarSesion.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(204, 204, 204));
-        btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-iniciarSesion.png"))); // NOI18N
         btnIniciarSesion.setBorderPainted(false);
         btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSesion.setFocusPainted(false);
         btnIniciarSesion.setFocusable(false);
         btnIniciarSesion.setRequestFocusEnabled(false);
+        btnIniciarSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-iniciarSesion-h.png"))); // NOI18N
         btnIniciarSesion.setVerifyInputWhenFocusTarget(false);
-        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 660, 240, 40));
+        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 710, 280, 40));
 
         txtPass.setBackground(new java.awt.Color(51, 51, 51));
         txtPass.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         txtPass.setForeground(new java.awt.Color(153, 153, 153));
         txtPass.setText("**********");
-        txtPass.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(207, 125, 44), 1, true));
-        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 570, 300, 40));
+        txtPass.setBorder(null);
+        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 590, 300, 40));
+
+        jLabel4.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lblPassword.png"))); // NOI18N
+        jLabel4.setOpaque(true);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 40, 40));
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lblUsuario.png"))); // NOI18N
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 40, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 320, 180));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 320, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/inicio y registro.jpeg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 820));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 720, 750));
+
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar.png"))); // NOI18N
+        btnCerrar.setBorder(null);
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.setRequestFocusEnabled(false);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar-h.png"))); // NOI18N
+        btnCerrar.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 50, 50));
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("FlyNow: Vuela fácil, vuela seguro.");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 280, 50));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-encabezado.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusPainted(false);
+        jButton1.setFocusable(false);
+        jButton1.setRequestFocusEnabled(false);
+        jButton1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,11 +167,15 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCambiarPass;
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnIniciarSesion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
