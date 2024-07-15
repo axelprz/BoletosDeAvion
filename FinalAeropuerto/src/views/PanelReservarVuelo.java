@@ -48,7 +48,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         spCantidadBoletos = new javax.swing.JSpinner();
-        dcFechaVuelo = new com.toedter.calendar.JDateChooser();
         btnReservar = new javax.swing.JButton();
         lblDia2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -63,7 +62,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         cbTipoDocumento = new javax.swing.JComboBox<>();
         btnSeleccionarAsiento = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        dcFechaNacimiento = new com.toedter.calendar.JDateChooser();
         btnGuardarPasajero = new javax.swing.JButton();
         lblAsientoSeleccionado = new javax.swing.JLabel();
         PanelPasajero5 = new javax.swing.JPanel();
@@ -210,16 +208,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         spCantidadBoletos.setVerifyInputWhenFocusTarget(false);
         PanelInfoVuelo.add(spCantidadBoletos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 60, 30));
 
-        dcFechaVuelo.setBackground(new java.awt.Color(51, 51, 51));
-        dcFechaVuelo.setForeground(new java.awt.Color(0, 0, 0));
-        dcFechaVuelo.setDoubleBuffered(false);
-        dcFechaVuelo.setFocusable(false);
-        dcFechaVuelo.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        dcFechaVuelo.setOpaque(false);
-        dcFechaVuelo.setRequestFocusEnabled(false);
-        dcFechaVuelo.setVerifyInputWhenFocusTarget(false);
-        PanelInfoVuelo.add(dcFechaVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 140, 30));
-
         btnReservar.setBackground(new java.awt.Color(51, 51, 51));
         btnReservar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnReservar.setForeground(new java.awt.Color(255, 255, 255));
@@ -332,16 +320,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         jLabel14.setText("Fecha de nacimiento");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelInfoPasajero.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 160, 30));
-
-        dcFechaNacimiento.setBackground(new java.awt.Color(51, 51, 51));
-        dcFechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
-        dcFechaNacimiento.setDoubleBuffered(false);
-        dcFechaNacimiento.setFocusable(false);
-        dcFechaNacimiento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        dcFechaNacimiento.setOpaque(false);
-        dcFechaNacimiento.setRequestFocusEnabled(false);
-        dcFechaNacimiento.setVerifyInputWhenFocusTarget(false);
-        PanelInfoPasajero.add(dcFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 160, 30));
 
         btnGuardarPasajero.setBackground(new java.awt.Color(51, 51, 51));
         btnGuardarPasajero.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -588,8 +566,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cbNacionalidad;
     public javax.swing.JComboBox<String> cbOrigen;
     public javax.swing.JComboBox<String> cbTipoDocumento;
-    public com.toedter.calendar.JDateChooser dcFechaNacimiento;
-    public com.toedter.calendar.JDateChooser dcFechaVuelo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
