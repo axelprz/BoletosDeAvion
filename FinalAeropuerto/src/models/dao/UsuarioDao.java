@@ -13,8 +13,8 @@ public class UsuarioDao {
     ResultSet rs;
     
     public boolean registrar(Usuario us){
-        String sql = "INSERT INTO usuarios (nombre, apellido, nombre_usuario, email, contrasena, telefono) "
-                + "VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO usuarios (nombre, apellido, nombre_usuario, email, contrasena, telefono, imagen) "
+                + "VALUES (?,?,?,?,?,?,?)";
         try {
             con = cn.getConexion();
             ps = con.prepareStatement(sql);
@@ -24,6 +24,7 @@ public class UsuarioDao {
             ps.setString(4, us.getEmail());
             ps.setString(5, us.getContrasena());
             ps.setString(6, us.getTelefono());
+            ps.setBytes(7, us.getImagenPerfil());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -52,6 +53,7 @@ public class UsuarioDao {
                 us.setEmail(rs.getString("email"));
                 us.setContrasena(rs.getString("contrasena"));
                 us.setTelefono(rs.getString("telefono"));
+                us.setImagenPerfil(rs.getBytes("imagen"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
@@ -78,6 +80,7 @@ public class UsuarioDao {
                 us.setEmail(rs.getString("email"));
                 us.setContrasena(rs.getString("contrasena"));
                 us.setTelefono(rs.getString("telefono"));
+                us.setImagenPerfil(rs.getBytes("imagen"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());

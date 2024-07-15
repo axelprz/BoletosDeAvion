@@ -231,4 +231,60 @@ public class PlaceHolder {
         }
         return new Object[] {txtTelefono};
     }
+    
+    public static Object[] placeHolderVueloBusqueda(JTextField txtBuscar) {
+        if (txtBuscar.getText().equals("Lugar o país")) {
+            txtBuscar.setText("");
+            txtBuscar.setForeground(new Color(0, 0, 0));
+        }
+        return new Object[] {txtBuscar};
+    }
+    
+    public static Object[] placeHolderReservaVueloNombre(JTextField txtNombre, JTextField txtApellido, JTextField txtNumeroDocumento){
+        if(txtNombre.getText().equals("Nombre")){
+            txtNombre.setText("");
+            txtNombre.setForeground(new Color(0, 0, 0));
+        }
+        if(txtApellido.getText().equals("")){
+            txtApellido.setText("Apellido");
+            txtApellido.setForeground(new Color(102, 102, 102));
+        }
+        if(txtNumeroDocumento.getText().equals("")){
+            txtNumeroDocumento.setText("Número de documento");
+            txtNumeroDocumento.setForeground(new Color(102, 102, 102));
+        }
+        return new Object[] {txtNombre, txtApellido, txtNumeroDocumento};
+    }
+    
+    public static Object[] placeHolderReservaVueloApellido(JTextField txtApellido, JTextField txtNombre, JTextField txtNumeroDocumento){
+        if(txtApellido.getText().equals("Apellido")){
+            txtApellido.setText("");
+            txtApellido.setForeground(new Color(0, 0, 0));
+        }
+        if(txtNombre.getText().equals("")){
+            txtNombre.setText("Nombre");
+            txtNombre.setForeground(new Color(102, 102, 102));
+        }
+        if(txtNumeroDocumento.getText().equals("")){
+            txtNumeroDocumento.setText("Número de documento");
+            txtNumeroDocumento.setForeground(new Color(102, 102, 102));
+        }
+        return new Object[] {txtApellido, txtNombre, txtNumeroDocumento};
+    }
+    
+    public static Object[] placeHolderReservaVueloNumeroDocumento(JTextField txtNumeroDocumento, JTextField txtApellido, JTextField txtNombre){
+        if(txtNumeroDocumento.getText().equals("Número de documento")){
+            txtNumeroDocumento.setText("");
+            txtNumeroDocumento.setForeground(new Color(0, 0, 0));
+        }
+        if(txtApellido.getText().equals("")){
+            txtApellido.setText("Apellido");
+            txtApellido.setForeground(new Color(102, 102, 102));
+        }
+        if(txtNombre.getText().equals("")){
+            txtNombre.setText("Nombre");
+            txtNombre.setForeground(new Color(102, 102, 102));
+        }
+        return new Object[] {txtNumeroDocumento, txtApellido, txtNombre};
+    }
 }

@@ -5,12 +5,17 @@ public class Vuelo {
     private String numeroVuelo;
     private String origen;
     private String destino;
+    private byte[] imagenDestino;
     private int duracion;
     private int precio; 
     private String dia;
     private int hora;
 
-    public Vuelo(int idVuelo, String numeroVuelo, String origen, String destino, int duracion, int precio, String dia, int hora) {
+    public Vuelo(){
+        
+    }
+    
+    public Vuelo(int idVuelo, String numeroVuelo, String origen, String destino, int duracion, int precio, String dia, int hora, byte[] imagenDestino) {
         this.idVuelo = idVuelo;
         this.numeroVuelo = numeroVuelo;
         this.origen = origen;
@@ -19,6 +24,7 @@ public class Vuelo {
         this.precio = precio;
         this.dia = dia;
         this.hora = hora;
+        this.imagenDestino = imagenDestino;
     }
 
     public int getIdVuelo() {
@@ -85,6 +91,14 @@ public class Vuelo {
         this.hora = hora;
     }
 
+    public byte[] getImagenDestino() {
+        return imagenDestino;
+    }
+
+    public void setImagenDestino(byte[] imagenDestino) {
+        this.imagenDestino = imagenDestino;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -93,6 +107,7 @@ public class Vuelo {
         sb.append(", numeroVuelo=").append(numeroVuelo);
         sb.append(", origen=").append(origen);
         sb.append(", destino=").append(destino);
+        sb.append(", imagenDestino=").append(imagenDestino);
         sb.append(", duracion=").append(duracion);
         sb.append(", precio=").append(precio);
         sb.append(", dia=").append(dia);
@@ -100,5 +115,4 @@ public class Vuelo {
         sb.append('}');
         return sb.toString();
     }
-    
 }

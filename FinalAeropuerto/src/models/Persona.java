@@ -1,17 +1,30 @@
 
 package models;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Persona {
     private String nombre;
     private String apellido;
     private String telefono;
-    private String nacionalidad;
-    private LocalDate fechaNacimiento;
-    private String tipoDocumento;
+    private int nacionalidad;
+    private Date fechaNacimiento;
+    private int tipoDocumento;
     private String numeroDocumento;
 
+    public Persona(){
+        
+    }
+    
+    public Persona(String nombre, String apellido, int tipoDocumento, String numeroDocumento, int nacionalidad, Date fechaNacimiento){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
+        this.nacionalidad = nacionalidad;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -36,27 +49,27 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public String getNacionalidad() {
+    public int getNacionalidad() {
         return nacionalidad;
     }
 
-    public void setNacionalidad(String nacionalidad) {
+    public void setNacionalidad(int nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
 
-    public LocalDate getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getTipoDocumento() {
+    public int getTipoDocumento() {
         return tipoDocumento;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
+    public void setTipoDocumento(int tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
 

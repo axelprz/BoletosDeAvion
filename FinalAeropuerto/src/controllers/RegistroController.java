@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import models.Usuario;
+import models.conexion.ImageUploader;
 import models.dao.UsuarioDao;
 import views.PanelIniciarSesion;
 import views.PanelRegistro;
@@ -105,6 +106,8 @@ public class RegistroController implements ActionListener, MouseListener {
                 }
 
                 us.setContrasena(String.valueOf(views.txtPassword.getPassword()));
+                
+                ImageUploader.crearImagenPerfilPorDefecto(us);
 
                 if (usDao.registrar(us)) {
                     JOptionPane.showMessageDialog(null, "Usuario registrado con éxito");

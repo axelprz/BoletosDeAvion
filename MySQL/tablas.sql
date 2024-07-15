@@ -85,7 +85,7 @@ CREATE TABLE reservas (
     id_usuario INT NOT NULL,
     id_vuelo INT NOT NULL,
     fecha_reserva DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_estado INT DEFAULT 'pendiente',
+    id_estado INT DEFAULT 1,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY (id_vuelo) REFERENCES vuelos(id_vuelo),
     FOREIGN KEY (id_estado) REFERENCES estados(id_estado)
@@ -102,7 +102,7 @@ CREATE TABLE pagos (
     id_metodo_pago INT NOT NULL,
     monto DECIMAL(10, 2) NOT NULL,
     fecha_pago DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_estado INT DEFAULT 'completado',
+    id_estado INT DEFAULT 2,
     FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva),
     FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pagos(id_metodo_pago),
     FOREIGN KEY (id_estado) REFERENCES estados(id_estado)

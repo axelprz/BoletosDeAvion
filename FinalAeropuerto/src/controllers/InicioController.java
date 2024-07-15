@@ -14,7 +14,6 @@ import models.Usuario;
 import models.Vuelo;
 import models.dao.VueloDao;
 import views.PanelInicio;
-import views.PanelPerfil;
 
 public class InicioController implements ActionListener {
     PanelInicio views;
@@ -29,6 +28,10 @@ public class InicioController implements ActionListener {
         this.us = us;
         this.vuelDao = vuelDao;
         views.btnPerfil.addActionListener(this);
+        views.btnPagos.addActionListener(this);
+        views.btnReservas.addActionListener(this);
+        views.btnVuelos.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
         views.lblBienvenida.setText("Gracias por unirte a nosotros " + us.getNombre() + "!!");
         lblsLugares = Arrays.asList(views.lblLugar1, views.lblLugar2, views.lblLugar3, views.lblLugar4, views.lblLugar5,
             views.lblLugar6, views.lblLugar7, views.lblLugar8, views.lblLugar9, views.lblLugar10, views.lblLugar11, views.lblLugar12, 
@@ -50,22 +53,8 @@ public class InicioController implements ActionListener {
             i++;
         }
         i = 1;
-        if(vuelos.size() == 14){
-            while(i <= 1){
-                (lblsLugares.get(lblsLugares.size() - i)).setVisible(false);
-                (lblsHoras.get(lblsHoras.size() - i)).setVisible(false);
-                i++;
-            }
-        }
         if(vuelos.size() == 10){
             while(i <= 5){
-                (lblsLugares.get(lblsLugares.size() - i)).setVisible(false);
-                (lblsHoras.get(lblsHoras.size() - i)).setVisible(false);
-                i++;
-            }
-        }
-        if(vuelos.size() == 9){
-            while(i <= 6){
                 (lblsLugares.get(lblsLugares.size() - i)).setVisible(false);
                 (lblsHoras.get(lblsHoras.size() - i)).setVisible(false);
                 i++;
@@ -104,9 +93,19 @@ public class InicioController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == views.btnPerfil){
-            PanelPerfil perfil = new PanelPerfil(this.us);
-            perfil.setVisible(true);
-            views.dispose();
+            BotonesInicio.btnPerfil(us, views);
+        }
+        else if(e.getSource() == views.btnVuelos){
+            BotonesInicio.btnVuelos(us, views);
+        }
+        else if(e.getSource() == views.btnPagos){
+            BotonesInicio.btnPagos(us, views);
+        }
+        else if(e.getSource() == views.btnReservas){
+            BotonesInicio.btnReservas(us, views);
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrar(views);
         }
     }
     

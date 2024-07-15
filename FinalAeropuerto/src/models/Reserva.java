@@ -1,23 +1,30 @@
 package models;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class Reserva {
     private int idReserva;
-    private int idUsuario;
-    private int idVuelo;
-    private String estado;
-    private LocalDateTime fechaReserva;
-    private List<Integer> idPasajeros;
+    private Usuario usuario;
+    private Vuelo vuelo;
+    private int estado;
+    private Date fechaReserva;
+    private List<Pasajero> pasajeros;
 
-    public Reserva(int idReserva, int idUsuario, int idVuelo, String estado, LocalDateTime fechaReserva, List<Integer> idPasajeros) {
-        this.idReserva = idReserva;
-        this.idUsuario = idUsuario;
-        this.idVuelo = idVuelo;
+    public Reserva(Usuario usuario, Vuelo vuelo, int estado, Date fechaReserva){
+        this.usuario = usuario;
+        this.vuelo = vuelo;
         this.estado = estado;
         this.fechaReserva = fechaReserva;
-        this.idPasajeros = idPasajeros;
+    }
+    
+    public Reserva(int idReserva, Usuario usuario, Vuelo vuelo, int estado, Date fechaReserva, List<Pasajero> pasajeros) {
+        this.idReserva = idReserva;
+        this.usuario = usuario;
+        this.vuelo = vuelo;
+        this.estado = estado;
+        this.fechaReserva = fechaReserva;
+        this.pasajeros = pasajeros;
     }
 
     public int getIdReserva() {
@@ -28,44 +35,44 @@ public class Reserva {
         this.idReserva = idReserva;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public int getIdVuelo() {
-        return idVuelo;
+    public Vuelo getVuelo() {
+        return vuelo;
     }
 
-    public void setIdVuelo(int idVuelo) {
-        this.idVuelo = idVuelo;
+    public void setVuelo(Vuelo vuelo) {
+        this.vuelo = vuelo;
     }
 
-    public String getEstado() {
+    public int getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 
-    public LocalDateTime getFechaReserva() {
+    public Date getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(LocalDateTime fechaReserva) {
+    public void setFechaReserva(Date fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 
-    public List<Integer> getIdPasajeros() {
-        return idPasajeros;
+    public List<Pasajero> getPasajeros() {
+        return pasajeros;
     }
 
-    public void setIdPasajeros(List<Integer> idPasajeros) {
-        this.idPasajeros = idPasajeros;
+    public void setPasajeros(List<Pasajero> pasajeros) {
+        this.pasajeros = pasajeros;
     }
 
     @Override
@@ -73,11 +80,11 @@ public class Reserva {
         StringBuilder sb = new StringBuilder();
         sb.append("Reserva{");
         sb.append("idReserva=").append(idReserva);
-        sb.append(", idUsuario=").append(idUsuario);
-        sb.append(", idVuelo=").append(idVuelo);
+        sb.append(", usuario=").append(usuario);
+        sb.append(", vuelo=").append(vuelo);
         sb.append(", estado=").append(estado);
         sb.append(", fechaReserva=").append(fechaReserva);
-        sb.append(", idPasajeros=").append(idPasajeros);
+        sb.append(", pasajeros=").append(pasajeros);
         sb.append('}');
         return sb.toString();
     }
