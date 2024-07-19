@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package views;
 
-/**
- *
- * @author agust
- */
+import controllers.SeleccionAsientoController;
+
 public class PanelSeleccionAciento extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PanelSeleccionAciento
-     */
-    public PanelSeleccionAciento() {
+   
+    public PanelSeleccionAciento(PanelReservarVuelo reserva) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         initComponents();
+        this.setLocationRelativeTo(null);
+        SeleccionAsientoController controller = new SeleccionAsientoController(this, reserva);
     }
 
     /**
@@ -26,347 +21,1244 @@ public class PanelSeleccionAciento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton38 = new javax.swing.JButton();
-        jButton39 = new javax.swing.JButton();
-        jButton40 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
-        jButton43 = new javax.swing.JButton();
-        jButton44 = new javax.swing.JButton();
-        jButton45 = new javax.swing.JButton();
-        jButton46 = new javax.swing.JButton();
-        jButton47 = new javax.swing.JButton();
-        jButton48 = new javax.swing.JButton();
-        jButton49 = new javax.swing.JButton();
-        jButton50 = new javax.swing.JButton();
-        jButton51 = new javax.swing.JButton();
-        jButton52 = new javax.swing.JButton();
-        jButton53 = new javax.swing.JButton();
-        jButton54 = new javax.swing.JButton();
-        jButton55 = new javax.swing.JButton();
-        jButton56 = new javax.swing.JButton();
-        jButton57 = new javax.swing.JButton();
-        jButton58 = new javax.swing.JButton();
-        jButton59 = new javax.swing.JButton();
-        jButton60 = new javax.swing.JButton();
-        jButton61 = new javax.swing.JButton();
-        jButton62 = new javax.swing.JButton();
-        jButton63 = new javax.swing.JButton();
-        jButton64 = new javax.swing.JButton();
-        jButton65 = new javax.swing.JButton();
-        jButton66 = new javax.swing.JButton();
-        jButton67 = new javax.swing.JButton();
-        jButton68 = new javax.swing.JButton();
-        jButton69 = new javax.swing.JButton();
-        jButton70 = new javax.swing.JButton();
-        jButton71 = new javax.swing.JButton();
-        jButton72 = new javax.swing.JButton();
-        jButton73 = new javax.swing.JButton();
-        jButton74 = new javax.swing.JButton();
-        jButton75 = new javax.swing.JButton();
-        jButton76 = new javax.swing.JButton();
-        jButton77 = new javax.swing.JButton();
-        jButton78 = new javax.swing.JButton();
-        jButton79 = new javax.swing.JButton();
-        jButton80 = new javax.swing.JButton();
-        jButton81 = new javax.swing.JButton();
-        jButton82 = new javax.swing.JButton();
-        jButton83 = new javax.swing.JButton();
-        jButton84 = new javax.swing.JButton();
-        jButton85 = new javax.swing.JButton();
-        jButton86 = new javax.swing.JButton();
-        jButton87 = new javax.swing.JButton();
-        jButton88 = new javax.swing.JButton();
-        jButton89 = new javax.swing.JButton();
-        jButton90 = new javax.swing.JButton();
-        jButton91 = new javax.swing.JButton();
-        jButton92 = new javax.swing.JButton();
-        jButton93 = new javax.swing.JButton();
-        jButton94 = new javax.swing.JButton();
-        jButton95 = new javax.swing.JButton();
-        jButton96 = new javax.swing.JButton();
-        jButton97 = new javax.swing.JButton();
-        jButton98 = new javax.swing.JButton();
-        jButton99 = new javax.swing.JButton();
-        jButton100 = new javax.swing.JButton();
-        jButton101 = new javax.swing.JButton();
-        jButton102 = new javax.swing.JButton();
-        jButton103 = new javax.swing.JButton();
-        jButton104 = new javax.swing.JButton();
-        jButton105 = new javax.swing.JButton();
-        jButton106 = new javax.swing.JButton();
-        jButton107 = new javax.swing.JButton();
-        jButton108 = new javax.swing.JButton();
-        jButton109 = new javax.swing.JButton();
-        jButton110 = new javax.swing.JButton();
-        jButton111 = new javax.swing.JButton();
-        jButton112 = new javax.swing.JButton();
-        jButton113 = new javax.swing.JButton();
-        jButton114 = new javax.swing.JButton();
-        jButton121 = new javax.swing.JButton();
-        jButton122 = new javax.swing.JButton();
-        jButton123 = new javax.swing.JButton();
-        jButton124 = new javax.swing.JButton();
-        jButton125 = new javax.swing.JButton();
-        jButton126 = new javax.swing.JButton();
-        jButton143 = new javax.swing.JButton();
-        jButton144 = new javax.swing.JButton();
-        jButton145 = new javax.swing.JButton();
-        jButton146 = new javax.swing.JButton();
-        jButton147 = new javax.swing.JButton();
-        jButton148 = new javax.swing.JButton();
-        jButton149 = new javax.swing.JButton();
-        jButton150 = new javax.swing.JButton();
-        jButton151 = new javax.swing.JButton();
-        jButton152 = new javax.swing.JButton();
-        jButton153 = new javax.swing.JButton();
-        jButton154 = new javax.swing.JButton();
-        jButton155 = new javax.swing.JButton();
-        jButton156 = new javax.swing.JButton();
-        jButton157 = new javax.swing.JButton();
-        jButton158 = new javax.swing.JButton();
-        jButton159 = new javax.swing.JButton();
-        jButton160 = new javax.swing.JButton();
-        jButton161 = new javax.swing.JButton();
-        jButton162 = new javax.swing.JButton();
-        jButton163 = new javax.swing.JButton();
-        jButton164 = new javax.swing.JButton();
-        jButton165 = new javax.swing.JButton();
-        jButton166 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton167 = new javax.swing.JButton();
-        jButton168 = new javax.swing.JButton();
-        jButton169 = new javax.swing.JButton();
-        jButton170 = new javax.swing.JButton();
-        jButton171 = new javax.swing.JButton();
-        jButton172 = new javax.swing.JButton();
-        jButton173 = new javax.swing.JButton();
-        jButton174 = new javax.swing.JButton();
-        jButton175 = new javax.swing.JButton();
-        jButton176 = new javax.swing.JButton();
-        jButton177 = new javax.swing.JButton();
-        jButton178 = new javax.swing.JButton();
-        jButton179 = new javax.swing.JButton();
-        jButton180 = new javax.swing.JButton();
-        jButton181 = new javax.swing.JButton();
-        jButton182 = new javax.swing.JButton();
-        jButton183 = new javax.swing.JButton();
-        jButton184 = new javax.swing.JButton();
-        jButton185 = new javax.swing.JButton();
-        jButton186 = new javax.swing.JButton();
-        jButton187 = new javax.swing.JButton();
-        jButton188 = new javax.swing.JButton();
-        jButton189 = new javax.swing.JButton();
-        jButton190 = new javax.swing.JButton();
-        jButton191 = new javax.swing.JButton();
-        jButton192 = new javax.swing.JButton();
-        jButton193 = new javax.swing.JButton();
-        jButton194 = new javax.swing.JButton();
+        btnAsiento107 = new javax.swing.JButton();
+        btnAsiento123 = new javax.swing.JButton();
+        btnAsiento108 = new javax.swing.JButton();
+        btnAsiento124 = new javax.swing.JButton();
+        btnAsiento109 = new javax.swing.JButton();
+        btnAsiento125 = new javax.swing.JButton();
+        btnAsiento110 = new javax.swing.JButton();
+        btnAsiento126 = new javax.swing.JButton();
+        btnAsiento53 = new javax.swing.JButton();
+        btnAsiento75 = new javax.swing.JButton();
+        btnAsiento100 = new javax.swing.JButton();
+        btnAsiento116 = new javax.swing.JButton();
+        btnAsiento101 = new javax.swing.JButton();
+        btnAsiento117 = new javax.swing.JButton();
+        btnAsiento102 = new javax.swing.JButton();
+        btnAsiento118 = new javax.swing.JButton();
+        btnAsiento103 = new javax.swing.JButton();
+        btnAsiento119 = new javax.swing.JButton();
+        btnAsiento104 = new javax.swing.JButton();
+        btnAsiento120 = new javax.swing.JButton();
+        btnAsiento105 = new javax.swing.JButton();
+        btnAsiento121 = new javax.swing.JButton();
+        btnAsiento106 = new javax.swing.JButton();
+        btnAsiento122 = new javax.swing.JButton();
+        btnAsiento1 = new javax.swing.JButton();
+        btnAsiento17 = new javax.swing.JButton();
+        btnAsiento2 = new javax.swing.JButton();
+        btnAsiento18 = new javax.swing.JButton();
+        btnAsiento3 = new javax.swing.JButton();
+        btnAsiento19 = new javax.swing.JButton();
+        btnAsiento4 = new javax.swing.JButton();
+        btnAsiento20 = new javax.swing.JButton();
+        btnAsiento5 = new javax.swing.JButton();
+        btnAsiento21 = new javax.swing.JButton();
+        btnAsiento6 = new javax.swing.JButton();
+        btnAsiento22 = new javax.swing.JButton();
+        btnAsiento7 = new javax.swing.JButton();
+        btnAsiento23 = new javax.swing.JButton();
+        btnAsiento8 = new javax.swing.JButton();
+        btnAsiento24 = new javax.swing.JButton();
+        btnAsiento9 = new javax.swing.JButton();
+        btnAsiento25 = new javax.swing.JButton();
+        btnAsiento10 = new javax.swing.JButton();
+        btnAsiento26 = new javax.swing.JButton();
+        btnAsiento11 = new javax.swing.JButton();
+        btnAsiento27 = new javax.swing.JButton();
+        btnAsiento12 = new javax.swing.JButton();
+        btnAsiento28 = new javax.swing.JButton();
+        btnAsiento115 = new javax.swing.JButton();
+        btnAsiento97 = new javax.swing.JButton();
+        btnAsiento99 = new javax.swing.JButton();
+        btnAsiento52 = new javax.swing.JButton();
+        btnAsiento74 = new javax.swing.JButton();
+        btnAsiento96 = new javax.swing.JButton();
+        btnAsiento50 = new javax.swing.JButton();
+        btnAsiento51 = new javax.swing.JButton();
+        btnAsiento72 = new javax.swing.JButton();
+        btnAsiento73 = new javax.swing.JButton();
+        btnAsiento94 = new javax.swing.JButton();
+        btnAsiento95 = new javax.swing.JButton();
+        btnAsiento41 = new javax.swing.JButton();
+        btnAsiento42 = new javax.swing.JButton();
+        btnAsiento54 = new javax.swing.JButton();
+        btnAsiento49 = new javax.swing.JButton();
+        btnAsiento71 = new javax.swing.JButton();
+        btnAsiento93 = new javax.swing.JButton();
+        btnAsiento76 = new javax.swing.JButton();
+        btnAsiento64 = new javax.swing.JButton();
+        btnAsiento63 = new javax.swing.JButton();
+        btnAsiento85 = new javax.swing.JButton();
+        btnAsiento86 = new javax.swing.JButton();
+        btnAsiento98 = new javax.swing.JButton();
+        btnAsiento33 = new javax.swing.JButton();
+        btnAsiento55 = new javax.swing.JButton();
+        btnAsiento77 = new javax.swing.JButton();
+        btnAsiento78 = new javax.swing.JButton();
+        btnAsiento56 = new javax.swing.JButton();
+        btnAsiento34 = new javax.swing.JButton();
+        btnAsiento35 = new javax.swing.JButton();
+        btnAsiento36 = new javax.swing.JButton();
+        btnAsiento58 = new javax.swing.JButton();
+        btnAsiento57 = new javax.swing.JButton();
+        btnAsiento79 = new javax.swing.JButton();
+        btnAsiento80 = new javax.swing.JButton();
+        btnAsiento81 = new javax.swing.JButton();
+        btnAsiento59 = new javax.swing.JButton();
+        btnAsiento37 = new javax.swing.JButton();
+        btnAsiento38 = new javax.swing.JButton();
+        btnAsiento60 = new javax.swing.JButton();
+        btnAsiento82 = new javax.swing.JButton();
+        btnAsiento83 = new javax.swing.JButton();
+        btnAsiento61 = new javax.swing.JButton();
+        btnAsiento39 = new javax.swing.JButton();
+        btnAsiento40 = new javax.swing.JButton();
+        btnAsiento62 = new javax.swing.JButton();
+        btnAsiento84 = new javax.swing.JButton();
+        btnAsiento142 = new javax.swing.JButton();
+        btnAsiento146 = new javax.swing.JButton();
+        btnAsiento44 = new javax.swing.JButton();
+        btnAsiento43 = new javax.swing.JButton();
+        btnAsiento65 = new javax.swing.JButton();
+        btnAsiento87 = new javax.swing.JButton();
+        btnAsiento88 = new javax.swing.JButton();
+        btnAsiento66 = new javax.swing.JButton();
+        btnAsiento134 = new javax.swing.JButton();
+        btnAsiento138 = new javax.swing.JButton();
+        btnAsiento150 = new javax.swing.JButton();
+        btnAsiento154 = new javax.swing.JButton();
+        btnAsiento133 = new javax.swing.JButton();
+        btnAsiento137 = new javax.swing.JButton();
+        btnAsiento135 = new javax.swing.JButton();
+        btnAsiento131 = new javax.swing.JButton();
+        btnAsiento132 = new javax.swing.JButton();
+        btnAsiento136 = new javax.swing.JButton();
+        btnAsiento148 = new javax.swing.JButton();
+        btnAsiento152 = new javax.swing.JButton();
+        btnAsiento140 = new javax.swing.JButton();
+        btnAsiento144 = new javax.swing.JButton();
+        btnAsiento143 = new javax.swing.JButton();
+        btnAsiento139 = new javax.swing.JButton();
+        btnAsiento147 = new javax.swing.JButton();
+        btnAsiento151 = new javax.swing.JButton();
+        btnAsiento141 = new javax.swing.JButton();
+        btnAsiento145 = new javax.swing.JButton();
+        btnAsiento149 = new javax.swing.JButton();
+        btnAsiento153 = new javax.swing.JButton();
+        btnAsiento114 = new javax.swing.JButton();
+        btnAsiento113 = new javax.swing.JButton();
+        btnAsiento112 = new javax.swing.JButton();
+        btnAsiento111 = new javax.swing.JButton();
+        btnAsiento127 = new javax.swing.JButton();
+        btnAsiento128 = new javax.swing.JButton();
+        btnAsiento129 = new javax.swing.JButton();
+        btnAsiento130 = new javax.swing.JButton();
+        btnAsiento16 = new javax.swing.JButton();
+        btnAsiento15 = new javax.swing.JButton();
+        btnAsiento14 = new javax.swing.JButton();
+        btnAsiento13 = new javax.swing.JButton();
+        btnAsiento29 = new javax.swing.JButton();
+        btnAsiento30 = new javax.swing.JButton();
+        btnAsiento31 = new javax.swing.JButton();
+        btnAsiento32 = new javax.swing.JButton();
+        btnAsiento45 = new javax.swing.JButton();
+        btnAsiento67 = new javax.swing.JButton();
+        btnAsiento89 = new javax.swing.JButton();
+        btnAsiento90 = new javax.swing.JButton();
+        btnAsiento91 = new javax.swing.JButton();
+        btnAsiento92 = new javax.swing.JButton();
+        btnAsiento46 = new javax.swing.JButton();
+        btnAsiento68 = new javax.swing.JButton();
+        btnAsiento69 = new javax.swing.JButton();
+        btnAsiento47 = new javax.swing.JButton();
+        btnAsiento70 = new javax.swing.JButton();
+        btnAsiento48 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 20, 20));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 220, 20, 20));
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 20, 20));
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, 20, 20));
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 20, 20));
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 20, 20));
-        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 20, 20));
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 20, 20));
-        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 20, 20));
-        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 20, 20));
-        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 150, 20, 20));
-        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 170, 20, 20));
-        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 20, 20));
-        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 20, 20));
-        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 20, 20));
-        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 20, 20));
-        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 20, 20));
-        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 20, 20));
-        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 20, 20));
-        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 20, 20));
-        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 20, 20));
-        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 20, 20));
-        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 20, 20));
-        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 20, 20));
-        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 20, 20));
-        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 20, 20));
-        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 20, 20));
-        getContentPane().add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 20, 20));
-        getContentPane().add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 20, 20));
-        getContentPane().add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 20, 20));
-        getContentPane().add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 20, 20));
-        getContentPane().add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 20, 20));
-        getContentPane().add(jButton39, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 20, 20));
-        getContentPane().add(jButton40, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 20, 20));
-        getContentPane().add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 20, 20));
-        getContentPane().add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 20, 20));
-        getContentPane().add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 20, 20));
-        getContentPane().add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 20, 20));
-        getContentPane().add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 20, 20));
-        getContentPane().add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 20, 20));
-        getContentPane().add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 20, 20));
-        getContentPane().add(jButton48, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 20, 20));
-        getContentPane().add(jButton49, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 20, 20));
-        getContentPane().add(jButton50, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 20, 20));
-        getContentPane().add(jButton51, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 20, 20));
-        getContentPane().add(jButton52, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 20, 20));
-        getContentPane().add(jButton53, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 20, 20));
-        getContentPane().add(jButton54, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 20, 20));
-        getContentPane().add(jButton55, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 20, 20));
-        getContentPane().add(jButton56, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 20, 20));
-        getContentPane().add(jButton57, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 220, 20, 20));
-        getContentPane().add(jButton58, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 240, 20, 20));
-        getContentPane().add(jButton59, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 100, 20, 20));
-        getContentPane().add(jButton60, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 120, 20, 20));
-        getContentPane().add(jButton61, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 100, 20, 20));
-        getContentPane().add(jButton62, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 120, 20, 20));
-        getContentPane().add(jButton63, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 220, 20, 20));
-        getContentPane().add(jButton64, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 240, 20, 20));
-        getContentPane().add(jButton65, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 20, 20));
-        getContentPane().add(jButton66, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 20, 20));
-        getContentPane().add(jButton67, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 20, 20));
-        getContentPane().add(jButton68, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 150, 20, 20));
-        getContentPane().add(jButton69, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 170, 20, 20));
-        getContentPane().add(jButton70, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 20, 20));
-        getContentPane().add(jButton71, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, 20, 20));
-        getContentPane().add(jButton72, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 20, 20));
-        getContentPane().add(jButton73, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 170, 20, 20));
-        getContentPane().add(jButton74, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 170, 20, 20));
-        getContentPane().add(jButton75, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, 20, 20));
-        getContentPane().add(jButton76, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 190, 20, 20));
-        getContentPane().add(jButton77, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 20, 20));
-        getContentPane().add(jButton78, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 20, 20));
-        getContentPane().add(jButton79, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 150, 20, 20));
-        getContentPane().add(jButton80, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 150, 20, 20));
-        getContentPane().add(jButton81, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 20, 20));
-        getContentPane().add(jButton82, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 20, 20));
-        getContentPane().add(jButton83, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 170, 20, 20));
-        getContentPane().add(jButton84, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 20, 20));
-        getContentPane().add(jButton85, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 20, 20));
-        getContentPane().add(jButton86, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 20, 20));
-        getContentPane().add(jButton87, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 20, 20));
-        getContentPane().add(jButton88, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 190, 20, 20));
-        getContentPane().add(jButton89, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 20, 20));
-        getContentPane().add(jButton90, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 20, 20));
-        getContentPane().add(jButton91, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 20, 20));
-        getContentPane().add(jButton92, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 20, 20));
-        getContentPane().add(jButton93, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 20, 20));
-        getContentPane().add(jButton94, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 20, 20));
-        getContentPane().add(jButton95, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, 20));
-        getContentPane().add(jButton96, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 20, 20));
-        getContentPane().add(jButton97, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 20, 20));
-        getContentPane().add(jButton98, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 20, 20));
-        getContentPane().add(jButton99, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 20, 20));
-        getContentPane().add(jButton100, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 20, 20));
-        getContentPane().add(jButton101, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 20, 20));
-        getContentPane().add(jButton102, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 20, 20));
-        getContentPane().add(jButton103, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 20, 20));
-        getContentPane().add(jButton104, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 20, 20));
-        getContentPane().add(jButton105, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 20, 20));
-        getContentPane().add(jButton106, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 20, 20));
-        getContentPane().add(jButton107, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 20, 20));
-        getContentPane().add(jButton108, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 20, 20));
-        getContentPane().add(jButton109, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 20, 20));
-        getContentPane().add(jButton110, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 20, 20));
-        getContentPane().add(jButton111, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 20, 20));
-        getContentPane().add(jButton112, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 20, 20));
-        getContentPane().add(jButton113, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 160, 20, 20));
-        getContentPane().add(jButton114, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 180, 20, 20));
-        getContentPane().add(jButton121, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 20, 20));
-        getContentPane().add(jButton122, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 20, 20));
-        getContentPane().add(jButton123, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 20, 20));
-        getContentPane().add(jButton124, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 20, 20));
-        getContentPane().add(jButton125, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 20, 20));
-        getContentPane().add(jButton126, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 20, 20));
-        getContentPane().add(jButton143, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 100, 20, 20));
-        getContentPane().add(jButton144, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 120, 20, 20));
-        getContentPane().add(jButton145, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 100, 20, 20));
-        getContentPane().add(jButton146, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 120, 20, 20));
-        getContentPane().add(jButton147, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 220, 20, 20));
-        getContentPane().add(jButton148, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 240, 20, 20));
-        getContentPane().add(jButton149, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, 20, 20));
-        getContentPane().add(jButton150, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 120, 20, 20));
-        getContentPane().add(jButton151, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 120, 20, 20));
-        getContentPane().add(jButton152, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 100, 20, 20));
-        getContentPane().add(jButton153, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 100, 20, 20));
-        getContentPane().add(jButton154, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 120, 20, 20));
-        getContentPane().add(jButton155, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 220, 20, 20));
-        getContentPane().add(jButton156, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 240, 20, 20));
-        getContentPane().add(jButton157, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 160, 20, 20));
-        getContentPane().add(jButton158, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 180, 20, 20));
-        getContentPane().add(jButton159, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, 20, 20));
-        getContentPane().add(jButton160, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 160, 20, 20));
-        getContentPane().add(jButton161, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 220, 20, 20));
-        getContentPane().add(jButton162, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, 20, 20));
-        getContentPane().add(jButton163, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 160, 20, 20));
-        getContentPane().add(jButton164, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 180, 20, 20));
-        getContentPane().add(jButton165, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 220, 20, 20));
-        getContentPane().add(jButton166, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 240, 20, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo mas chico.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-        getContentPane().add(jButton167, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 20, 20));
-        getContentPane().add(jButton168, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 20, 20));
-        getContentPane().add(jButton169, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 20, 20));
-        getContentPane().add(jButton170, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 20, 20));
-        getContentPane().add(jButton171, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 20, 20));
-        getContentPane().add(jButton172, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, 20, 20));
-        getContentPane().add(jButton173, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 20, 20));
-        getContentPane().add(jButton174, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 20, 20));
-        getContentPane().add(jButton175, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 100, 20, 20));
-        getContentPane().add(jButton176, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, 20, 20));
-        getContentPane().add(jButton177, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, 20, 20));
-        getContentPane().add(jButton178, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 20, 20));
-        getContentPane().add(jButton179, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 20, 20));
-        getContentPane().add(jButton180, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, 20, 20));
-        getContentPane().add(jButton181, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 20, 20));
-        getContentPane().add(jButton182, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 20, 20));
-        getContentPane().add(jButton183, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 20, 20));
-        getContentPane().add(jButton184, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 20, 20));
-        getContentPane().add(jButton185, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 20, 20));
-        getContentPane().add(jButton186, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, 20, 20));
-        getContentPane().add(jButton187, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 20, 20));
-        getContentPane().add(jButton188, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 20, 20));
-        getContentPane().add(jButton189, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 150, 20, 20));
-        getContentPane().add(jButton190, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 170, 20, 20));
-        getContentPane().add(jButton191, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 20, 20));
-        getContentPane().add(jButton192, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 20, 20));
-        getContentPane().add(jButton193, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 20, 20));
-        getContentPane().add(jButton194, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 20, 20));
+        btnAsiento107.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento107.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento107.setDefaultCapable(false);
+        btnAsiento107.setFocusPainted(false);
+        btnAsiento107.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento107, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 20, 20));
+
+        btnAsiento123.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento123.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento123.setDefaultCapable(false);
+        btnAsiento123.setFocusPainted(false);
+        btnAsiento123.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento123, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, 20, 20));
+
+        btnAsiento108.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento108.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento108.setDefaultCapable(false);
+        btnAsiento108.setFocusPainted(false);
+        btnAsiento108.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento108, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 20, 20));
+
+        btnAsiento124.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento124.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento124.setDefaultCapable(false);
+        btnAsiento124.setFocusPainted(false);
+        btnAsiento124.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento124, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 20, 20));
+
+        btnAsiento109.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento109.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento109.setDefaultCapable(false);
+        btnAsiento109.setFocusPainted(false);
+        btnAsiento109.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento109, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 20, 20));
+
+        btnAsiento125.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento125.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento125.setDefaultCapable(false);
+        btnAsiento125.setFocusPainted(false);
+        btnAsiento125.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento125, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 20, 20));
+
+        btnAsiento110.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento110.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento110.setDefaultCapable(false);
+        btnAsiento110.setFocusPainted(false);
+        btnAsiento110.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento110, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 20, 20));
+
+        btnAsiento126.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento126.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento126.setDefaultCapable(false);
+        btnAsiento126.setFocusPainted(false);
+        btnAsiento126.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento126, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 20, 20));
+
+        btnAsiento53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento53.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento53.setDefaultCapable(false);
+        btnAsiento53.setFocusPainted(false);
+        btnAsiento53.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento53, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 150, 20, 20));
+
+        btnAsiento75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento75.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento75.setDefaultCapable(false);
+        btnAsiento75.setFocusPainted(false);
+        btnAsiento75.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento75, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 170, 20, 20));
+
+        btnAsiento100.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento100.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento100.setDefaultCapable(false);
+        btnAsiento100.setFocusPainted(false);
+        btnAsiento100.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento100, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 20, 20));
+
+        btnAsiento116.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento116.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento116.setDefaultCapable(false);
+        btnAsiento116.setFocusPainted(false);
+        btnAsiento116.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento116, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 20, 20));
+
+        btnAsiento101.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento101.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento101.setDefaultCapable(false);
+        btnAsiento101.setFocusPainted(false);
+        btnAsiento101.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento101, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 20, 20));
+
+        btnAsiento117.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento117.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento117.setDefaultCapable(false);
+        btnAsiento117.setFocusPainted(false);
+        btnAsiento117.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento117, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 20, 20));
+
+        btnAsiento102.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento102.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento102.setDefaultCapable(false);
+        btnAsiento102.setFocusPainted(false);
+        btnAsiento102.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento102, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 20, 20));
+
+        btnAsiento118.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento118.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento118.setDefaultCapable(false);
+        btnAsiento118.setFocusPainted(false);
+        btnAsiento118.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento118, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 20, 20));
+
+        btnAsiento103.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento103.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento103.setDefaultCapable(false);
+        btnAsiento103.setFocusPainted(false);
+        btnAsiento103.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento103, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 20, 20));
+
+        btnAsiento119.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento119.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento119.setDefaultCapable(false);
+        btnAsiento119.setFocusPainted(false);
+        btnAsiento119.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento119, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 20, 20));
+
+        btnAsiento104.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento104.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento104.setDefaultCapable(false);
+        btnAsiento104.setFocusPainted(false);
+        btnAsiento104.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento104, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 20, 20));
+
+        btnAsiento120.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento120.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento120.setDefaultCapable(false);
+        btnAsiento120.setFocusPainted(false);
+        btnAsiento120.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento120, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 20, 20));
+
+        btnAsiento105.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento105.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento105.setDefaultCapable(false);
+        btnAsiento105.setFocusPainted(false);
+        btnAsiento105.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento105, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 20, 20));
+
+        btnAsiento121.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento121.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento121.setDefaultCapable(false);
+        btnAsiento121.setFocusPainted(false);
+        btnAsiento121.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento121, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 20, 20));
+
+        btnAsiento106.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento106.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento106.setDefaultCapable(false);
+        btnAsiento106.setFocusPainted(false);
+        btnAsiento106.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento106, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 20, 20));
+
+        btnAsiento122.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento122.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento122.setDefaultCapable(false);
+        btnAsiento122.setFocusPainted(false);
+        btnAsiento122.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento122, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 20, 20));
+
+        btnAsiento1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento1.setDefaultCapable(false);
+        btnAsiento1.setFocusPainted(false);
+        btnAsiento1.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 20, 20));
+
+        btnAsiento17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento17.setDefaultCapable(false);
+        btnAsiento17.setFocusPainted(false);
+        btnAsiento17.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento17, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 20, 20));
+
+        btnAsiento2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento2.setDefaultCapable(false);
+        btnAsiento2.setFocusPainted(false);
+        btnAsiento2.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 20, 20));
+
+        btnAsiento18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento18.setDefaultCapable(false);
+        btnAsiento18.setFocusPainted(false);
+        btnAsiento18.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento18, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 20, 20));
+
+        btnAsiento3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento3.setDefaultCapable(false);
+        btnAsiento3.setFocusPainted(false);
+        btnAsiento3.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 20, 20));
+
+        btnAsiento19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento19.setDefaultCapable(false);
+        btnAsiento19.setFocusPainted(false);
+        btnAsiento19.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 20, 20));
+
+        btnAsiento4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento4.setDefaultCapable(false);
+        btnAsiento4.setFocusPainted(false);
+        btnAsiento4.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 20, 20));
+
+        btnAsiento20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento20.setDefaultCapable(false);
+        btnAsiento20.setFocusPainted(false);
+        btnAsiento20.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento20, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 20, 20));
+
+        btnAsiento5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento5.setDefaultCapable(false);
+        btnAsiento5.setFocusPainted(false);
+        btnAsiento5.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 20, 20));
+
+        btnAsiento21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento21.setDefaultCapable(false);
+        btnAsiento21.setFocusPainted(false);
+        btnAsiento21.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento21, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 20, 20));
+
+        btnAsiento6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento6.setDefaultCapable(false);
+        btnAsiento6.setFocusPainted(false);
+        btnAsiento6.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 20, 20));
+
+        btnAsiento22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento22.setDefaultCapable(false);
+        btnAsiento22.setFocusPainted(false);
+        btnAsiento22.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento22, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 20, 20));
+
+        btnAsiento7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento7.setDefaultCapable(false);
+        btnAsiento7.setFocusPainted(false);
+        btnAsiento7.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 20, 20));
+
+        btnAsiento23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento23.setDefaultCapable(false);
+        btnAsiento23.setFocusPainted(false);
+        btnAsiento23.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento23, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 20, 20));
+
+        btnAsiento8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento8.setDefaultCapable(false);
+        btnAsiento8.setFocusPainted(false);
+        btnAsiento8.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 20, 20));
+
+        btnAsiento24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento24.setDefaultCapable(false);
+        btnAsiento24.setFocusPainted(false);
+        btnAsiento24.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento24, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 20, 20));
+
+        btnAsiento9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento9.setDefaultCapable(false);
+        btnAsiento9.setFocusPainted(false);
+        btnAsiento9.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 20, 20));
+
+        btnAsiento25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento25.setDefaultCapable(false);
+        btnAsiento25.setFocusPainted(false);
+        btnAsiento25.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento25, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 20, 20));
+
+        btnAsiento10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento10.setDefaultCapable(false);
+        btnAsiento10.setFocusPainted(false);
+        btnAsiento10.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 20, 20));
+
+        btnAsiento26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento26.setDefaultCapable(false);
+        btnAsiento26.setFocusPainted(false);
+        btnAsiento26.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento26, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 20, 20));
+
+        btnAsiento11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento11.setDefaultCapable(false);
+        btnAsiento11.setFocusPainted(false);
+        btnAsiento11.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 20, 20));
+
+        btnAsiento27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento27.setDefaultCapable(false);
+        btnAsiento27.setFocusPainted(false);
+        btnAsiento27.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento27, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 20, 20));
+
+        btnAsiento12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento12.setDefaultCapable(false);
+        btnAsiento12.setFocusPainted(false);
+        btnAsiento12.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento12, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 20, 20));
+
+        btnAsiento28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento28.setDefaultCapable(false);
+        btnAsiento28.setFocusPainted(false);
+        btnAsiento28.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento28, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 20, 20));
+
+        btnAsiento115.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento115.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento115.setDefaultCapable(false);
+        btnAsiento115.setFocusPainted(false);
+        btnAsiento115.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento115, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 20, 20));
+
+        btnAsiento97.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento97.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento97.setDefaultCapable(false);
+        btnAsiento97.setFocusPainted(false);
+        btnAsiento97.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento97, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 20, 20));
+
+        btnAsiento99.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento99.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento99.setDefaultCapable(false);
+        btnAsiento99.setFocusPainted(false);
+        btnAsiento99.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento99, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 20, 20));
+
+        btnAsiento52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento52.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento52.setDefaultCapable(false);
+        btnAsiento52.setFocusPainted(false);
+        btnAsiento52.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento52, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 150, 20, 20));
+
+        btnAsiento74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento74.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento74.setDefaultCapable(false);
+        btnAsiento74.setFocusPainted(false);
+        btnAsiento74.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento74, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 170, 20, 20));
+
+        btnAsiento96.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento96.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento96.setDefaultCapable(false);
+        btnAsiento96.setFocusPainted(false);
+        btnAsiento96.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento96, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 190, 20, 20));
+
+        btnAsiento50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento50.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento50.setDefaultCapable(false);
+        btnAsiento50.setFocusPainted(false);
+        btnAsiento50.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento50, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, 20, 20));
+
+        btnAsiento51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento51.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento51.setDefaultCapable(false);
+        btnAsiento51.setFocusPainted(false);
+        btnAsiento51.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento51, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 20, 20));
+
+        btnAsiento72.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento72.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento72.setDefaultCapable(false);
+        btnAsiento72.setFocusPainted(false);
+        btnAsiento72.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento72, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 170, 20, 20));
+
+        btnAsiento73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento73.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento73.setDefaultCapable(false);
+        btnAsiento73.setFocusPainted(false);
+        btnAsiento73.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento73, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 170, 20, 20));
+
+        btnAsiento94.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento94.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento94.setDefaultCapable(false);
+        btnAsiento94.setFocusPainted(false);
+        btnAsiento94.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento94, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 190, 20, 20));
+
+        btnAsiento95.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento95.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento95.setDefaultCapable(false);
+        btnAsiento95.setFocusPainted(false);
+        btnAsiento95.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento95, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 190, 20, 20));
+
+        btnAsiento41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento41.setDefaultCapable(false);
+        btnAsiento41.setFocusPainted(false);
+        btnAsiento41.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento41, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 20, 20));
+
+        btnAsiento42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento42.setDefaultCapable(false);
+        btnAsiento42.setFocusPainted(false);
+        btnAsiento42.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento42, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 20, 20));
+
+        btnAsiento54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento54.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento54.setDefaultCapable(false);
+        btnAsiento54.setFocusPainted(false);
+        btnAsiento54.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento54, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 150, 20, 20));
+
+        btnAsiento49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento49.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento49.setDefaultCapable(false);
+        btnAsiento49.setFocusPainted(false);
+        btnAsiento49.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento49, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 150, 20, 20));
+
+        btnAsiento71.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento71.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento71.setDefaultCapable(false);
+        btnAsiento71.setFocusPainted(false);
+        btnAsiento71.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento71, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 20, 20));
+
+        btnAsiento93.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento93.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento93.setDefaultCapable(false);
+        btnAsiento93.setFocusPainted(false);
+        btnAsiento93.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento93, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 20, 20));
+
+        btnAsiento76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento76.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento76.setDefaultCapable(false);
+        btnAsiento76.setFocusPainted(false);
+        btnAsiento76.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento76, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 170, 20, 20));
+
+        btnAsiento64.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento64.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento64.setDefaultCapable(false);
+        btnAsiento64.setFocusPainted(false);
+        btnAsiento64.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento64, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 20, 20));
+
+        btnAsiento63.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento63.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento63.setDefaultCapable(false);
+        btnAsiento63.setFocusPainted(false);
+        btnAsiento63.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento63, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 20, 20));
+
+        btnAsiento85.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento85.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento85.setDefaultCapable(false);
+        btnAsiento85.setFocusPainted(false);
+        btnAsiento85.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento85, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 20, 20));
+
+        btnAsiento86.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento86.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento86.setDefaultCapable(false);
+        btnAsiento86.setFocusPainted(false);
+        btnAsiento86.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento86, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 20, 20));
+
+        btnAsiento98.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento98.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento98.setDefaultCapable(false);
+        btnAsiento98.setFocusPainted(false);
+        btnAsiento98.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento98, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 190, 20, 20));
+
+        btnAsiento33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento33.setDefaultCapable(false);
+        btnAsiento33.setFocusPainted(false);
+        btnAsiento33.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento33, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 20, 20));
+
+        btnAsiento55.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento55.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento55.setDefaultCapable(false);
+        btnAsiento55.setFocusPainted(false);
+        btnAsiento55.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento55, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 20, 20));
+
+        btnAsiento77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento77.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento77.setDefaultCapable(false);
+        btnAsiento77.setFocusPainted(false);
+        btnAsiento77.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento77, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 20, 20));
+
+        btnAsiento78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento78.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento78.setDefaultCapable(false);
+        btnAsiento78.setFocusPainted(false);
+        btnAsiento78.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento78, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 20, 20));
+
+        btnAsiento56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento56.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento56.setDefaultCapable(false);
+        btnAsiento56.setFocusPainted(false);
+        btnAsiento56.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento56, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 20, 20));
+
+        btnAsiento34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento34.setDefaultCapable(false);
+        btnAsiento34.setFocusPainted(false);
+        btnAsiento34.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento34, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 20, 20));
+
+        btnAsiento35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento35.setDefaultCapable(false);
+        btnAsiento35.setFocusPainted(false);
+        btnAsiento35.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento35, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 20, 20));
+
+        btnAsiento36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento36.setDefaultCapable(false);
+        btnAsiento36.setFocusPainted(false);
+        btnAsiento36.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento36, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 20, 20));
+
+        btnAsiento58.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento58.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento58.setDefaultCapable(false);
+        btnAsiento58.setFocusPainted(false);
+        btnAsiento58.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento58, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 20, 20));
+
+        btnAsiento57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento57.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento57.setDefaultCapable(false);
+        btnAsiento57.setFocusPainted(false);
+        btnAsiento57.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento57, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 20, 20));
+
+        btnAsiento79.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento79.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento79.setDefaultCapable(false);
+        btnAsiento79.setFocusPainted(false);
+        btnAsiento79.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento79, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 20, 20));
+
+        btnAsiento80.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento80.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento80.setDefaultCapable(false);
+        btnAsiento80.setFocusPainted(false);
+        btnAsiento80.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento80, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 20, 20));
+
+        btnAsiento81.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento81.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento81.setDefaultCapable(false);
+        btnAsiento81.setFocusPainted(false);
+        btnAsiento81.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento81, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 20, 20));
+
+        btnAsiento59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento59.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento59.setDefaultCapable(false);
+        btnAsiento59.setFocusPainted(false);
+        btnAsiento59.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento59, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 20, 20));
+
+        btnAsiento37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento37.setDefaultCapable(false);
+        btnAsiento37.setFocusPainted(false);
+        btnAsiento37.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 20, 20));
+
+        btnAsiento38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento38.setDefaultCapable(false);
+        btnAsiento38.setFocusPainted(false);
+        btnAsiento38.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento38, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 20, 20));
+
+        btnAsiento60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento60.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento60.setDefaultCapable(false);
+        btnAsiento60.setFocusPainted(false);
+        btnAsiento60.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento60, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 20, 20));
+
+        btnAsiento82.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento82.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento82.setDefaultCapable(false);
+        btnAsiento82.setFocusPainted(false);
+        btnAsiento82.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento82, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 20, 20));
+
+        btnAsiento83.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento83.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento83.setDefaultCapable(false);
+        btnAsiento83.setFocusPainted(false);
+        btnAsiento83.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento83, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 20, 20));
+
+        btnAsiento61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento61.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento61.setDefaultCapable(false);
+        btnAsiento61.setFocusPainted(false);
+        btnAsiento61.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento61, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 20, 20));
+
+        btnAsiento39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento39.setDefaultCapable(false);
+        btnAsiento39.setFocusPainted(false);
+        btnAsiento39.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento39, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 20, 20));
+
+        btnAsiento40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento40.setDefaultCapable(false);
+        btnAsiento40.setFocusPainted(false);
+        btnAsiento40.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento40, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 20, 20));
+
+        btnAsiento62.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento62.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento62.setDefaultCapable(false);
+        btnAsiento62.setFocusPainted(false);
+        btnAsiento62.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento62, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 20, 20));
+
+        btnAsiento84.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento84.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento84.setDefaultCapable(false);
+        btnAsiento84.setFocusPainted(false);
+        btnAsiento84.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento84, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, 20, 20));
+
+        btnAsiento142.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento142.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento142.setDefaultCapable(false);
+        btnAsiento142.setFocusPainted(false);
+        btnAsiento142.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento142, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 160, 20, 20));
+
+        btnAsiento146.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento146.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento146.setDefaultCapable(false);
+        btnAsiento146.setFocusPainted(false);
+        btnAsiento146.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento146, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 180, 20, 20));
+
+        btnAsiento44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento44.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento44.setDefaultCapable(false);
+        btnAsiento44.setFocusPainted(false);
+        btnAsiento44.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento44, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 20, 20));
+
+        btnAsiento43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento43.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento43.setDefaultCapable(false);
+        btnAsiento43.setFocusPainted(false);
+        btnAsiento43.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento43, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 20, 20));
+
+        btnAsiento65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento65.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento65.setDefaultCapable(false);
+        btnAsiento65.setFocusPainted(false);
+        btnAsiento65.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento65, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 20, 20));
+
+        btnAsiento87.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento87.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento87.setDefaultCapable(false);
+        btnAsiento87.setFocusPainted(false);
+        btnAsiento87.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento87, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 20, 20));
+
+        btnAsiento88.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento88.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento88.setDefaultCapable(false);
+        btnAsiento88.setFocusPainted(false);
+        btnAsiento88.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento88, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 20, 20));
+
+        btnAsiento66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento66.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento66.setDefaultCapable(false);
+        btnAsiento66.setFocusPainted(false);
+        btnAsiento66.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento66, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 20, 20));
+
+        btnAsiento134.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento134.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento134.setDefaultCapable(false);
+        btnAsiento134.setFocusPainted(false);
+        btnAsiento134.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento134, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 100, 20, 20));
+
+        btnAsiento138.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento138.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento138.setDefaultCapable(false);
+        btnAsiento138.setFocusPainted(false);
+        btnAsiento138.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento138, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 120, 20, 20));
+
+        btnAsiento150.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento150.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento150.setDefaultCapable(false);
+        btnAsiento150.setFocusPainted(false);
+        btnAsiento150.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento150, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 220, 20, 20));
+
+        btnAsiento154.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento154.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento154.setDefaultCapable(false);
+        btnAsiento154.setFocusPainted(false);
+        btnAsiento154.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento154, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 240, 20, 20));
+
+        btnAsiento133.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento133.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento133.setDefaultCapable(false);
+        btnAsiento133.setFocusPainted(false);
+        btnAsiento133.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento133, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 100, 20, 20));
+
+        btnAsiento137.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento137.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento137.setDefaultCapable(false);
+        btnAsiento137.setFocusPainted(false);
+        btnAsiento137.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento137, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 120, 20, 20));
+
+        btnAsiento135.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento135.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento135.setDefaultCapable(false);
+        btnAsiento135.setFocusPainted(false);
+        btnAsiento135.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento135, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 120, 20, 20));
+
+        btnAsiento131.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento131.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento131.setDefaultCapable(false);
+        btnAsiento131.setFocusPainted(false);
+        btnAsiento131.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento131, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 100, 20, 20));
+
+        btnAsiento132.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento132.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento132.setDefaultCapable(false);
+        btnAsiento132.setFocusPainted(false);
+        btnAsiento132.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento132, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 100, 20, 20));
+
+        btnAsiento136.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento136.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento136.setDefaultCapable(false);
+        btnAsiento136.setFocusPainted(false);
+        btnAsiento136.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento136, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 120, 20, 20));
+
+        btnAsiento148.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento148.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento148.setDefaultCapable(false);
+        btnAsiento148.setFocusPainted(false);
+        btnAsiento148.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento148, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 220, 20, 20));
+
+        btnAsiento152.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento152.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento152.setDefaultCapable(false);
+        btnAsiento152.setFocusPainted(false);
+        btnAsiento152.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento152, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 240, 20, 20));
+
+        btnAsiento140.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento140.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento140.setDefaultCapable(false);
+        btnAsiento140.setFocusPainted(false);
+        btnAsiento140.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento140, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 160, 20, 20));
+
+        btnAsiento144.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento144.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento144.setDefaultCapable(false);
+        btnAsiento144.setFocusPainted(false);
+        btnAsiento144.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento144, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 180, 20, 20));
+
+        btnAsiento143.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento143.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento143.setDefaultCapable(false);
+        btnAsiento143.setFocusPainted(false);
+        btnAsiento143.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento143, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, 20, 20));
+
+        btnAsiento139.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento139.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento139.setDefaultCapable(false);
+        btnAsiento139.setFocusPainted(false);
+        btnAsiento139.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento139, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 160, 20, 20));
+
+        btnAsiento147.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento147.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento147.setDefaultCapable(false);
+        btnAsiento147.setFocusPainted(false);
+        btnAsiento147.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento147, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 220, 20, 20));
+
+        btnAsiento151.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento151.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento151.setDefaultCapable(false);
+        btnAsiento151.setFocusPainted(false);
+        btnAsiento151.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento151, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, 20, 20));
+
+        btnAsiento141.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento141.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento141.setDefaultCapable(false);
+        btnAsiento141.setFocusPainted(false);
+        btnAsiento141.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento141, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 160, 20, 20));
+
+        btnAsiento145.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento145.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento145.setDefaultCapable(false);
+        btnAsiento145.setFocusPainted(false);
+        btnAsiento145.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento145, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 180, 20, 20));
+
+        btnAsiento149.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento149.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento149.setDefaultCapable(false);
+        btnAsiento149.setFocusPainted(false);
+        btnAsiento149.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento149, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 220, 20, 20));
+
+        btnAsiento153.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento153.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento153.setDefaultCapable(false);
+        btnAsiento153.setFocusPainted(false);
+        btnAsiento153.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento153, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 240, 20, 20));
+
+        btnAsiento114.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento114.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento114.setDefaultCapable(false);
+        btnAsiento114.setFocusPainted(false);
+        btnAsiento114.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento114, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 20, 20));
+
+        btnAsiento113.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento113.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento113.setDefaultCapable(false);
+        btnAsiento113.setFocusPainted(false);
+        btnAsiento113.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento113, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 20, 20));
+
+        btnAsiento112.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento112.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento112.setDefaultCapable(false);
+        btnAsiento112.setFocusPainted(false);
+        btnAsiento112.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento112, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 20, 20));
+
+        btnAsiento111.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento111.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento111.setDefaultCapable(false);
+        btnAsiento111.setFocusPainted(false);
+        btnAsiento111.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento111, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 20, 20));
+
+        btnAsiento127.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento127.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento127.setDefaultCapable(false);
+        btnAsiento127.setFocusPainted(false);
+        btnAsiento127.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento127, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 20, 20));
+
+        btnAsiento128.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento128.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento128.setDefaultCapable(false);
+        btnAsiento128.setFocusPainted(false);
+        btnAsiento128.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento128, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, 20, 20));
+
+        btnAsiento129.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento129.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento129.setDefaultCapable(false);
+        btnAsiento129.setFocusPainted(false);
+        btnAsiento129.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento129, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 20, 20));
+
+        btnAsiento130.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento130.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento130.setDefaultCapable(false);
+        btnAsiento130.setFocusPainted(false);
+        btnAsiento130.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento130, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 20, 20));
+
+        btnAsiento16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento16.setDefaultCapable(false);
+        btnAsiento16.setFocusPainted(false);
+        btnAsiento16.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento16, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 100, 20, 20));
+
+        btnAsiento15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento15.setDefaultCapable(false);
+        btnAsiento15.setFocusPainted(false);
+        btnAsiento15.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento15, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, 20, 20));
+
+        btnAsiento14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento14.setDefaultCapable(false);
+        btnAsiento14.setFocusPainted(false);
+        btnAsiento14.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento14, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, 20, 20));
+
+        btnAsiento13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento13.setDefaultCapable(false);
+        btnAsiento13.setFocusPainted(false);
+        btnAsiento13.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 20, 20));
+
+        btnAsiento29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento29.setDefaultCapable(false);
+        btnAsiento29.setFocusPainted(false);
+        btnAsiento29.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento29, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 20, 20));
+
+        btnAsiento30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento30.setDefaultCapable(false);
+        btnAsiento30.setFocusPainted(false);
+        btnAsiento30.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento30, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 120, 20, 20));
+
+        btnAsiento31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento31.setDefaultCapable(false);
+        btnAsiento31.setFocusPainted(false);
+        btnAsiento31.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento31, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 20, 20));
+
+        btnAsiento32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento32.setDefaultCapable(false);
+        btnAsiento32.setFocusPainted(false);
+        btnAsiento32.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento32, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 20, 20));
+
+        btnAsiento45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento45.setDefaultCapable(false);
+        btnAsiento45.setFocusPainted(false);
+        btnAsiento45.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento45, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 20, 20));
+
+        btnAsiento67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento67.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento67.setDefaultCapable(false);
+        btnAsiento67.setFocusPainted(false);
+        btnAsiento67.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento67, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 20, 20));
+
+        btnAsiento89.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento89.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento89.setDefaultCapable(false);
+        btnAsiento89.setFocusPainted(false);
+        btnAsiento89.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento89, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 20, 20));
+
+        btnAsiento90.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento90.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento90.setDefaultCapable(false);
+        btnAsiento90.setFocusPainted(false);
+        btnAsiento90.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento90, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, 20, 20));
+
+        btnAsiento91.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento91.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento91.setDefaultCapable(false);
+        btnAsiento91.setFocusPainted(false);
+        btnAsiento91.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento91, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 20, 20));
+
+        btnAsiento92.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento92.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento92.setDefaultCapable(false);
+        btnAsiento92.setFocusPainted(false);
+        btnAsiento92.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento92, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 190, 20, 20));
+
+        btnAsiento46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento46.setDefaultCapable(false);
+        btnAsiento46.setFocusPainted(false);
+        btnAsiento46.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento46, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 150, 20, 20));
+
+        btnAsiento68.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento68.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento68.setDefaultCapable(false);
+        btnAsiento68.setFocusPainted(false);
+        btnAsiento68.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento68, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 170, 20, 20));
+
+        btnAsiento69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento69.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento69.setDefaultCapable(false);
+        btnAsiento69.setFocusPainted(false);
+        btnAsiento69.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento69, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 20, 20));
+
+        btnAsiento47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento47.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento47.setDefaultCapable(false);
+        btnAsiento47.setFocusPainted(false);
+        btnAsiento47.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento47, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 20, 20));
+
+        btnAsiento70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento70.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento70.setDefaultCapable(false);
+        btnAsiento70.setFocusPainted(false);
+        btnAsiento70.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento70, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 20, 20));
+
+        btnAsiento48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAsiento48.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAsiento48.setDefaultCapable(false);
+        btnAsiento48.setFocusPainted(false);
+        btnAsiento48.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(btnAsiento48, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 20, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/avion acientos (1) (1) (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, -1));
@@ -377,209 +1269,161 @@ public class PanelSeleccionAciento extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PanelSeleccionAciento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PanelSeleccionAciento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PanelSeleccionAciento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PanelSeleccionAciento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PanelSeleccionAciento().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton100;
-    private javax.swing.JButton jButton101;
-    private javax.swing.JButton jButton102;
-    private javax.swing.JButton jButton103;
-    private javax.swing.JButton jButton104;
-    private javax.swing.JButton jButton105;
-    private javax.swing.JButton jButton106;
-    private javax.swing.JButton jButton107;
-    private javax.swing.JButton jButton108;
-    private javax.swing.JButton jButton109;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton110;
-    private javax.swing.JButton jButton111;
-    private javax.swing.JButton jButton112;
-    private javax.swing.JButton jButton113;
-    private javax.swing.JButton jButton114;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton121;
-    private javax.swing.JButton jButton122;
-    private javax.swing.JButton jButton123;
-    private javax.swing.JButton jButton124;
-    private javax.swing.JButton jButton125;
-    private javax.swing.JButton jButton126;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton143;
-    private javax.swing.JButton jButton144;
-    private javax.swing.JButton jButton145;
-    private javax.swing.JButton jButton146;
-    private javax.swing.JButton jButton147;
-    private javax.swing.JButton jButton148;
-    private javax.swing.JButton jButton149;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton150;
-    private javax.swing.JButton jButton151;
-    private javax.swing.JButton jButton152;
-    private javax.swing.JButton jButton153;
-    private javax.swing.JButton jButton154;
-    private javax.swing.JButton jButton155;
-    private javax.swing.JButton jButton156;
-    private javax.swing.JButton jButton157;
-    private javax.swing.JButton jButton158;
-    private javax.swing.JButton jButton159;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton160;
-    private javax.swing.JButton jButton161;
-    private javax.swing.JButton jButton162;
-    private javax.swing.JButton jButton163;
-    private javax.swing.JButton jButton164;
-    private javax.swing.JButton jButton165;
-    private javax.swing.JButton jButton166;
-    private javax.swing.JButton jButton167;
-    private javax.swing.JButton jButton168;
-    private javax.swing.JButton jButton169;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton170;
-    private javax.swing.JButton jButton171;
-    private javax.swing.JButton jButton172;
-    private javax.swing.JButton jButton173;
-    private javax.swing.JButton jButton174;
-    private javax.swing.JButton jButton175;
-    private javax.swing.JButton jButton176;
-    private javax.swing.JButton jButton177;
-    private javax.swing.JButton jButton178;
-    private javax.swing.JButton jButton179;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton180;
-    private javax.swing.JButton jButton181;
-    private javax.swing.JButton jButton182;
-    private javax.swing.JButton jButton183;
-    private javax.swing.JButton jButton184;
-    private javax.swing.JButton jButton185;
-    private javax.swing.JButton jButton186;
-    private javax.swing.JButton jButton187;
-    private javax.swing.JButton jButton188;
-    private javax.swing.JButton jButton189;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton190;
-    private javax.swing.JButton jButton191;
-    private javax.swing.JButton jButton192;
-    private javax.swing.JButton jButton193;
-    private javax.swing.JButton jButton194;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton39;
-    private javax.swing.JButton jButton40;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton43;
-    private javax.swing.JButton jButton44;
-    private javax.swing.JButton jButton45;
-    private javax.swing.JButton jButton46;
-    private javax.swing.JButton jButton47;
-    private javax.swing.JButton jButton48;
-    private javax.swing.JButton jButton49;
-    private javax.swing.JButton jButton50;
-    private javax.swing.JButton jButton51;
-    private javax.swing.JButton jButton52;
-    private javax.swing.JButton jButton53;
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
-    private javax.swing.JButton jButton56;
-    private javax.swing.JButton jButton57;
-    private javax.swing.JButton jButton58;
-    private javax.swing.JButton jButton59;
-    private javax.swing.JButton jButton60;
-    private javax.swing.JButton jButton61;
-    private javax.swing.JButton jButton62;
-    private javax.swing.JButton jButton63;
-    private javax.swing.JButton jButton64;
-    private javax.swing.JButton jButton65;
-    private javax.swing.JButton jButton66;
-    private javax.swing.JButton jButton67;
-    private javax.swing.JButton jButton68;
-    private javax.swing.JButton jButton69;
-    private javax.swing.JButton jButton70;
-    private javax.swing.JButton jButton71;
-    private javax.swing.JButton jButton72;
-    private javax.swing.JButton jButton73;
-    private javax.swing.JButton jButton74;
-    private javax.swing.JButton jButton75;
-    private javax.swing.JButton jButton76;
-    private javax.swing.JButton jButton77;
-    private javax.swing.JButton jButton78;
-    private javax.swing.JButton jButton79;
-    private javax.swing.JButton jButton80;
-    private javax.swing.JButton jButton81;
-    private javax.swing.JButton jButton82;
-    private javax.swing.JButton jButton83;
-    private javax.swing.JButton jButton84;
-    private javax.swing.JButton jButton85;
-    private javax.swing.JButton jButton86;
-    private javax.swing.JButton jButton87;
-    private javax.swing.JButton jButton88;
-    private javax.swing.JButton jButton89;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JButton jButton90;
-    private javax.swing.JButton jButton91;
-    private javax.swing.JButton jButton92;
-    private javax.swing.JButton jButton93;
-    private javax.swing.JButton jButton94;
-    private javax.swing.JButton jButton95;
-    private javax.swing.JButton jButton96;
-    private javax.swing.JButton jButton97;
-    private javax.swing.JButton jButton98;
-    private javax.swing.JButton jButton99;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btnAsiento1;
+    public javax.swing.JButton btnAsiento10;
+    public javax.swing.JButton btnAsiento100;
+    public javax.swing.JButton btnAsiento101;
+    public javax.swing.JButton btnAsiento102;
+    public javax.swing.JButton btnAsiento103;
+    public javax.swing.JButton btnAsiento104;
+    public javax.swing.JButton btnAsiento105;
+    public javax.swing.JButton btnAsiento106;
+    public javax.swing.JButton btnAsiento107;
+    public javax.swing.JButton btnAsiento108;
+    public javax.swing.JButton btnAsiento109;
+    public javax.swing.JButton btnAsiento11;
+    public javax.swing.JButton btnAsiento110;
+    public javax.swing.JButton btnAsiento111;
+    public javax.swing.JButton btnAsiento112;
+    public javax.swing.JButton btnAsiento113;
+    public javax.swing.JButton btnAsiento114;
+    public javax.swing.JButton btnAsiento115;
+    public javax.swing.JButton btnAsiento116;
+    public javax.swing.JButton btnAsiento117;
+    public javax.swing.JButton btnAsiento118;
+    public javax.swing.JButton btnAsiento119;
+    public javax.swing.JButton btnAsiento12;
+    public javax.swing.JButton btnAsiento120;
+    public javax.swing.JButton btnAsiento121;
+    public javax.swing.JButton btnAsiento122;
+    public javax.swing.JButton btnAsiento123;
+    public javax.swing.JButton btnAsiento124;
+    public javax.swing.JButton btnAsiento125;
+    public javax.swing.JButton btnAsiento126;
+    public javax.swing.JButton btnAsiento127;
+    public javax.swing.JButton btnAsiento128;
+    public javax.swing.JButton btnAsiento129;
+    public javax.swing.JButton btnAsiento13;
+    public javax.swing.JButton btnAsiento130;
+    public javax.swing.JButton btnAsiento131;
+    public javax.swing.JButton btnAsiento132;
+    public javax.swing.JButton btnAsiento133;
+    public javax.swing.JButton btnAsiento134;
+    public javax.swing.JButton btnAsiento135;
+    public javax.swing.JButton btnAsiento136;
+    public javax.swing.JButton btnAsiento137;
+    public javax.swing.JButton btnAsiento138;
+    public javax.swing.JButton btnAsiento139;
+    public javax.swing.JButton btnAsiento14;
+    public javax.swing.JButton btnAsiento140;
+    public javax.swing.JButton btnAsiento141;
+    public javax.swing.JButton btnAsiento142;
+    public javax.swing.JButton btnAsiento143;
+    public javax.swing.JButton btnAsiento144;
+    public javax.swing.JButton btnAsiento145;
+    public javax.swing.JButton btnAsiento146;
+    public javax.swing.JButton btnAsiento147;
+    public javax.swing.JButton btnAsiento148;
+    public javax.swing.JButton btnAsiento149;
+    public javax.swing.JButton btnAsiento15;
+    public javax.swing.JButton btnAsiento150;
+    public javax.swing.JButton btnAsiento151;
+    public javax.swing.JButton btnAsiento152;
+    public javax.swing.JButton btnAsiento153;
+    public javax.swing.JButton btnAsiento154;
+    public javax.swing.JButton btnAsiento16;
+    public javax.swing.JButton btnAsiento17;
+    public javax.swing.JButton btnAsiento18;
+    public javax.swing.JButton btnAsiento19;
+    public javax.swing.JButton btnAsiento2;
+    public javax.swing.JButton btnAsiento20;
+    public javax.swing.JButton btnAsiento21;
+    public javax.swing.JButton btnAsiento22;
+    public javax.swing.JButton btnAsiento23;
+    public javax.swing.JButton btnAsiento24;
+    public javax.swing.JButton btnAsiento25;
+    public javax.swing.JButton btnAsiento26;
+    public javax.swing.JButton btnAsiento27;
+    public javax.swing.JButton btnAsiento28;
+    public javax.swing.JButton btnAsiento29;
+    public javax.swing.JButton btnAsiento3;
+    public javax.swing.JButton btnAsiento30;
+    public javax.swing.JButton btnAsiento31;
+    public javax.swing.JButton btnAsiento32;
+    public javax.swing.JButton btnAsiento33;
+    public javax.swing.JButton btnAsiento34;
+    public javax.swing.JButton btnAsiento35;
+    public javax.swing.JButton btnAsiento36;
+    public javax.swing.JButton btnAsiento37;
+    public javax.swing.JButton btnAsiento38;
+    public javax.swing.JButton btnAsiento39;
+    public javax.swing.JButton btnAsiento4;
+    public javax.swing.JButton btnAsiento40;
+    public javax.swing.JButton btnAsiento41;
+    public javax.swing.JButton btnAsiento42;
+    public javax.swing.JButton btnAsiento43;
+    public javax.swing.JButton btnAsiento44;
+    public javax.swing.JButton btnAsiento45;
+    public javax.swing.JButton btnAsiento46;
+    public javax.swing.JButton btnAsiento47;
+    public javax.swing.JButton btnAsiento48;
+    public javax.swing.JButton btnAsiento49;
+    public javax.swing.JButton btnAsiento5;
+    public javax.swing.JButton btnAsiento50;
+    public javax.swing.JButton btnAsiento51;
+    public javax.swing.JButton btnAsiento52;
+    public javax.swing.JButton btnAsiento53;
+    public javax.swing.JButton btnAsiento54;
+    public javax.swing.JButton btnAsiento55;
+    public javax.swing.JButton btnAsiento56;
+    public javax.swing.JButton btnAsiento57;
+    public javax.swing.JButton btnAsiento58;
+    public javax.swing.JButton btnAsiento59;
+    public javax.swing.JButton btnAsiento6;
+    public javax.swing.JButton btnAsiento60;
+    public javax.swing.JButton btnAsiento61;
+    public javax.swing.JButton btnAsiento62;
+    public javax.swing.JButton btnAsiento63;
+    public javax.swing.JButton btnAsiento64;
+    public javax.swing.JButton btnAsiento65;
+    public javax.swing.JButton btnAsiento66;
+    public javax.swing.JButton btnAsiento67;
+    public javax.swing.JButton btnAsiento68;
+    public javax.swing.JButton btnAsiento69;
+    public javax.swing.JButton btnAsiento7;
+    public javax.swing.JButton btnAsiento70;
+    public javax.swing.JButton btnAsiento71;
+    public javax.swing.JButton btnAsiento72;
+    public javax.swing.JButton btnAsiento73;
+    public javax.swing.JButton btnAsiento74;
+    public javax.swing.JButton btnAsiento75;
+    public javax.swing.JButton btnAsiento76;
+    public javax.swing.JButton btnAsiento77;
+    public javax.swing.JButton btnAsiento78;
+    public javax.swing.JButton btnAsiento79;
+    public javax.swing.JButton btnAsiento8;
+    public javax.swing.JButton btnAsiento80;
+    public javax.swing.JButton btnAsiento81;
+    public javax.swing.JButton btnAsiento82;
+    public javax.swing.JButton btnAsiento83;
+    public javax.swing.JButton btnAsiento84;
+    public javax.swing.JButton btnAsiento85;
+    public javax.swing.JButton btnAsiento86;
+    public javax.swing.JButton btnAsiento87;
+    public javax.swing.JButton btnAsiento88;
+    public javax.swing.JButton btnAsiento89;
+    public javax.swing.JButton btnAsiento9;
+    public javax.swing.JButton btnAsiento90;
+    public javax.swing.JButton btnAsiento91;
+    public javax.swing.JButton btnAsiento92;
+    public javax.swing.JButton btnAsiento93;
+    public javax.swing.JButton btnAsiento94;
+    public javax.swing.JButton btnAsiento95;
+    public javax.swing.JButton btnAsiento96;
+    public javax.swing.JButton btnAsiento97;
+    public javax.swing.JButton btnAsiento98;
+    public javax.swing.JButton btnAsiento99;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

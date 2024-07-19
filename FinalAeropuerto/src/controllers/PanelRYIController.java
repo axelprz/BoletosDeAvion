@@ -15,6 +15,7 @@ public class PanelRYIController implements ActionListener{
         views.btnLogin.addActionListener(this);
         views.btnRegistrarse.addActionListener(this);
         views.btnCerrar.addActionListener(this);
+        views.btnSonido.addActionListener(this);
     }
 
     @Override
@@ -31,6 +32,9 @@ public class PanelRYIController implements ActionListener{
         }
         else if(e.getSource() == views.btnCerrar){
             BotonesInicio.btnCerrar(views);
+        }
+        else if(e.getSource() == views.btnSonido){
+            BotonesInicio.btnSonido();
         }
     }
 }

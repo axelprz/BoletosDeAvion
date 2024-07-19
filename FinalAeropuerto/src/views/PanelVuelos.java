@@ -39,11 +39,13 @@ public class PanelVuelos extends javax.swing.JFrame {
         btnSiguiente = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnAnterior = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         lblPaginador = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/menu.png"))); // NOI18N
@@ -127,7 +129,7 @@ public class PanelVuelos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Busque su destino");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1150, -1));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 1000, -1));
 
         txtBuscar.setBackground(new java.awt.Color(102, 102, 102));
         txtBuscar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -137,33 +139,61 @@ public class PanelVuelos extends javax.swing.JFrame {
 
         btnSiguiente.setBackground(new java.awt.Color(0, 0, 0));
         btnSiguiente.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnSiguiente.setForeground(new java.awt.Color(204, 204, 204));
+        btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnAnteriorSiguiente.png"))); // NOI18N
         btnSiguiente.setText("Siguiente");
         btnSiguiente.setBorder(null);
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSiguiente.setDefaultCapable(false);
         btnSiguiente.setFocusPainted(false);
         btnSiguiente.setFocusable(false);
+        btnSiguiente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSiguiente.setRolloverEnabled(true);
+        btnSiguiente.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnAnteriorSiguiente-h.png"))); // NOI18N
+        btnSiguiente.setVerifyInputWhenFocusTarget(false);
         jPanel4.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 660, 140, 40));
 
         btnBuscar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnBuscar.setText("Buscar");
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-buscar.png"))); // NOI18N
         btnBuscar.setBorder(null);
         btnBuscar.setBorderPainted(false);
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setDefaultCapable(false);
         btnBuscar.setFocusPainted(false);
-        jPanel4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 100, 40));
+        btnBuscar.setFocusable(false);
+        btnBuscar.setRolloverEnabled(true);
+        btnBuscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-buscar-h.png"))); // NOI18N
+        btnBuscar.setVerifyInputWhenFocusTarget(false);
+        jPanel4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 40, 40));
 
         btnAnterior.setBackground(new java.awt.Color(0, 0, 0));
         btnAnterior.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnAnterior.setForeground(new java.awt.Color(204, 204, 204));
+        btnAnterior.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnAnteriorSiguiente.png"))); // NOI18N
         btnAnterior.setText("Anterior");
         btnAnterior.setBorder(null);
         btnAnterior.setBorderPainted(false);
         btnAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnterior.setDefaultCapable(false);
         btnAnterior.setFocusPainted(false);
         btnAnterior.setFocusable(false);
+        btnAnterior.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAnterior.setRolloverEnabled(true);
+        btnAnterior.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnAnteriorSiguiente-h.png"))); // NOI18N
+        btnAnterior.setVerifyInputWhenFocusTarget(false);
         jPanel4.add(btnAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 660, 140, 40));
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-cerrar2.png"))); // NOI18N
+        btnCerrar.setBorder(null);
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.setRequestFocusEnabled(false);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-cerrar2-h.png"))); // NOI18N
+        btnCerrar.setVerifyInputWhenFocusTarget(false);
+        jPanel4.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 10, -1, -1));
 
         lblPaginador.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         lblPaginador.setForeground(new java.awt.Color(255, 255, 255));
@@ -203,6 +233,7 @@ public class PanelVuelos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAnterior;
     public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnLugar1;
     public javax.swing.JButton btnLugar2;
     public javax.swing.JButton btnLugar3;

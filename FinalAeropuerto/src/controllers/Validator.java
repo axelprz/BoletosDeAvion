@@ -14,6 +14,10 @@ public class Validator {
     private static final Pattern PHONE_PATTERN = Pattern.compile(PHONE_REGEX);
     private static final String DOCUMENT_NUMBER_REGEX = "^[0-9]{6,10}$";
     private static final Pattern DOCUMENT_NUMBER_PATTERN = Pattern.compile(DOCUMENT_NUMBER_REGEX);
+    private static final String CREDIT_CARD_REGEX = "^[0-9]{13,19}$";
+    private static final Pattern CREDIT_CARD_PATTERN = Pattern.compile(CREDIT_CARD_REGEX);
+    private static final String CVV_REGEX = "^[0-9]{3,4}$";
+    private static final Pattern CVV_PATTERN = Pattern.compile(CVV_REGEX);
 
     public static boolean isValidPassword(String password) {
         if (password == null) {
@@ -58,6 +62,22 @@ public class Validator {
             return false;
         }
         Matcher matcher = DOCUMENT_NUMBER_PATTERN.matcher(documentNumber);
+        return matcher.matches();
+    }
+    
+    public static boolean isValidCreditCardNumber(String cardNumber) {
+        if (cardNumber == null) {
+            return false;
+        }
+        Matcher matcher = CREDIT_CARD_PATTERN.matcher(cardNumber);
+        return matcher.matches();
+    }
+
+    public static boolean isValidCVV(String cvv) {
+        if (cvv == null) {
+            return false;
+        }
+        Matcher matcher = CVV_PATTERN.matcher(cvv);
         return matcher.matches();
     }
 }

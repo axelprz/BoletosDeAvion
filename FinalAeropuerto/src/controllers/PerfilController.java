@@ -15,7 +15,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import models.Usuario;
 import models.conexion.ImageUploader;
 import models.dao.UsuarioDao;
-import views.PanelInicio;
 import views.PanelPerfil;
 
 public class PerfilController implements ActionListener, MouseListener {
@@ -37,6 +36,7 @@ public class PerfilController implements ActionListener, MouseListener {
         views.btnConfirmarCodigo.addActionListener(this);
         views.btnConfirmarPassword.addActionListener(this);
         views.btnConfirmarTelefono.addActionListener(this);
+        views.btnSonido.addActionListener(this);
         views.btnMenu.addActionListener(this);
         views.btnVuelos.addActionListener(this);
         views.btnPagos.addActionListener(this);
@@ -82,9 +82,7 @@ public class PerfilController implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == views.btnMenu){
-            PanelInicio inicio = new PanelInicio(this.us);
-            inicio.setVisible(true);
-            views.dispose();
+            BotonesInicio.btnInicio(us, views);
         }
         else if(e.getSource() == views.btnVuelos){
             BotonesInicio.btnVuelos(us, views);
@@ -103,7 +101,8 @@ public class PerfilController implements ActionListener, MouseListener {
             views.txtCodigo.setVisible(true);
             views.jSeparator1.setVisible(true);
             views.btnConfirmarCodigo.setVisible(true);
-            this.codigo = GeneradorCodigosEmail.enviarCorreo(us.getEmail(), false);  
+            this.codigo = GeneradorCodigosEmail.enviarCorreo(us.getEmail(), false);
+            JOptionPane.showMessageDialog(null, "Espere un momento..");
             JOptionPane.showMessageDialog(null, "Ingrese el código que le enviamos a su correo");
         }
         else if(e.getSource() == views.btnConfirmarCodigo){
@@ -162,7 +161,10 @@ public class PerfilController implements ActionListener, MouseListener {
             }
         }
         else if(e.getSource() == views.btnCerrar){
-            BotonesInicio.btnCerrar(views);
+            BotonesInicio.btnCerrarLogin(views);
+        }
+        else if(e.getSource() == views.btnSonido){
+            BotonesInicio.btnSonido();
         }
     }
 

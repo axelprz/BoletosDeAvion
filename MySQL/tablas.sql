@@ -60,6 +60,36 @@ CREATE TABLE vuelos (
     FOREIGN KEY(id_horario) REFERENCES horario_vuelos(id_horario)
 );
 
+CREATE TABLE clases (
+	id_clase INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(20) NOT NULL,
+    precio INT NOT NULL
+);
+
+CREATE TABLE asientos (
+	id_asiento INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(10) NOT NULL,
+    id_clase INT NOT NULL,
+    FOREIGN KEY(id_clase) REFERENCES clases(id_clase)
+);
+
+CREATE TABLE estados(
+	id_estado INT AUTO_INCREMENT PRIMARY KEY,
+    estado VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE reservas (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_vuelo INT NOT NULL,
+    fecha_reserva VARCHAR(30),
+    id_estado INT NOT NULL DEFAULT 1,
+    total_pagar INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_vuelo) REFERENCES vuelos(id_vuelo),
+    FOREIGN KEY (id_estado) REFERENCES estados(id_estado)
+);
+
 CREATE TABLE pasajeros (
     id_pasajero INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -67,51 +97,24 @@ CREATE TABLE pasajeros (
     id_tipo_documento INT NOT NULL,
     numero_documento VARCHAR(50) NOT NULL,
     id_nacionalidad INT,
-    fecha_nacimiento DATE,
-    id_vuelo INT NOT NULL,
-    codigo_asiento VARCHAR(10),
+    fecha_nacimiento VARCHAR(30),
+    id_asiento INT NOT NULL,
+    id_reserva INT NOT NULL,
     FOREIGN KEY (id_tipo_documento) REFERENCES tipo_documentos(id_tipo_documento),
     FOREIGN KEY (id_nacionalidad) REFERENCES nacionalidades(id_nacionalidad),
-    FOREIGN KEY (id_vuelo) REFERENCES vuelos(id_vuelo)
-);
-
-CREATE TABLE estados(
-	id_estado INT AUTO_INCREMENT PRIMARY KEY,
-    estado ENUM('pendiente','completado','cancelado') NOT NULL
-);
-
-CREATE TABLE reservas (
-    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
-    id_vuelo INT NOT NULL,
-    fecha_reserva DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_estado INT DEFAULT 1,
-    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (id_vuelo) REFERENCES vuelos(id_vuelo),
-    FOREIGN KEY (id_estado) REFERENCES estados(id_estado)
+    FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva)
 );
 
 CREATE TABLE metodo_pagos(
 	id_metodo_pago INT AUTO_INCREMENT PRIMARY KEY,
-    metodo_pago ENUM('Tarjeta de crédito','Tarjeta de débito','Transferencia bancaria','Depósito en efectivo') NOT NULL
+    metodo_pago VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE pagos (
     id_pago INT AUTO_INCREMENT PRIMARY KEY,
     id_reserva INT NOT NULL,
     id_metodo_pago INT NOT NULL,
-    monto DECIMAL(10, 2) NOT NULL,
-    fecha_pago DATETIME DEFAULT CURRENT_TIMESTAMP,
-    id_estado INT DEFAULT 2,
+    monto INT NOT NULL,
     FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva),
-    FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pagos(id_metodo_pago),
-    FOREIGN KEY (id_estado) REFERENCES estados(id_estado)
-);
-
-CREATE TABLE reserva_pasajeros (
-    id_reserva INT NOT NULL,
-    id_pasajero INT NOT NULL,
-    PRIMARY KEY (id_reserva, id_pasajero),
-    FOREIGN KEY (id_reserva) REFERENCES reservas(id_reserva),
-    FOREIGN KEY (id_pasajero) REFERENCES pasajeros(id_pasajero)
+    FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pagos(id_metodo_pago)
 );

@@ -224,6 +224,14 @@ public class PlaceHolder {
         return new Object[] {txtCodigo};
     }
     
+    public static Object[] placeHolderEmail(JTextField txtEmail) {
+        if (txtEmail.getText().equals("Nombre de Usuario o Email...")) {
+            txtEmail.setText("");
+            txtEmail.setForeground(new Color(0, 0, 0));
+        }
+        return new Object[] {txtEmail};
+    }
+    
     public static Object[] placeHolderRegistroTelefono(JTextField txtTelefono) {
         if (txtTelefono.getText().equals("Nuevo Teléfono")) {
             txtTelefono.setText("");

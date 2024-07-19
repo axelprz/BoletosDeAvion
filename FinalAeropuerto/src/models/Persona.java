@@ -8,7 +8,7 @@ public class Persona {
     private String apellido;
     private String telefono;
     private int nacionalidad;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private int tipoDocumento;
     private String numeroDocumento;
 
@@ -16,7 +16,7 @@ public class Persona {
         
     }
     
-    public Persona(String nombre, String apellido, int tipoDocumento, String numeroDocumento, int nacionalidad, Date fechaNacimiento){
+    public Persona(String nombre, String apellido, int tipoDocumento, String numeroDocumento, int nacionalidad, String fechaNacimiento){
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
@@ -57,11 +57,11 @@ public class Persona {
         this.nacionalidad = nacionalidad;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

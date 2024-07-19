@@ -66,7 +66,7 @@ public class PanelPerfil extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSonido = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -387,16 +387,16 @@ public class PanelPerfil extends javax.swing.JFrame {
         jLabel9.setText("FlyNow: Vuela fácil, vuela seguro.");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 280, 50));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-encabezado.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.setRequestFocusEnabled(false);
-        jButton1.setVerifyInputWhenFocusTarget(false);
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+        btnSonido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-encabezado.png"))); // NOI18N
+        btnSonido.setBorder(null);
+        btnSonido.setBorderPainted(false);
+        btnSonido.setContentAreaFilled(false);
+        btnSonido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSonido.setFocusPainted(false);
+        btnSonido.setFocusable(false);
+        btnSonido.setRequestFocusEnabled(false);
+        btnSonido.setVerifyInputWhenFocusTarget(false);
+        jPanel4.add(btnSonido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 70));
 
@@ -465,8 +465,8 @@ public class PanelPerfil extends javax.swing.JFrame {
     public javax.swing.JButton btnPagos;
     public javax.swing.JButton btnReservas;
     public javax.swing.JButton btnSeleccionarImagen;
+    public javax.swing.JButton btnSonido;
     public javax.swing.JButton btnVuelos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;

@@ -12,10 +12,12 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
     public PanelReservarVuelo(Vuelo vuelo, Usuario us) {
         initComponents();
         
+        this.setLocationRelativeTo(null);
         this.PanelInfoPasajero.setVisible(false);
         this.PanelInfoVuelo.setVisible(false);
         this.PanelTotalAPagar.setVisible(false);
         this.lblAsientoSeleccionado.setVisible(false);
+        this.lblPrecioAsientos.setVisible(false);
         this.PanelPasajero1.setVisible(false);
         this.PanelPasajero2.setVisible(false);
         this.PanelPasajero3.setVisible(false);
@@ -40,6 +42,7 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         cbOrigen = new javax.swing.JComboBox<>();
+        btnCerrar = new javax.swing.JButton();
         PanelInfoVuelo = new javax.swing.JPanel();
         lblDia1 = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
@@ -53,6 +56,7 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         lblDestino = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        dcFechaVuelo = new com.toedter.calendar.JDateChooser();
         PanelInfoPasajero = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         txtNumeroDocumento = new javax.swing.JTextField();
@@ -67,23 +71,20 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         PanelPasajero5 = new javax.swing.JPanel();
         lblNombreApellido5 = new javax.swing.JLabel();
         lblAsiento5 = new javax.swing.JLabel();
-        btnEliminar5 = new javax.swing.JButton();
         PanelPasajero1 = new javax.swing.JPanel();
-        btnEliminar1 = new javax.swing.JButton();
         lblAsiento1 = new javax.swing.JLabel();
         lblNombreApellido1 = new javax.swing.JLabel();
         PanelPasajero2 = new javax.swing.JPanel();
         lblNombreApellido2 = new javax.swing.JLabel();
         lblAsiento2 = new javax.swing.JLabel();
-        btnEliminar2 = new javax.swing.JButton();
         PanelPasajero3 = new javax.swing.JPanel();
         lblNombreApellido3 = new javax.swing.JLabel();
         lblAsiento3 = new javax.swing.JLabel();
-        btnEliminar3 = new javax.swing.JButton();
         PanelPasajero4 = new javax.swing.JPanel();
         lblNombreApellido4 = new javax.swing.JLabel();
         lblAsiento4 = new javax.swing.JLabel();
-        btnEliminar4 = new javax.swing.JButton();
+        dcFechaNacimiento = new com.toedter.calendar.JDateChooser();
+        lblPrecioAsientos = new javax.swing.JLabel();
         PanelTotalAPagar = new javax.swing.JPanel();
         btnConfirmarReserva = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -94,6 +95,7 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         lblPrecioTotalAsiento = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -122,18 +124,20 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         btnConfirmar.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnConfirmar.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmar.setText("Confirmar");
+        btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-confirmar.png"))); // NOI18N
         btnConfirmar.setBorder(null);
         btnConfirmar.setBorderPainted(false);
         btnConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmar.setFocusable(false);
         btnConfirmar.setRequestFocusEnabled(false);
+        btnConfirmar.setRolloverEnabled(true);
+        btnConfirmar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-confirmar-h.png"))); // NOI18N
         btnConfirmar.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 167, 37));
+        jPanel2.add(btnConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 170, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo mas chico.png"))); // NOI18N
         jLabel6.setText("jLabel2");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 220, 140));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 220, 140));
 
         jLabel16.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 51));
@@ -157,6 +161,17 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         cbOrigen.setRequestFocusEnabled(false);
         cbOrigen.setVerifyInputWhenFocusTarget(false);
         jPanel2.add(cbOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 189, 30));
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar.png"))); // NOI18N
+        btnCerrar.setBorder(null);
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.setRequestFocusEnabled(false);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar-h.png"))); // NOI18N
+        btnCerrar.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 50, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 730, 190));
 
@@ -211,14 +226,16 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         btnReservar.setBackground(new java.awt.Color(51, 51, 51));
         btnReservar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnReservar.setForeground(new java.awt.Color(255, 255, 255));
-        btnReservar.setText("Reservar");
+        btnReservar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-reservar.png"))); // NOI18N
         btnReservar.setBorder(null);
         btnReservar.setBorderPainted(false);
         btnReservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReservar.setFocusable(false);
         btnReservar.setRequestFocusEnabled(false);
+        btnReservar.setRolloverEnabled(true);
+        btnReservar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-reservar-h.png"))); // NOI18N
         btnReservar.setVerifyInputWhenFocusTarget(false);
-        PanelInfoVuelo.add(btnReservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 167, 37));
+        PanelInfoVuelo.add(btnReservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 170, 40));
 
         lblDia2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblDia2.setForeground(new java.awt.Color(0, 0, 0));
@@ -245,6 +262,7 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Días y horarios disponibles");
         PanelInfoVuelo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 310, 20));
+        PanelInfoVuelo.add(dcFechaVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 200, 140, 30));
 
         jPanel1.add(PanelInfoVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 350, 330));
 
@@ -324,17 +342,17 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         btnGuardarPasajero.setBackground(new java.awt.Color(51, 51, 51));
         btnGuardarPasajero.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnGuardarPasajero.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardarPasajero.setText("Guardar Pasajero");
+        btnGuardarPasajero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-guardarPasajero.png"))); // NOI18N
         btnGuardarPasajero.setBorder(null);
         btnGuardarPasajero.setBorderPainted(false);
         btnGuardarPasajero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarPasajero.setFocusable(false);
         btnGuardarPasajero.setRequestFocusEnabled(false);
+        btnGuardarPasajero.setRolloverEnabled(true);
+        btnGuardarPasajero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-guardarPasajero-h.png"))); // NOI18N
         btnGuardarPasajero.setVerifyInputWhenFocusTarget(false);
-        PanelInfoPasajero.add(btnGuardarPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 167, 37));
-
-        lblAsientoSeleccionado.setText("1");
-        PanelInfoPasajero.add(lblAsientoSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 40, 30));
+        PanelInfoPasajero.add(btnGuardarPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 170, 40));
+        PanelInfoPasajero.add(lblAsientoSeleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 40, 30));
 
         PanelPasajero5.setBackground(new java.awt.Color(255, 255, 255));
         PanelPasajero5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -351,34 +369,10 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         lblAsiento5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelPasajero5.add(lblAsiento5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 30));
 
-        btnEliminar5.setBackground(new java.awt.Color(51, 51, 51));
-        btnEliminar5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEliminar5.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar5.setText("X");
-        btnEliminar5.setBorder(null);
-        btnEliminar5.setBorderPainted(false);
-        btnEliminar5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar5.setFocusable(false);
-        btnEliminar5.setRequestFocusEnabled(false);
-        btnEliminar5.setVerifyInputWhenFocusTarget(false);
-        PanelPasajero5.add(btnEliminar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
-
         PanelInfoPasajero.add(PanelPasajero5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 330, 30));
 
         PanelPasajero1.setBackground(new java.awt.Color(255, 255, 255));
         PanelPasajero1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnEliminar1.setBackground(new java.awt.Color(51, 51, 51));
-        btnEliminar1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEliminar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar1.setText("X");
-        btnEliminar1.setBorder(null);
-        btnEliminar1.setBorderPainted(false);
-        btnEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar1.setFocusable(false);
-        btnEliminar1.setRequestFocusEnabled(false);
-        btnEliminar1.setVerifyInputWhenFocusTarget(false);
-        PanelPasajero1.add(btnEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
 
         lblAsiento1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblAsiento1.setForeground(new java.awt.Color(0, 0, 0));
@@ -409,18 +403,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         lblAsiento2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelPasajero2.add(lblAsiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 30));
 
-        btnEliminar2.setBackground(new java.awt.Color(51, 51, 51));
-        btnEliminar2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEliminar2.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar2.setText("X");
-        btnEliminar2.setBorder(null);
-        btnEliminar2.setBorderPainted(false);
-        btnEliminar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar2.setFocusable(false);
-        btnEliminar2.setRequestFocusEnabled(false);
-        btnEliminar2.setVerifyInputWhenFocusTarget(false);
-        PanelPasajero2.add(btnEliminar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
-
         PanelInfoPasajero.add(PanelPasajero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 330, 30));
 
         PanelPasajero3.setBackground(new java.awt.Color(255, 255, 255));
@@ -437,18 +419,6 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         lblAsiento3.setText("Asiento");
         lblAsiento3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelPasajero3.add(lblAsiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 30));
-
-        btnEliminar3.setBackground(new java.awt.Color(51, 51, 51));
-        btnEliminar3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEliminar3.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar3.setText("X");
-        btnEliminar3.setBorder(null);
-        btnEliminar3.setBorderPainted(false);
-        btnEliminar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar3.setFocusable(false);
-        btnEliminar3.setRequestFocusEnabled(false);
-        btnEliminar3.setVerifyInputWhenFocusTarget(false);
-        PanelPasajero3.add(btnEliminar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
 
         PanelInfoPasajero.add(PanelPasajero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 330, 30));
 
@@ -467,19 +437,11 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         lblAsiento4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PanelPasajero4.add(lblAsiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 30));
 
-        btnEliminar4.setBackground(new java.awt.Color(51, 51, 51));
-        btnEliminar4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        btnEliminar4.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar4.setText("X");
-        btnEliminar4.setBorder(null);
-        btnEliminar4.setBorderPainted(false);
-        btnEliminar4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminar4.setFocusable(false);
-        btnEliminar4.setRequestFocusEnabled(false);
-        btnEliminar4.setVerifyInputWhenFocusTarget(false);
-        PanelPasajero4.add(btnEliminar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 30, 30));
-
         PanelInfoPasajero.add(PanelPasajero4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 330, 30));
+        PanelInfoPasajero.add(dcFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 160, 30));
+
+        lblPrecioAsientos.setText("0");
+        PanelInfoPasajero.add(lblPrecioAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 40, 30));
 
         jPanel1.add(PanelInfoPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 350, 490));
 
@@ -489,14 +451,16 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
         btnConfirmarReserva.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarReserva.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         btnConfirmarReserva.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmarReserva.setText("Confirmar Reserva");
+        btnConfirmarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-confirmarReserva.png"))); // NOI18N
         btnConfirmarReserva.setBorder(null);
         btnConfirmarReserva.setBorderPainted(false);
         btnConfirmarReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarReserva.setFocusable(false);
         btnConfirmarReserva.setRequestFocusEnabled(false);
+        btnConfirmarReserva.setRolloverEnabled(true);
+        btnConfirmarReserva.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservarVuelo-confirmarReserva-h.png"))); // NOI18N
         btnConfirmarReserva.setVerifyInputWhenFocusTarget(false);
-        PanelTotalAPagar.add(btnConfirmarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 167, 37));
+        PanelTotalAPagar.add(btnConfirmarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 170, 40));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -552,13 +516,9 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
     public javax.swing.JPanel PanelPasajero4;
     public javax.swing.JPanel PanelPasajero5;
     public javax.swing.JPanel PanelTotalAPagar;
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConfirmar;
     public javax.swing.JButton btnConfirmarReserva;
-    public javax.swing.JButton btnEliminar1;
-    public javax.swing.JButton btnEliminar2;
-    public javax.swing.JButton btnEliminar3;
-    public javax.swing.JButton btnEliminar4;
-    public javax.swing.JButton btnEliminar5;
     public javax.swing.JButton btnGuardarPasajero;
     public javax.swing.JButton btnReservar;
     public javax.swing.JButton btnSeleccionarAsiento;
@@ -566,6 +526,8 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cbNacionalidad;
     public javax.swing.JComboBox<String> cbOrigen;
     public javax.swing.JComboBox<String> cbTipoDocumento;
+    public com.toedter.calendar.JDateChooser dcFechaNacimiento;
+    public com.toedter.calendar.JDateChooser dcFechaVuelo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -598,6 +560,7 @@ public class PanelReservarVuelo extends javax.swing.JFrame {
     public javax.swing.JLabel lblNombreApellido4;
     public javax.swing.JLabel lblNombreApellido5;
     public javax.swing.JLabel lblPrecio;
+    public javax.swing.JLabel lblPrecioAsientos;
     public javax.swing.JLabel lblPrecioTotalAsiento;
     public javax.swing.JLabel lblPrecioTotalVuelo;
     public javax.swing.JLabel lblTotalAPagar;

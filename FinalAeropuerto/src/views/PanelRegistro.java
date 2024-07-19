@@ -46,8 +46,10 @@ public class PanelRegistro extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparatorCodigo = new javax.swing.JSeparator();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
@@ -156,11 +158,13 @@ public class PanelRegistro extends javax.swing.JFrame {
         btnRegistrarse.setBackground(new java.awt.Color(51, 51, 51));
         btnRegistrarse.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-registro-registrarse.png"))); // NOI18N
         btnRegistrarse.setBorderPainted(false);
         btnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegistrarse.setFocusPainted(false);
         btnRegistrarse.setRequestFocusEnabled(false);
+        btnRegistrarse.setRolloverEnabled(true);
+        btnRegistrarse.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-registro-registrarse-h.png"))); // NOI18N
         btnRegistrarse.setVerifyInputWhenFocusTarget(false);
         btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,11 +192,13 @@ public class PanelRegistro extends javax.swing.JFrame {
         btnConfirmarCodigo.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirmarCodigo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConfirmarCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfirmarCodigo.setText("Confirmar Código");
+        btnConfirmarCodigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-registro-codigo.png"))); // NOI18N
         btnConfirmarCodigo.setBorderPainted(false);
         btnConfirmarCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfirmarCodigo.setFocusPainted(false);
         btnConfirmarCodigo.setRequestFocusEnabled(false);
+        btnConfirmarCodigo.setRolloverEnabled(true);
+        btnConfirmarCodigo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-registro-codigo-h.png"))); // NOI18N
         btnConfirmarCodigo.setVerifyInputWhenFocusTarget(false);
         btnConfirmarCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,6 +238,17 @@ public class PanelRegistro extends javax.swing.JFrame {
         jSeparatorCodigo.setBackground(new java.awt.Color(0, 0, 0));
         jSeparatorCodigo.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparatorCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 200, -1));
+
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar.png"))); // NOI18N
+        btnCerrar.setBorder(null);
+        btnCerrar.setBorderPainted(false);
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.setFocusPainted(false);
+        btnCerrar.setRequestFocusEnabled(false);
+        btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar-h.png"))); // NOI18N
+        btnCerrar.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 540));
 
@@ -330,6 +347,7 @@ public class PanelRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConfirmarCodigo;
     public javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel2;

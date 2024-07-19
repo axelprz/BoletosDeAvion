@@ -32,6 +32,7 @@ public class VuelosController implements ActionListener, MouseListener {
         this.botones = Arrays.asList(views.btnLugar1, views.btnLugar2, views.btnLugar3, views.btnLugar4, views.btnLugar5, views.btnLugar6,
                 views.btnLugar7,views.btnLugar8);
         views.btnAnterior.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
         views.btnBuscar.addActionListener(this);
         views.btnLugar1.addActionListener(this);
         views.btnLugar2.addActionListener(this);
@@ -91,7 +92,7 @@ public class VuelosController implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == views.btnMenu){
-            BotonesInicio.btnPerfil(us, views);
+            BotonesInicio.btnInicio(us, views);
         }
         else if(e.getSource() == views.btnPerfil){
             BotonesInicio.btnPerfil(us, views);
@@ -101,6 +102,9 @@ public class VuelosController implements ActionListener, MouseListener {
         }
         else if(e.getSource() == views.btnReservas){
             BotonesInicio.btnReservas(us, views);
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrarLogin(views);
         }
         else if(e.getSource() == views.btnSiguiente){
             if(paginador+1 < maxPaginas){

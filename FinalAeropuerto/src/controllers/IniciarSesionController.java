@@ -28,15 +28,14 @@ public class IniciarSesionController implements ActionListener, MouseListener {
         views.btnCambiarPass.addActionListener(this);
         views.btnIniciarSesion.addActionListener(this);
         views.btnCerrar.addActionListener(this);
+        views.btnSonido.addActionListener(this);
     }
     
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == views.btnCambiarPass){
             PanelNewPassword cambiarPass = new PanelNewPassword();
             cambiarPass.setVisible(true);
-            this.views.dispose();
         }
         else if(e.getSource() == views.btnIniciarSesion){
             if (views.txtEmail.getText().equals("") || String.valueOf(views.txtPass.getPassword()).equals("") ||
@@ -56,7 +55,10 @@ public class IniciarSesionController implements ActionListener, MouseListener {
             }
         }
         else if(e.getSource() == views.btnCerrar){
-            BotonesInicio.btnCerrar(views);
+            BotonesInicio.btnCerrarLogin(views);
+        }
+        else if(e.getSource() == views.btnSonido){
+            BotonesInicio.btnSonido();
         }
     }
 

@@ -25,6 +25,7 @@ public class RegistroController implements ActionListener, MouseListener {
         this.us = us;
         this.usDao = usDao;
         views.txtNombre.addMouseListener(this);
+        views.btnCerrar.addActionListener(this);
         views.txtApellido.addMouseListener(this);
         views.txtNombreUsuario.addMouseListener(this);
         views.txtEmail.addMouseListener(this);
@@ -33,6 +34,7 @@ public class RegistroController implements ActionListener, MouseListener {
         views.txtCodigo.addMouseListener(this);
         views.btnRegistrarse.addActionListener(this);
         views.btnConfirmarCodigo.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
     }
 
     @Override
@@ -70,6 +72,7 @@ public class RegistroController implements ActionListener, MouseListener {
                                         views.txtCodigo.setVisible(true);
                                         views.btnConfirmarCodigo.setVisible(true);
                                         views.jSeparatorCodigo.setVisible(true);
+                                        JOptionPane.showMessageDialog(null, "Espere un momento...");
                                         this.codigo = GeneradorCodigosEmail.enviarCorreo(views.txtEmail.getText(), true);
                                         JOptionPane.showMessageDialog(null, "Ingrese el código de verificación que le enviamos");
                                     } else {
@@ -120,6 +123,9 @@ public class RegistroController implements ActionListener, MouseListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Código Incorrecto");
             }
+        }
+        else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrarLogin(views);
         }
     }
 

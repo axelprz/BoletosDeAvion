@@ -45,8 +45,10 @@ public class PanelNewPassword extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JButton();
+        lblGifCarga = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
@@ -100,8 +102,12 @@ public class PanelNewPassword extends javax.swing.JFrame {
         btnConfirmarPassword.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConfirmarPassword.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmarPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarPassword.png"))); // NOI18N
+        btnConfirmarPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnConfirmarPassword.setContentAreaFilled(false);
         btnConfirmarPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConfirmarPassword.setDefaultCapable(false);
         btnConfirmarPassword.setFocusPainted(false);
+        btnConfirmarPassword.setFocusable(false);
         btnConfirmarPassword.setRequestFocusEnabled(false);
         btnConfirmarPassword.setRolloverEnabled(true);
         btnConfirmarPassword.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-confirmarPassword-h.png"))); // NOI18N
@@ -116,7 +122,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         txtCodigoVerificacion.setBackground(new java.awt.Color(255, 204, 102));
         txtCodigoVerificacion.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtCodigoVerificacion.setForeground(new java.awt.Color(51, 51, 51));
-        txtCodigoVerificacion.setText("Ingrese el código de verificación");
+        txtCodigoVerificacion.setText("Código de verificación");
         txtCodigoVerificacion.setBorder(null);
         txtCodigoVerificacion.setDragEnabled(true);
         txtCodigoVerificacion.setFocusCycleRoot(true);
@@ -188,6 +194,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
         jPanel2.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 70));
+        jPanel1.add(lblGifCarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 40, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
@@ -265,6 +272,7 @@ public class PanelNewPassword extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
+    public javax.swing.JLabel lblGifCarga;
     public javax.swing.JTextField txtCodigoVerificacion;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JPasswordField txtPassword;

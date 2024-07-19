@@ -30,7 +30,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSonido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -114,16 +114,14 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
         jLabel6.setText("FlyNow: Vuela fácil, vuela seguro.");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 280, 50));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-encabezado.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.setRequestFocusEnabled(false);
-        jButton1.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+        btnSonido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-encabezado.png"))); // NOI18N
+        btnSonido.setBorder(null);
+        btnSonido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSonido.setFocusPainted(false);
+        btnSonido.setRequestFocusEnabled(false);
+        btnSonido.setRolloverEnabled(true);
+        btnSonido.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(btnSonido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 70));
 
@@ -169,7 +167,7 @@ public class PanelIniciarSesion extends javax.swing.JFrame {
     public javax.swing.JButton btnCambiarPass;
     public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnSonido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

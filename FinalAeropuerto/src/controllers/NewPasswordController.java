@@ -29,6 +29,7 @@ public class NewPasswordController implements ActionListener, MouseListener {
         views.btnConfirmarEmail.addActionListener(this);
         views.btnConfirmarPassword.addActionListener(this);
         views.btnConfirmarCodigo.addActionListener(this);
+        views.btnCerrar.addActionListener(this);
     }
 
     @Override
@@ -41,6 +42,7 @@ public class NewPasswordController implements ActionListener, MouseListener {
                 String email = views.txtEmail.getText();
                 us = usDao.buscarUsuario(email);
                 if (us.getEmail() != null) {
+                    JOptionPane.showMessageDialog(null, "Espere un momento...");
                     this.codigo = GeneradorCodigosEmail.enviarCorreo(us.getEmail(), false);
                     if (this.codigo != null) {
                         JOptionPane.showMessageDialog(null, "Ingrese el código de verificación que le enviamos");
@@ -50,7 +52,7 @@ public class NewPasswordController implements ActionListener, MouseListener {
                         views.btnConfirmarEmail.setVisible(false);
                         views.btnConfirmarCodigo.setVisible(true);
                     }else{
-                        JOptionPane.showMessageDialog(null, "No pudimos encontrar su usuario");
+                        JOptionPane.showMessageDialog(null, "No pudimos encontrar su correo electrónico");
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "No se encontró el correo o usuario ingresado");
@@ -89,15 +91,16 @@ public class NewPasswordController implements ActionListener, MouseListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese la nueva contraseña");
             }
+        }else if(e.getSource() == views.btnCerrar){
+            BotonesInicio.btnCerrarLogin(views);
         }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == views.txtEmail) {
-            Object[] components = PlaceHolder.placeHolderEmail(views.txtEmail, views.txtPassword);
+            Object[] components = PlaceHolder.placeHolderEmail(views.txtEmail);
             views.txtEmail = (JTextField) components[0];
-            views.txtPassword = (JPasswordField) components[1];
         } else if (e.getSource() == views.txtPassword) {
             Object[] components = PlaceHolder.placeHolderPassword2(views.txtPassword, views.txtPasswordConfirmada);
             views.txtPassword = (JPasswordField) components[0];

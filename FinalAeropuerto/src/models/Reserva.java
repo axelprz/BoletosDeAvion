@@ -1,30 +1,26 @@
 package models;
 
-import java.util.Date;
 import java.util.List;
 
 public class Reserva {
     private int idReserva;
     private Usuario usuario;
     private Vuelo vuelo;
-    private int estado;
-    private Date fechaReserva;
+    private String estado;
+    private String fechaReserva;
     private List<Pasajero> pasajeros;
+    private int totalPagar;
+    private int idVuelo;
 
-    public Reserva(Usuario usuario, Vuelo vuelo, int estado, Date fechaReserva){
-        this.usuario = usuario;
-        this.vuelo = vuelo;
-        this.estado = estado;
-        this.fechaReserva = fechaReserva;
-    }
+    public Reserva(){}
     
-    public Reserva(int idReserva, Usuario usuario, Vuelo vuelo, int estado, Date fechaReserva, List<Pasajero> pasajeros) {
-        this.idReserva = idReserva;
+    public Reserva(Usuario usuario, Vuelo vuelo, String estado, String fechaReserva, List<Pasajero> pasajeros, int totalPagar) {
         this.usuario = usuario;
         this.vuelo = vuelo;
         this.estado = estado;
         this.fechaReserva = fechaReserva;
         this.pasajeros = pasajeros;
+        this.totalPagar = totalPagar;
     }
 
     public int getIdReserva() {
@@ -51,19 +47,19 @@ public class Reserva {
         this.vuelo = vuelo;
     }
 
-    public int getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public Date getFechaReserva() {
+    public String getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(Date fechaReserva) {
+    public void setFechaReserva(String fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 
@@ -75,6 +71,22 @@ public class Reserva {
         this.pasajeros = pasajeros;
     }
 
+    public int getTotalPagar() {
+        return totalPagar;
+    }
+
+    public void setTotalPagar(int totalPagar) {
+        this.totalPagar = totalPagar;
+    }
+
+    public int getIdVuelo() {
+        return idVuelo;
+    }
+
+    public void setIdVuelo(int idVuelo) {
+        this.idVuelo = idVuelo;
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,6 +97,7 @@ public class Reserva {
         sb.append(", estado=").append(estado);
         sb.append(", fechaReserva=").append(fechaReserva);
         sb.append(", pasajeros=").append(pasajeros);
+        sb.append(", totalPagar=").append(totalPagar);
         sb.append('}');
         return sb.toString();
     }
