@@ -69,7 +69,7 @@ public class ReservarVueloController implements ActionListener, MouseListener {
     private void FormatearCalendarioFechaNacimiento() {
         BirthDateValidator birthDateValidator = new BirthDateValidator(views.dcFechaNacimiento);
     }
-    
+
     private static String getDayOfWeekInSpanish(int dayOfWeek) {
         switch (dayOfWeek) {
             case Calendar.MONDAY:
@@ -96,7 +96,7 @@ public class ReservarVueloController implements ActionListener, MouseListener {
         if (e.getSource() == views.btnConfirmar) {
             if (views.cbOrigen.getSelectedIndex() != 0) {
                 if (!(views.cbOrigen.getSelectedItem().equals(vuelo.getDestino()))) {
-                    
+
                     JOptionPane.showMessageDialog(null, "Ahora proceda con la información del vuelo");
                     views.PanelInfoVuelo.setVisible(true);
 
@@ -114,7 +114,7 @@ public class ReservarVueloController implements ActionListener, MouseListener {
                     views.cbOrigen.setEnabled(false);
                     views.cbIdaYVuelta.setEnabled(false);
                     views.btnConfirmar.setEnabled(false);
-                    
+
                     views.lblDia1.setText(vuelos.get(0).getDia());
                     views.lblDia2.setText(vuelos.get(1).getDia());
 
@@ -130,18 +130,19 @@ public class ReservarVueloController implements ActionListener, MouseListener {
             }
         } else if (e.getSource() == views.btnReservar) {
             if (views.dcFechaVuelo.getDate() != null && views.spCantidadBoletos.getValue() != null) {
+
                 JOptionPane.showMessageDialog(null, "Reserva realizada, ahora ingrese los datos de los pasajeros");
-                       
+
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(views.dcFechaVuelo.getDate());
 
                 String dia = getDayOfWeekInSpanish(calendar.get(Calendar.DAY_OF_WEEK));
-                
+
                 this.vuelo = vueloDao.buscarVueloPorNacionalidadYDia(views.cbOrigen.getSelectedIndex(), vuelo.getDestino(), dia);
                 if (views.cbIdaYVuelta.getSelectedIndex() != 0) {
                     vuelo.setPrecio(vuelo.getPrecio() * 2);
                 }
-                
+
                 FormatearCalendarioFechaNacimiento();
 
                 this.cantidadBoletos = (int) views.spCantidadBoletos.getValue();
