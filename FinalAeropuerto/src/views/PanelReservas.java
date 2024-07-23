@@ -18,6 +18,12 @@ public class PanelReservas extends javax.swing.JFrame {
         this.lbl6.setVisible(false);
         this.lbl1.setVisible(false);
         this.lbl2.setVisible(false);
+        this.btnInfo1.setVisible(false);
+        this.btnInfo2.setVisible(false);
+        this.btnInfo3.setVisible(false);
+        this.btnInfo4.setVisible(false);
+        this.btnInfo5.setVisible(false);
+        this.btnInfo6.setVisible(false);
         this.lblGuion1.setVisible(false);
         this.lblGuion2.setVisible(false);
         this.lblReservaCancelada1.setVisible(false);
@@ -82,6 +88,12 @@ public class PanelReservas extends javax.swing.JFrame {
         lblDni4 = new javax.swing.JLabel();
         lblDni5 = new javax.swing.JLabel();
         lblNombre5 = new javax.swing.JLabel();
+        btnInfo6 = new javax.swing.JButton();
+        btnInfo1 = new javax.swing.JButton();
+        btnInfo2 = new javax.swing.JButton();
+        btnInfo3 = new javax.swing.JButton();
+        btnInfo4 = new javax.swing.JButton();
+        btnInfo5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -275,9 +287,9 @@ public class PanelReservas extends javax.swing.JFrame {
         btnCerrar.setRequestFocusEnabled(false);
         btnCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar-h.png"))); // NOI18N
         btnCerrar.setVerifyInputWhenFocusTarget(false);
-        jPanel3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 10, -1, -1));
+        jPanel3.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, -1, -1));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 70));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 70));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -286,7 +298,7 @@ public class PanelReservas extends javax.swing.JFrame {
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 370, -1));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 440, -1));
 
         lbl2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         lbl2.setForeground(new java.awt.Color(255, 255, 255));
@@ -402,7 +414,61 @@ public class PanelReservas extends javax.swing.JFrame {
         lblNombre5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(lblNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 180, 50));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 720));
+        btnInfo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo6.setDefaultCapable(false);
+        btnInfo6.setRolloverEnabled(true);
+        btnInfo6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo6.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 610, 50, 50));
+
+        btnInfo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo1.setDefaultCapable(false);
+        btnInfo1.setRolloverEnabled(true);
+        btnInfo1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo1.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 50, 50));
+
+        btnInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo2.setDefaultCapable(false);
+        btnInfo2.setRolloverEnabled(true);
+        btnInfo2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo2.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 220, 50, 50));
+
+        btnInfo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo3.setDefaultCapable(false);
+        btnInfo3.setRolloverEnabled(true);
+        btnInfo3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo3.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 300, 50, 50));
+
+        btnInfo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo4.setDefaultCapable(false);
+        btnInfo4.setRolloverEnabled(true);
+        btnInfo4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo4.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, 50, 50));
+
+        btnInfo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info.png"))); // NOI18N
+        btnInfo5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnInfo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInfo5.setDefaultCapable(false);
+        btnInfo5.setRolloverEnabled(true);
+        btnInfo5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-reservas-info-h.png"))); // NOI18N
+        btnInfo5.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(btnInfo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 530, 50, 50));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 950, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -410,6 +476,12 @@ public class PanelReservas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnInfo1;
+    public javax.swing.JButton btnInfo2;
+    public javax.swing.JButton btnInfo3;
+    public javax.swing.JButton btnInfo4;
+    public javax.swing.JButton btnInfo5;
+    public javax.swing.JButton btnInfo6;
     public javax.swing.JButton btnMenu;
     public javax.swing.JButton btnPagar;
     public javax.swing.JButton btnPagos;

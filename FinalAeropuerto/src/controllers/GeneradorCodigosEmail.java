@@ -79,7 +79,7 @@ public class GeneradorCodigosEmail {
         String codigo;
 
         asunto = "Reserva Completada";
-        contenido = "Gracias por comprar su voleto";
+        contenido = "Gracias por comprar su boleto";
 
         String usuario = "flynow.airlines.arg@gmail.com";
         String contrasena = "tavm wgje scam esoy";

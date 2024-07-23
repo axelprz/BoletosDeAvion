@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import models.Pasajero;
@@ -14,6 +15,7 @@ import models.Vuelo;
 import models.dao.PasajeroDao;
 import models.dao.ReservaDao;
 import models.dao.VueloDao;
+import views.PanelInfoReserva;
 import views.PanelInicio;
 import views.PanelPagos;
 import views.PanelReservas;
@@ -35,6 +37,8 @@ public class ReservasController implements ActionListener {
     private List<JLabel> lblReservasCompletadas;
     private List<JLabel> lblNombres;
     private List<JLabel> lblDocumentos;
+    private List<JButton> btnInfoReservasCanceladas;
+    private List<JButton> btnInfoReservasCompletadas;
 
     public ReservasController(PanelReservas views, Usuario us, ReservaDao reservaDao) {
         this.views = views;
@@ -51,6 +55,8 @@ public class ReservasController implements ActionListener {
         this.lblDocumentos = Arrays.asList(views.lblDni1, views.lblDni2, views.lblDni3, views.lblDni4, views.lblDni5);
         this.lblReservasCompletadas = Arrays.asList(views.lblReservaCompletada1, views.lblReservaCompletada2, views.lblReservaCompletada3);
         this.lblReservasCanceladas = Arrays.asList(views.lblReservaCancelada1, views.lblReservaCancelada2, views.lblReservaCancelada3);
+        this.btnInfoReservasCanceladas = Arrays.asList(views.btnInfo4, views.btnInfo5, views.btnInfo6);
+        this.btnInfoReservasCompletadas = Arrays.asList(views.btnInfo1, views.btnInfo2, views.btnInfo3);
         this.reservasCanceladas = reservaDao.buscarReservaCancelada(us);
         this.reservasCompletadas = reservaDao.buscarReservaCompletada(us);
         this.lblPasajeros = Arrays.asList(views.lbl3, views.lbl4, views.lbl5, views.lbl6, views.lbl7);
@@ -61,8 +67,17 @@ public class ReservasController implements ActionListener {
         views.btnPagos.addActionListener(this);
         views.btnPerfil.addActionListener(this);
         views.btnVuelos.addActionListener(this);
+        views.btnInfo1.addActionListener(this);
+        views.btnInfo2.addActionListener(this);
+        views.btnInfo3.addActionListener(this);
+        views.btnInfo4.addActionListener(this);
+        views.btnInfo5.addActionListener(this);
+        views.btnInfo6.addActionListener(this);
+        actualizarLongitudReservas();
         mostrarReservas(reservasCanceladas, lblReservasCanceladas);
         mostrarReservas(reservasCompletadas, lblReservasCompletadas);
+        mostrarBotonesReservaCancelada();
+        mostrarBotonesReservaCompletada();
         llenarCampos();
     }
 
@@ -121,6 +136,15 @@ public class ReservasController implements ActionListener {
         }
         return null;
     }
+    
+    public void actualizarLongitudReservas(){
+        while (reservasCanceladas.size() > 3) {
+            reservasCanceladas.remove(0);
+        }
+        while (reservasCompletadas.size() > 3) {
+            reservasCompletadas.remove(0);
+        }
+    }
 
     public void mostrarReservas(List<Reserva> reservas, List<JLabel> lblReservas) {
         for (int i = 0; i < reservas.size(); i++) {
@@ -150,6 +174,42 @@ public class ReservasController implements ActionListener {
         inicio.setVisible(true);
         views.dispose();
     }
+    
+    public void mostrarBotonesReservaCancelada(){
+        for (int i = 0; i < reservasCanceladas.size(); i++) {
+            btnInfoReservasCanceladas.get(i).setVisible(true);
+        }
+    }
+    
+    public void mostrarBotonesReservaCompletada(){
+        for (int i = 0; i < reservasCompletadas.size(); i++) {
+            btnInfoReservasCompletadas.get(i).setVisible(true);
+        }
+    }
+    
+    public void botonesInfoReservaCancelada(int indice){
+        vuelo = vueloDao.buscarVueloPorReserva(reservasCanceladas.get(indice));
+        String destino = vuelo.getDestino();
+        String origen = vuelo.getOrigen();
+        String fechaSalida = vuelo.getDia() + " " + vuelo.getHora() + "AM";
+        String fechaLlegada = calcularFechaYHoraLlegada(vuelo.getDia(), vuelo.getHora(), vuelo.getDuracion());
+        String precio = "$" + reservasCanceladas.get(indice).getTotalPagar();
+        String numeroVuelo = vuelo.getNumeroVuelo();
+        PanelInfoReserva info = new PanelInfoReserva(destino, origen, fechaSalida, fechaLlegada, precio, numeroVuelo);
+        info.setVisible(true);
+    }
+    
+    public void botonesInfoReservaCompletada(int indice){
+        vuelo = vueloDao.buscarVueloPorReserva(reservasCompletadas.get(indice));
+        String destino = vuelo.getDestino();
+        String origen = vuelo.getOrigen();
+        String fechaSalida = vuelo.getDia() + " " + vuelo.getHora() + "AM";
+        String fechaLlegada = calcularFechaYHoraLlegada(vuelo.getDia(), vuelo.getHora(), vuelo.getDuracion());
+        String precio = "$" + reservasCompletadas.get(indice).getTotalPagar();
+        String numeroVuelo = vuelo.getNumeroVuelo();
+        PanelInfoReserva info = new PanelInfoReserva(destino, origen, fechaSalida, fechaLlegada, precio, numeroVuelo);
+        info.setVisible(true);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -170,6 +230,18 @@ public class ReservasController implements ActionListener {
             PanelPagos pagos = new PanelPagos(us);
             pagos.setVisible(true);
             views.dispose();
+        } else if(e.getSource() == views.btnInfo1){
+            botonesInfoReservaCompletada(0);
+        } else if(e.getSource() == views.btnInfo2){
+            botonesInfoReservaCompletada(1);
+        } else if(e.getSource() == views.btnInfo3){
+            botonesInfoReservaCompletada(2);
+        } else if(e.getSource() == views.btnInfo4){
+            botonesInfoReservaCancelada(0);
+        } else if(e.getSource() == views.btnInfo5){
+            botonesInfoReservaCancelada(1);
+        } else if(e.getSource() == views.btnInfo6){
+            botonesInfoReservaCancelada(2);
         }
     }
 
