@@ -15,7 +15,7 @@ Este proyecto lo llevamos a cabo como final de la asignatura "Programación III"
 
 ## 🛠️ **Instalación**
 
-1. **Clonar el Repositorio:**
+1. **Clonar el Repositorio (es importante hacerlo en la unidad raiz C para que las imagenes se carguen bien):**
 
    ```bash
    git clone https://github.com/axelprz/BoletosDeAvion
